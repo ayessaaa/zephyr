@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvaotgkjbc0pm"]
+
+[ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
+[ext_resource type="Texture2D" uid="uid://b6dwkhxgb5nxg" path="res://assets/sprites/IMG_2180.PNG" id="2_14505"]
+[ext_resource type="Texture2D" uid="uid://bmn6o4rix21ci" path="res://assets/sprites/IMG_2181.PNG" id="3_4wcc8"]
+
+[sub_resource type="Animation" id="Animation_s027a"]
+resource_name = "swing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.2617994, 0.3490658503988659, 0.2617994, 0.17453292519943295, 0.2617994, 0.5235988]
+}
+
+[sub_resource type="Animation" id="Animation_14505"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_4wcc8"]
+resource_name = "left_back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_8sknh"]
+resource_name = "to_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.2617994, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0gfpk"]
+resource_name = "to_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.2617994, 0.5235988]
+}
+
+[sub_resource type="Animation" id="Animation_0hrit"]
+resource_name = "right_back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5235988, 0.2617994]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4wcc8"]
+_data = {
+&"RESET": SubResource("Animation_14505"),
+&"left_back": SubResource("Animation_4wcc8"),
+&"right_back": SubResource("Animation_0hrit"),
+&"swing": SubResource("Animation_s027a"),
+&"to_left": SubResource("Animation_8sknh"),
+&"to_right": SubResource("Animation_0gfpk")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sknh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_14505")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4wcc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rwm0n"]
+radius = 50.0
+height = 146.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_s027a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+
+[node name="CatAnimation" type="Node2D" parent="."]
+position = Vector2(0, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CatAnimation"]
+libraries = {
+&"": SubResource("AnimationLibrary_4wcc8")
+}
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CatAnimation"]
+position = Vector2(3.9999986, 1)
+rotation = 0.2617994
+scale = Vector2(0.10440334, 0.104403354)
+sprite_frames = SubResource("SpriteFrames_8sknh")
+autoplay = "default"
+frame_progress = 0.12733942
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 75)
+scale = Vector2(0.59590507, 0.59590507)
+shape = SubResource("CapsuleShape2D_rwm0n")
+
+[connection signal="animation_finished" from="CatAnimation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

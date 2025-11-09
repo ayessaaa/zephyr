@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbug54s1qisjb"]
+
+[ext_resource type="Texture2D" uid="uid://bsorlgesyypn3" path="res://assets/sprites/bg-zephyr.png" id="1_5k1j6"]
+[ext_resource type="PackedScene" uid="uid://dvaotgkjbc0pm" path="res://assets/scenes/player.tscn" id="2_x40lm"]
+
+[node name="MainArea" type="Node2D"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(577.5, -502)
+scale = Vector2(1.4340798, 1)
+texture = ExtResource("1_5k1j6")
+
+[node name="Player" parent="." instance=ExtResource("2_x40lm")]
+position = Vector2(578, 325)
