@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgtijnky3h5ho"]
+[gd_scene load_steps=6 format=3 uid="uid://dgtijnky3h5ho"]
 
 [ext_resource type="Script" uid="uid://im3pqah35s0s" path="res://assets/scripts/rocket_red.gd" id="1_4jufp"]
 [ext_resource type="Texture2D" uid="uid://byjjsyl7xa3e8" path="res://assets/sprites/IMG_2221.PNG" id="1_7fpqd"]
 [ext_resource type="Texture2D" uid="uid://gdh7rptjltx8" path="res://assets/sprites/IMG_2224.PNG" id="2_4jufp"]
+[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="4_wuef6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ka46r"]
 animations = [{
@@ -27,8 +28,17 @@ z_index = 1
 scale = Vector2(0.886008, 0.886008)
 sprite_frames = SubResource("SpriteFrames_ka46r")
 autoplay = "default"
-frame_progress = 0.35799453
+frame_progress = 0.39878404
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.886008, 0.886008)
 polygon = PackedVector2Array(-250.29941, -7.5848308, -149.16833, -93.54625, -123.88557, -60.678646, 83.433136, -50.565536, 70.791756, 53.093815, -121.35729, 60.678646, -139.05524, 101.13107, -245.24286, 15.1696615)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -120.158195
+offset_top = -274.6473
+offset_right = 50.841805
+offset_bottom = -148.64731
+theme_override_fonts/font = ExtResource("4_wuef6")
+theme_override_font_sizes/font_size = 130
+text = "AS"

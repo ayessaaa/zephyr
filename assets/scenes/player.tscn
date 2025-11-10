@@ -1,10 +1,49 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=21 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
+[ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
 [ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
 [ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
 [ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="4_0hrit"]
 [ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="5_o5c66"]
+[ext_resource type="PackedScene" uid="uid://iydwpujjwdhq" path="res://assets/scenes/areas/text_input.tscn" id="6_0gfpk"]
+
+[sub_resource type="Animation" id="Animation_o5c66"]
+resource_name = "red_bg"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tc801"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60g6h"]
+_data = {
+&"RESET": SubResource("Animation_tc801"),
+&"red_bg": SubResource("Animation_o5c66")
+}
 
 [sub_resource type="Animation" id="Animation_14505"]
 length = 0.001
@@ -149,10 +188,25 @@ motion_mode = 1
 script = ExtResource("1_s027a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -31)
+position = Vector2(2, -11)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+script = ExtResource("2_0hrit")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 50
+offset_left = -388.0
+offset_top = -222.0
+offset_right = 391.0
+offset_bottom = 224.0
+color = Color(1, 0.40784314, 0.4, 0.19607843)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_60g6h")
+}
 
 [node name="CatAnimation" type="Node2D" parent="."]
 position = Vector2(0, 64)
@@ -184,5 +238,8 @@ frame_progress = 0.2555916
 position = Vector2(0, 75)
 scale = Vector2(0.59590507, 0.59590507)
 shape = SubResource("CapsuleShape2D_rwm0n")
+
+[node name="TextInput" parent="." instance=ExtResource("6_0gfpk")]
+position = Vector2(0, 155)
 
 [connection signal="animation_finished" from="CatAnimation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

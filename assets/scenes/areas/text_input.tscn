@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=3 uid="uid://iydwpujjwdhq"]
+
+[ext_resource type="Script" uid="uid://dg3sqvkkxlmyu" path="res://assets/scripts/text_input.gd" id="1_je6pq"]
+[ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="2_3ucl1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ucl1"]
+bg_color = Color(0.5647059, 0.61960787, 0.8666667, 0.39215687)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs1oq"]
+
+[sub_resource type="Animation" id="Animation_3ucl1"]
+resource_name = "correct"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineEdit:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.5647059, 0.61960787, 0.8666667, 0.39215687), Color(0.25882354, 0.7372549, 0.49803922, 0.39215687), Color(0.5647059, 0.61960787, 0.8666667, 0.39215687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.6333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.061493, 1.061493), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bs1oq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineEdit:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.5647059, 0.61960787, 0.8666667, 0.39215687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_67far"]
+resource_name = "incorrect"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineEdit:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.5647059, 0.61960787, 0.8666667, 0.39215687), Color(1, 0.40784314, 0.4, 0.39215687), Color(0.5647059, 0.61960787, 0.8666667, 0.39215687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.34),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.034906585, -0.034906585, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.061493, 1.061493), Vector2(1.1235299, 1.1235299), Vector2(1.061493, 1.061493)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_67far"]
+_data = {
+&"RESET": SubResource("Animation_bs1oq"),
+&"correct": SubResource("Animation_3ucl1"),
+&"incorrect": SubResource("Animation_67far")
+}
+
+[node name="TextInput" type="Node2D"]
+script = ExtResource("1_je6pq")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = -132.0
+offset_top = -18.0
+offset_right = 757.6561
+offset_bottom = 102.85895
+scale = Vector2(0.2978679, 0.2978679)
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("2_3ucl1")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ucl1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bs1oq")
+alignment = 1
+max_length = 20
+keep_editing_on_text_submit = true
+expand_to_text_length = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 37.0
+offset_right = 41.0
+offset_bottom = 60.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_67far")
+}
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
