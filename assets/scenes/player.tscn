@@ -31,10 +31,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 10),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.2617994, 0.0]
+"values": [0.17453292, 0.2617994, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_0hrit"]
@@ -145,11 +145,14 @@ radius = 50.0
 height = 146.0
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_s027a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -31)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="CatAnimation" type="Node2D" parent="."]
 position = Vector2(0, 64)
@@ -166,7 +169,7 @@ rotation = 0.2617994
 scale = Vector2(0.10440334, 0.104403354)
 sprite_frames = SubResource("SpriteFrames_8sknh")
 autoplay = "default"
-frame_progress = 0.22867154
+frame_progress = 0.34125838
 
 [node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
 z_index = -1
