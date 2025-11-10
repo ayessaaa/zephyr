@@ -12,9 +12,9 @@ var _shake_strength: float = 0.0
 func _ready() -> void:
 	pass # Replace with function body.
 
-func trigger_shake()-> void:
+func trigger_shake(bg)-> void:
 	_shake_strength = max_shake
-	animation_player.play("red_bg")
+	animation_player.play(bg)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

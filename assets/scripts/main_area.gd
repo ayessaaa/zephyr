@@ -1,11 +1,20 @@
 extends Node2D
 
+var english_words := {}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	#load_word_list("res://words.txt")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+#func load_word_list(path: String):
+	#var file = FileAccess.open(path, FileAccess.READ)
+	#if file:
+		#while not file.eof_reached():
+			#var line = file.get_line().strip_edges()
+			#english_words[line.to_lower()] = true
+		#file.close()

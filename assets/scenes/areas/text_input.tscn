@@ -128,6 +128,7 @@ _data = {
 }
 
 [node name="TextInput" type="Node2D"]
+z_index = 2
 script = ExtResource("1_je6pq")
 
 [node name="LineEdit" type="LineEdit" parent="."]
@@ -148,6 +149,7 @@ expand_to_text_length = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
+z_index = 2
 offset_left = 1.0
 offset_top = 37.0
 offset_right = 41.0
