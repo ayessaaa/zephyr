@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -400.0
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
-	velocity.y -= 10 * delta
+	position.y -= 50 * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

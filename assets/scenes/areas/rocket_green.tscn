@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://drtkonetbdyed"]
+
+[ext_resource type="Texture2D" uid="uid://c1xqwwvna1vbv" path="res://assets/sprites/IMG_2223.PNG" id="1_1v0em"]
+[ext_resource type="Texture2D" uid="uid://cqy7pqd34041y" path="res://assets/sprites/IMG_2226.PNG" id="2_7ghuu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1lea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1v0em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7ghuu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RocketGreen" type="Area2D"]
+scale = Vector2(0.116513066, 0.116513066)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.886, 0.886)
+sprite_frames = SubResource("SpriteFrames_f1lea")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.886008, 0.886008)
+polygon = PackedVector2Array(-250.29941, -7.5848308, -149.16833, -93.54625, -123.88557, -60.678646, 83.433136, -50.565536, 70.791756, 53.093815, -121.35729, 60.678646, -139.05524, 101.13107, -245.24286, 15.1696615)

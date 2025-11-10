@@ -21,17 +21,18 @@ gravity_scale = -3.495
 
 [node name="WhiteBg" type="Sprite2D" parent="Balloon"]
 position = Vector2(590, 208)
-scale = Vector2(0.10689951, 0.106899515)
+scale = Vector2(0.16203997, 0.16203998)
 texture = ExtResource("1_8560f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Balloon"]
 z_index = 1
 position = Vector2(590, 208)
-scale = Vector2(0.10689951, 0.106899515)
+scale = Vector2(0.16203997, 0.16203998)
 texture = ExtResource("2_7pxlx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon"]
 position = Vector2(590, 203)
+scale = Vector2(1.5158163, 1.5158163)
 shape = SubResource("CircleShape2D_im47u")
 
 [node name="Rope2" type="RigidBody2D" parent="."]
