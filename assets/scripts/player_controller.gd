@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $CatAnimation/AnimationPlayer
 
-const SPEED = 300.0
+const SPEED = 50.0
 const JUMP_VELOCITY = -400.0
 
 

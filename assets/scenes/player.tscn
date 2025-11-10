@@ -1,24 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=16 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
-[ext_resource type="Texture2D" uid="uid://b6dwkhxgb5nxg" path="res://assets/sprites/IMG_2180.PNG" id="2_14505"]
-[ext_resource type="Texture2D" uid="uid://bmn6o4rix21ci" path="res://assets/sprites/IMG_2181.PNG" id="3_4wcc8"]
-
-[sub_resource type="Animation" id="Animation_s027a"]
-resource_name = "swing"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.4666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.2617994, 0.3490658503988659, 0.2617994, 0.17453292519943295, 0.2617994, 0.5235988]
-}
+[ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
+[ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
+[ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="4_0hrit"]
+[ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="5_o5c66"]
 
 [sub_resource type="Animation" id="Animation_14505"]
 length = 0.001
@@ -45,42 +31,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.2617994]
-}
-
-[sub_resource type="Animation" id="Animation_8sknh"]
-resource_name = "to_left"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0.5, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.2617994, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_0gfpk"]
-resource_name = "to_right"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.2617994, 0.5235988]
 }
 
 [sub_resource type="Animation" id="Animation_0hrit"]
@@ -96,7 +50,56 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.5235988, 0.2617994]
+"values": [0.3490658503988659, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_s027a"]
+resource_name = "swing"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.2617994, 0.3490658503988659, 0.17453292519943295, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_8sknh"]
+resource_name = "to_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.2617994, 0.17453292519943295]
+}
+
+[sub_resource type="Animation" id="Animation_0gfpk"]
+resource_name = "to_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.2617994, 0.3490658503988659]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4wcc8"]
@@ -113,10 +116,24 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_14505")
+"texture": ExtResource("4_0hrit")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4wcc8")
+"texture": ExtResource("5_o5c66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tc801"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8sknh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0gfpk")
 }],
 "loop": true,
 "name": &"default",
@@ -143,12 +160,22 @@ libraries = {
 }
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CatAnimation"]
+z_index = 2
 position = Vector2(3.9999986, 1)
 rotation = 0.2617994
 scale = Vector2(0.10440334, 0.104403354)
 sprite_frames = SubResource("SpriteFrames_8sknh")
 autoplay = "default"
-frame_progress = 0.12733942
+frame_progress = 0.22867154
+
+[node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
+z_index = -1
+z_as_relative = false
+position = Vector2(1.5258789e-05, 0)
+scale = Vector2(0.9961368, 0.99613655)
+sprite_frames = SubResource("SpriteFrames_tc801")
+autoplay = "default"
+frame_progress = 0.2555916
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 75)
