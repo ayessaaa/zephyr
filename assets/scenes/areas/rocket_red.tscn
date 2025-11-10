@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgtijnky3h5ho"]
+[gd_scene load_steps=5 format=3 uid="uid://dgtijnky3h5ho"]
 
+[ext_resource type="Script" uid="uid://im3pqah35s0s" path="res://assets/scripts/rocket_red.gd" id="1_4jufp"]
 [ext_resource type="Texture2D" uid="uid://byjjsyl7xa3e8" path="res://assets/sprites/IMG_2221.PNG" id="1_7fpqd"]
 [ext_resource type="Texture2D" uid="uid://gdh7rptjltx8" path="res://assets/sprites/IMG_2224.PNG" id="2_4jufp"]
 
@@ -19,13 +20,14 @@ animations = [{
 
 [node name="RocketRed" type="Area2D"]
 scale = Vector2(0.116513066, 0.116513066)
+script = ExtResource("1_4jufp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 scale = Vector2(0.886008, 0.886008)
 sprite_frames = SubResource("SpriteFrames_ka46r")
 autoplay = "default"
-frame_progress = 0.57515794
+frame_progress = 0.35799453
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.886008, 0.886008)
