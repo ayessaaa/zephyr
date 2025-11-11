@@ -5,6 +5,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var camera = get_parent().get_node("Camera2D")
+@onready var rocket = get_parent().get_parent().get_node("Rockets/RocketRed/Sprite2D")
 
 #func _ready() -> void:
 	#line_edit.text_submitted.connect(_on_LineEdit_text_entered)
@@ -12,18 +13,18 @@ extends Node2D
 #func _on_LineEdit_text_entered(new_text: String)-> void:
 	#label.text = new_text
 
-var patterns = ["AD", "PS"]
-
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	#label.text = new_text
-	for pattern in patterns:
+	for rocket in Global.rocket_list:
 		
-		if not new_text.to_lower().find(pattern.to_lower()) != -1:
+		if not new_text.to_lower().find(rocket.pattern.to_lower()) != -1:
 			continue
-		elif is_real_word(new_text, pattern):
+		elif is_real_word(new_text, rocket.pattern):
 			animation_player.play("correct")
 			camera.trigger_shake("green_bg")
 			line_edit.text = ""
+			rocket.get_node("Sprite2D").play("explode")
+			Global.rocket_list.erase(rocket)
 			return
 			
 	animation_player.play("incorrect")

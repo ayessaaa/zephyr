@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=13 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://co610mowxe521" path="res://assets/sprites/IMG_2197.PNG" id="3_y61u2"]
 [ext_resource type="Texture2D" uid="uid://dpnte6mqwblw0" path="res://assets/sprites/IMG_2196.PNG" id="4_8hxss"]
 [ext_resource type="PackedScene" uid="uid://byurh1y0yj7o3" path="res://assets/scenes/cloud_1.tscn" id="7_8hxss"]
-[ext_resource type="PackedScene" uid="uid://dgtijnky3h5ho" path="res://assets/scenes/areas/rocket_red.tscn" id="7_eblat"]
 [ext_resource type="PackedScene" uid="uid://dxw88obwdo4vq" path="res://assets/scenes/cloud_2.tscn" id="8_x0hsm"]
 [ext_resource type="PackedScene" uid="uid://djxarqc2kffhx" path="res://assets/scenes/cloud_3.tscn" id="9_eblat"]
 
@@ -158,9 +157,6 @@ node_a = NodePath("..")
 node_b = NodePath("../../Rope5")
 
 [node name="Rockets" type="Node" parent="."]
-
-[node name="RocketRed" parent="Rockets" instance=ExtResource("7_eblat")]
-position = Vector2(1036, 157)
 
 [node name="BgObjects" type="Node" parent="."]
 

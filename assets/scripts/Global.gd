@@ -18,3 +18,12 @@ func load_word_list(path: String):
 		file.close()
 
 var menu = true
+
+var patterns_easy = ["an", "in", "on", "at", "it", "en", "er", "ar", "or", "us", "um", "is",
+					"th", "sh", "ch", "ph", "st", "tr", "br", "cl", "pr", "dr", "gr", "bl",
+					"ed", "es", "ly", "er", "al", "le", "nt", "nd", "ck", "ng",
+					"gh", "pt", "wr", "kn", "qu", "xi"]
+var patterns_medium = ["ing", "str", "pre", "ous", "ack", "est", "all", "ant"]
+var patterns_hard = ["tion", "able", "less", "wise", "ment", "hood", "ough"]
+
+var rocket_list = []
