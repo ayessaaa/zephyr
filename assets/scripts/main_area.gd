@@ -10,9 +10,13 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var rockets: Node = $Rockets
 
 @onready var player: CharacterBody2D = $Player
+@onready var meow_1: AudioStreamPlayer2D = $MeowSounds/Meow1
 
 var timer = 10
 var rocket_position_x = [146.0, 1036.0]
+
+var meow_timer = 0
+
 
 var probability_timer = 0
 
@@ -48,8 +52,10 @@ func _process(delta: float) -> void:
 			spawn_rocket(ROCKET_RED, spawn_pos, random_position)
 			
 			
-	
-			
+	meow_timer += delta
+	if meow_timer >= 5:
+		meow_timer = 0
+		meow_1.play()
 	
 		
 func spawn_rocket(rocket_scene, pos, left_or_right):

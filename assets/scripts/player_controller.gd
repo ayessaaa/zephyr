@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var gravity = 400
+@export var gravity = 1000
 
 @onready var animation_player: AnimationPlayer = $CatAnimation/AnimationPlayer
 

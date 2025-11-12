@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=25 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://byurh1y0yj7o3" path="res://assets/scenes/cloud_1.tscn" id="7_8hxss"]
 [ext_resource type="PackedScene" uid="uid://dxw88obwdo4vq" path="res://assets/scenes/cloud_2.tscn" id="8_x0hsm"]
 [ext_resource type="PackedScene" uid="uid://djxarqc2kffhx" path="res://assets/scenes/cloud_3.tscn" id="9_eblat"]
+[ext_resource type="AudioStream" uid="uid://b3buy6hk2u1un" path="res://assets/audio/meow1.mp3" id="13_r6dgb"]
+[ext_resource type="Texture2D" uid="uid://1f2lhdf36kaj" path="res://assets/sprites/Frame 3.png" id="14_ep3yq"]
+[ext_resource type="Script" uid="uid://wqra5oc8x0pj" path="res://assets/scripts/score.gd" id="14_nrxh2"]
+[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="15_nrxh2"]
+[ext_resource type="Script" uid="uid://eaw5ajy0i0e7" path="res://assets/scripts/score_label.gd" id="16_b2x3e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y61u2"]
 radius = 26.019224
@@ -25,6 +30,66 @@ radius = 49.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y61u2"]
 size = Vector2(2, 21)
 
+[sub_resource type="Animation" id="Animation_hrrj1"]
+resource_name = "scored"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score/ScoreLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.16078432, 0.19607843, 0.40784314, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.16078432, 0.19607843, 0.40784314, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Score/ScoreLabel:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.39, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5094896, 0.5094896), Vector2(0.52612734, 0.52612734), Vector2(0.52612734, 0.52612734), Vector2(0.5094896, 0.5094896)]
+}
+
+[sub_resource type="Animation" id="Animation_c6vv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score/ScoreLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.16078432, 0.19607843, 0.40784314, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Score/ScoreLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5094896, 0.5094896)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh07x"]
+_data = {
+&"RESET": SubResource("Animation_c6vv5"),
+&"scored": SubResource("Animation_hrrj1")
+}
+
 [node name="MainArea" type="Node2D"]
 script = ExtResource("1_s6uqe")
 
@@ -35,8 +100,8 @@ parameters/looping = true
 
 [node name="Bg" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(520.00006, -6745.207)
-scale = Vector2(0.66500837, 1.1795378)
+position = Vector2(520.00006, -7418.2266)
+scale = Vector2(0.66500837, 1.5733962)
 texture = ExtResource("1_8hxss")
 
 [node name="Balloon" type="RigidBody2D" parent="."]
@@ -438,6 +503,41 @@ position = Vector2(661, -2790)
 
 [node name="Cloud82" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(46, -2719)
+
+[node name="MeowSounds" type="Node" parent="."]
+
+[node name="Meow1" type="AudioStreamPlayer2D" parent="MeowSounds"]
+stream = ExtResource("13_r6dgb")
+volume_db = -5.0
+
+[node name="Score" type="Area2D" parent="."]
+script = ExtResource("14_nrxh2")
+
+[node name="ScoreSprite" type="Sprite2D" parent="Score"]
+z_index = 2
+position = Vector2(253.719, 122.632355)
+scale = Vector2(0.17492256, 0.17492256)
+texture = ExtResource("14_ep3yq")
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+z_index = 2
+offset_left = 213.71893
+offset_top = 138.63232
+offset_right = 253.71893
+offset_bottom = 183.63232
+scale = Vector2(0.5094896, 0.5094896)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("15_nrxh2")
+theme_override_font_sizes/font_size = 46
+text = "0"
+script = ExtResource("16_b2x3e")
+
+[node name="ScoreAnimation" type="AnimationPlayer" parent="Score"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_nh07x")
+}
 
 [connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]

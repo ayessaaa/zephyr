@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=24 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
@@ -9,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="5_o5c66"]
 [ext_resource type="PackedScene" uid="uid://iydwpujjwdhq" path="res://assets/scenes/areas/text_input.tscn" id="6_0gfpk"]
 [ext_resource type="Texture2D" uid="uid://cdhwrodsxpxkt" path="res://assets/sprites/IMG_2242.PNG" id="6_nh07x"]
-[ext_resource type="Texture2D" uid="uid://1f2lhdf36kaj" path="res://assets/sprites/Frame 3.png" id="8_o5c66"]
-[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="9_tc801"]
-[ext_resource type="Script" uid="uid://eaw5ajy0i0e7" path="res://assets/scripts/score_label.gd" id="10_60g6h"]
 
 [sub_resource type="Animation" id="Animation_tc801"]
 length = 0.001
@@ -252,66 +249,6 @@ animations = [{
 radius = 50.0
 height = 146.0
 
-[sub_resource type="Animation" id="Animation_hrrj1"]
-resource_name = "scored"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ScoreLabel:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.16078432, 0.19607843, 0.40784314, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.16078432, 0.19607843, 0.40784314, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ScoreLabel:scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16, 0.39, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.5094896, 0.5094896), Vector2(0.52612734, 0.52612734), Vector2(0.52612734, 0.52612734), Vector2(0.5094896, 0.5094896)]
-}
-
-[sub_resource type="Animation" id="Animation_c6vv5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ScoreLabel:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.16078432, 0.19607843, 0.40784314, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ScoreLabel:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.5094896, 0.5094896)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh07x"]
-_data = {
-&"RESET": SubResource("Animation_c6vv5"),
-&"scored": SubResource("Animation_hrrj1")
-}
-
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_s027a")
@@ -319,6 +256,7 @@ script = ExtResource("1_s027a")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, -11)
 zoom = Vector2(1.5, 1.5)
+limit_bottom = 3000
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("2_0hrit")
@@ -370,30 +308,5 @@ shape = SubResource("CapsuleShape2D_rwm0n")
 
 [node name="TextInput" parent="." instance=ExtResource("6_0gfpk")]
 position = Vector2(0, 155)
-
-[node name="ScoreSprite" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(-327, -205)
-scale = Vector2(0.17492256, 0.17492256)
-texture = ExtResource("8_o5c66")
-
-[node name="ScoreLabel" type="Label" parent="."]
-z_index = 2
-offset_left = -367.0
-offset_top = -189.0
-offset_right = -327.0
-offset_bottom = -144.0
-scale = Vector2(0.5094896, 0.5094896)
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
-theme_override_fonts/font = ExtResource("9_tc801")
-theme_override_font_sizes/font_size = 46
-text = "0"
-script = ExtResource("10_60g6h")
-
-[node name="ScoreAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_nh07x")
-}
 
 [connection signal="animation_finished" from="CatAnimation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

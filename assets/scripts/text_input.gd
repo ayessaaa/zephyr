@@ -9,7 +9,7 @@ extends Node2D
 @onready var typing_sound: AudioStreamPlayer2D = $TypingSound
 @onready var correct_sound: AudioStreamPlayer2D = $CorrectSound
 @onready var incorrect_sound: AudioStreamPlayer2D = $IncorrectSound
-@onready var score_animation: AnimationPlayer = $"../ScoreAnimation"
+@onready var score_animation: AnimationPlayer = get_parent().get_parent().get_node("Score/ScoreAnimation")
 @onready var bg_music: AudioStreamPlayer2D = $"../../BgMusic"
 
 var score = 0
