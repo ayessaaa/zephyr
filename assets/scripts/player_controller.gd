@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var gravity = 400
+
 @onready var animation_player: AnimationPlayer = $CatAnimation/AnimationPlayer
 
 const SPEED = 25.0
@@ -10,8 +12,10 @@ func _physics_process(delta: float) -> void:
 	#if Global.menu:
 		#return
 	# Add the gravity.
-	#if not is_on_floor():
-	position.y -= 30 * delta
+	if Global.floating:
+		position.y -= 30 * delta
+	else:
+		velocity.y += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

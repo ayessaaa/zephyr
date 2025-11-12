@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=17 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
@@ -8,12 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://5sf0rb158ygs" path="res://assets/sprites/IMG_2193.PNG" id="3_6d4cm"]
 [ext_resource type="Texture2D" uid="uid://co610mowxe521" path="res://assets/sprites/IMG_2197.PNG" id="3_y61u2"]
 [ext_resource type="Texture2D" uid="uid://dpnte6mqwblw0" path="res://assets/sprites/IMG_2196.PNG" id="4_8hxss"]
+[ext_resource type="Script" uid="uid://dh4lj7ygmt5si" path="res://assets/scripts/balloon.gd" id="4_u3uip"]
 [ext_resource type="PackedScene" uid="uid://byurh1y0yj7o3" path="res://assets/scenes/cloud_1.tscn" id="7_8hxss"]
 [ext_resource type="PackedScene" uid="uid://dxw88obwdo4vq" path="res://assets/scenes/cloud_2.tscn" id="8_x0hsm"]
 [ext_resource type="PackedScene" uid="uid://djxarqc2kffhx" path="res://assets/scenes/cloud_3.tscn" id="9_eblat"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y61u2"]
 radius = 26.019224
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6dgb"]
+radius = 31.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u3uip"]
+radius = 49.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y61u2"]
 size = Vector2(2, 21)
@@ -37,6 +44,7 @@ z_index = 1
 position = Vector2(-6, 23)
 mass = 0.132
 gravity_scale = -3.495
+script = ExtResource("4_u3uip")
 
 [node name="WhiteBg" type="Sprite2D" parent="Balloon"]
 position = Vector2(590, 208)
@@ -53,6 +61,25 @@ texture = ExtResource("3_6d4cm")
 position = Vector2(590, 203)
 scale = Vector2(1.2399976, 1.2399976)
 shape = SubResource("CircleShape2D_y61u2")
+
+[node name="BalloonArea" type="Area2D" parent="Balloon"]
+z_index = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon/BalloonArea"]
+z_index = 2
+position = Vector2(590, 201)
+shape = SubResource("CircleShape2D_r6dgb")
+
+[node name="BalloonExternalArea" type="Area2D" parent="Balloon"]
+position = Vector2(592.4589, 203.90271)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon/BalloonExternalArea"]
+position = Vector2(-2.4589233, 0.09729004)
+shape = SubResource("CircleShape2D_u3uip")
 
 [node name="Rope2" type="RigidBody2D" parent="."]
 position = Vector2(-5, 25)
@@ -413,3 +440,5 @@ position = Vector2(661, -2790)
 position = Vector2(46, -2719)
 
 [connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
+[connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
+[connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]

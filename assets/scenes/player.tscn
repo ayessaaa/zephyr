@@ -1,12 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=30 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
 [ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
 [ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
 [ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="4_0hrit"]
+[ext_resource type="Texture2D" uid="uid://byi6ihdwhq0l5" path="res://assets/sprites/IMG_2241.PNG" id="5_c6vv5"]
 [ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="5_o5c66"]
 [ext_resource type="PackedScene" uid="uid://iydwpujjwdhq" path="res://assets/scenes/areas/text_input.tscn" id="6_0gfpk"]
+[ext_resource type="Texture2D" uid="uid://cdhwrodsxpxkt" path="res://assets/sprites/IMG_2242.PNG" id="6_nh07x"]
 [ext_resource type="Texture2D" uid="uid://1f2lhdf36kaj" path="res://assets/sprites/Frame 3.png" id="8_o5c66"]
 [ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="9_tc801"]
 [ext_resource type="Script" uid="uid://eaw5ajy0i0e7" path="res://assets/scripts/score_label.gd" id="10_60g6h"]
@@ -219,6 +221,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c6vv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nh07x")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc801"]
@@ -338,8 +351,8 @@ position = Vector2(3.9999986, 1)
 rotation = 0.2617994
 scale = Vector2(0.10440334, 0.104403354)
 sprite_frames = SubResource("SpriteFrames_8sknh")
+animation = &"scared"
 autoplay = "default"
-frame_progress = 0.34125838
 
 [node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
 z_index = -1

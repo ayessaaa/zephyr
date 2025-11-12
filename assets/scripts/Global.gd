@@ -33,3 +33,5 @@ var patterns_hard = [ "tion", "sion", "ment", "able", "less", "ness", "ward", "w
 
 var rocket_list = []
 var score = 0
+var rocket_speed = 50.0
+var floating = true

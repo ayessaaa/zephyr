@@ -10,6 +10,9 @@ extends Node2D
 @onready var correct_sound: AudioStreamPlayer2D = $CorrectSound
 @onready var incorrect_sound: AudioStreamPlayer2D = $IncorrectSound
 @onready var score_animation: AnimationPlayer = $"../ScoreAnimation"
+@onready var bg_music: AudioStreamPlayer2D = $"../../BgMusic"
+
+var score = 0
 
 #func _ready() -> void:
 	#line_edit.text_submitted.connect(_on_LineEdit_text_entered)
@@ -28,16 +31,21 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			camera.trigger_shake("green_bg")
 			line_edit.text = ""
 			rocket.get_node("Sprite2D").play("explode")
-			rocket.get_node("ExplosionSound").play()
 			correct_sound.play()
 			
 			if rocket.color == "red":
-				Global.score += len(new_text)*27
+				score = len(new_text)*27
 			elif rocket.color == "green":
-				Global.score += len(new_text)*48
+				score = len(new_text)*48
 			else:
-				Global.score += len(new_text)*69
+				score = len(new_text)*69
+				
+			Global.score += score
+			Global.rocket_speed += score*0.01
 			score_animation.play("scored")
+			#bg_music.pitch_scale += score*0.00001
+			
+			print(bg_music.pitch_scale)
 			
 			Global.rocket_list.erase(rocket)
 			return

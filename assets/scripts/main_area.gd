@@ -28,8 +28,6 @@ func _process(delta: float) -> void:
 	timer += delta
 	probability_timer += delta*0.25
 	
-	#print("red timer: " + str(red_probability))
-	#print("green timer: " + str(green_probability))
 	if timer >= 4:
 		timer = 0
 		var random_position = randi_range(0, len(rocket_position_x) - 1)
@@ -40,7 +38,7 @@ func _process(delta: float) -> void:
 		var blue_threshold = 10 * difficulty_factor
 		var green_threshold = 30 * difficulty_factor
 		
-		var spawn_pos = Vector2(rocket_position_x[random_position], player.position.y)
+		var spawn_pos = Vector2(rocket_position_x[random_position], player.position.y-100)
 		
 		if random_probability < blue_threshold:
 			spawn_rocket(ROCKET_BLUE, spawn_pos, random_position)
@@ -49,20 +47,10 @@ func _process(delta: float) -> void:
 		else:
 			spawn_rocket(ROCKET_RED, spawn_pos, random_position)
 			
-		#if random_probability <= red_probability:
-			#spawn_rocket(ROCKET_RED, Vector2(rocket_position_x[random_position], player.position.y), random_position)
-		#elif random_probability <= green_probability:
-			#spawn_rocket(ROCKET_GREEN, Vector2(rocket_position_x[random_position], player.position.y), random_position)
-		#elif random_probability <= blue_probability:
-			#spawn_rocket(ROCKET_BLUE, Vector2(rocket_position_x[random_position], player.position.y), random_position)
+			
 	
-#func load_word_list(path: String):
-	#var file = FileAccess.open(path, FileAccess.READ)
-	#if file:
-		#while not file.eof_reached():
-			#var line = file.get_line().strip_edges()
-			#english_words[line.to_lower()] = true
-		#file.close()
+			
+	
 		
 func spawn_rocket(rocket_scene, pos, left_or_right):
 	var rocket = rocket_scene.instantiate()
@@ -72,4 +60,5 @@ func spawn_rocket(rocket_scene, pos, left_or_right):
 
 
 func _on_bg_music_finished() -> void:
+	print("ended")
 	bg_music.play()

@@ -56,20 +56,21 @@ animations = [{
 
 [node name="RocketRed" type="Area2D"]
 scale = Vector2(0.116513066, 0.116513066)
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_4jufp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 scale = Vector2(0.886008, 0.886008)
 sprite_frames = SubResource("SpriteFrames_ka46r")
-animation = &"explode"
 autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 z_index = 1
 position = Vector2(17.165455, 8.582727)
 scale = Vector2(0.886008, 0.886008)
-polygon = PackedVector2Array(-250.29941, -7.5848308, -149.16833, -93.54625, -123.88557, -60.678646, 83.433136, -50.565536, 70.791756, 53.093815, -121.35729, 60.678646, -139.05524, 101.13107, -245.24286, 15.1696615)
+polygon = PackedVector2Array(-193.73929, -58.121784, -149.16833, -93.54625, -123.88557, -60.678646, 83.433136, -50.565536, 70.791756, 53.093815, -121.35729, 60.678646, -139.05524, 101.13107, -193.73929, 58.121784)
 
 [node name="LetterPattern" type="Label" parent="."]
 z_index = 1
@@ -102,4 +103,5 @@ parameters/looping = true
 [node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_yf5k1")
 
+[connection signal="animation_changed" from="Sprite2D" to="." method="_on_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
