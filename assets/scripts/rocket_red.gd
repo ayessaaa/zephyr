@@ -7,6 +7,7 @@ extends Area2D
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var letter_pattern: Label = $LetterPattern
 @onready var letter_pattern_2: Label = $LetterPattern2
+@onready var burning_sound: AudioStreamPlayer2D = $BurningSound
 
 const SPEED = 50.0
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 		sprite_2d.flip_v = true
 	else:
 		letter_pattern.text = pattern.to_upper()
+	#burning_sound.play()
 	
 
 func _process(delta: float) -> void:

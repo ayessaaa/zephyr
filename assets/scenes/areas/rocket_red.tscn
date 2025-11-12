@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgtijnky3h5ho"]
+[gd_scene load_steps=15 format=3 uid="uid://dgtijnky3h5ho"]
 
 [ext_resource type="Script" uid="uid://im3pqah35s0s" path="res://assets/scripts/rocket_red.gd" id="1_4jufp"]
 [ext_resource type="Texture2D" uid="uid://c8m8ct5gqpkww" path="res://assets/sprites/IMG_2228.PNG" id="2_bicmf"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://d2vm1xds80ojh" path="res://assets/sprites/IMG_2235.PNG" id="8_w20ik"]
 [ext_resource type="Texture2D" uid="uid://b3wmd3clef6j8" path="res://assets/sprites/IMG_2236.PNG" id="9_m6ijb"]
 [ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="10_xrf2s"]
+[ext_resource type="AudioStream" uid="uid://ctg80vo0n3uvu" path="res://assets/audio/firewood-burning-sound-179862.mp3" id="12_alt2i"]
+[ext_resource type="AudioStream" uid="uid://cc2sf2d65g32d" path="res://assets/audio/explosion-9-340460.mp3" id="13_yf5k1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ka46r"]
 animations = [{
@@ -91,5 +93,13 @@ theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
 theme_override_fonts/font = ExtResource("4_wuef6")
 theme_override_font_sizes/font_size = 130
 horizontal_alignment = 1
+
+[node name="BurningSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_alt2i")
+autoplay = true
+parameters/looping = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_yf5k1")
 
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]

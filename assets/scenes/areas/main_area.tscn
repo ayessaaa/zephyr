@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=14 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
+[ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="2_s6uqe"]
 [ext_resource type="Texture2D" uid="uid://03h3a0dd2eev" path="res://assets/sprites/IMG_2189.PNG" id="2_utkpm"]
 [ext_resource type="PackedScene" uid="uid://dvaotgkjbc0pm" path="res://assets/scenes/player.tscn" id="2_x40lm"]
 [ext_resource type="Texture2D" uid="uid://5sf0rb158ygs" path="res://assets/sprites/IMG_2193.PNG" id="3_6d4cm"]
@@ -19,6 +20,11 @@ size = Vector2(2, 21)
 
 [node name="MainArea" type="Node2D"]
 script = ExtResource("1_s6uqe")
+
+[node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s6uqe")
+autoplay = true
+parameters/looping = true
 
 [node name="Bg" type="Sprite2D" parent="."]
 z_index = -2
@@ -400,8 +406,8 @@ position = Vector2(669, -4521)
 [node name="Cloud80" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(92, -4469)
 
-[node name="Cloud1" parent="." instance=ExtResource("7_8hxss")]
+[node name="Cloud81" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(661, -2790)
 
-[node name="Cloud2" parent="." instance=ExtResource("7_8hxss")]
+[node name="Cloud82" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(46, -2719)

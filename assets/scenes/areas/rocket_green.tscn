@@ -1,30 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://drtkonetbdyed"]
+[gd_scene load_steps=13 format=3 uid="uid://drtkonetbdyed"]
 
-[ext_resource type="Texture2D" uid="uid://c1xqwwvna1vbv" path="res://assets/sprites/IMG_2223.PNG" id="1_1v0em"]
-[ext_resource type="Texture2D" uid="uid://cqy7pqd34041y" path="res://assets/sprites/IMG_2226.PNG" id="2_7ghuu"]
+[ext_resource type="Script" uid="uid://o1uwd35rklwp" path="res://assets/scripts/rocket_green.gd" id="1_xhpwr"]
+[ext_resource type="Texture2D" uid="uid://d3ao81e75xkdw" path="res://assets/sprites/IMG_2230.PNG" id="2_1atrr"]
+[ext_resource type="Texture2D" uid="uid://cltep00qu65no" path="res://assets/sprites/IMG_2240.PNG" id="3_gjw57"]
+[ext_resource type="Texture2D" uid="uid://bj8tqmmowe12h" path="res://assets/sprites/IMG_2231.PNG" id="4_han2h"]
+[ext_resource type="Texture2D" uid="uid://dcx7y1btnu4qm" path="res://assets/sprites/IMG_2232.PNG" id="5_e7lpw"]
+[ext_resource type="Texture2D" uid="uid://qmyieqgf62og" path="res://assets/sprites/IMG_2233.PNG" id="6_fvmsw"]
+[ext_resource type="Texture2D" uid="uid://dovaq1uxx3i21" path="res://assets/sprites/IMG_2234.PNG" id="7_ivux7"]
+[ext_resource type="Texture2D" uid="uid://d2vm1xds80ojh" path="res://assets/sprites/IMG_2235.PNG" id="8_lwrdq"]
+[ext_resource type="Texture2D" uid="uid://b3wmd3clef6j8" path="res://assets/sprites/IMG_2236.PNG" id="9_4jed1"]
+[ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="10_wy72y"]
+[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="11_bhc4a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1lea"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_1v0em")
+"texture": ExtResource("2_1atrr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_7ghuu")
+"texture": ExtResource("3_gjw57")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_han2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e7lpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fvmsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ivux7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lwrdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4jed1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wy72y")
+}],
+"loop": false,
+"name": &"explode",
 "speed": 5.0
 }]
 
 [node name="RocketGreen" type="Area2D"]
 scale = Vector2(0.116513066, 0.116513066)
+script = ExtResource("1_xhpwr")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.886, 0.886)
 sprite_frames = SubResource("SpriteFrames_f1lea")
+animation = &"explode"
 autoplay = "default"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(17.165455, 8.582727)
 scale = Vector2(0.886008, 0.886008)
-polygon = PackedVector2Array(-250.29941, -7.5848308, -149.16833, -93.54625, -123.88557, -60.678646, 83.433136, -50.565536, 70.791756, 53.093815, -121.35729, 60.678646, -139.05524, 101.13107, -245.24286, 15.1696615)
+polygon = PackedVector2Array(-250.29941, -7.5848308, -149.16833, -93.54625, -123.88557, -60.678646, 87.18268, -58.121784, 77.49572, 48.434822, -121.35729, 60.678646, -139.05524, 101.13107, -245.24286, 15.1696615)
+
+[node name="LetterPattern" type="Label" parent="."]
+z_index = 1
+offset_left = -231.73366
+offset_top = -248.89912
+offset_right = 154.48912
+offset_bottom = -122.899124
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("11_bhc4a")
+theme_override_font_sizes/font_size = 130
+horizontal_alignment = 1
+
+[node name="LetterPattern2" type="Label" parent="."]
+z_index = 1
+offset_left = 197.40271
+offset_top = 248.89905
+offset_right = 583.6255
+offset_bottom = 374.89908
+rotation = -3.1415927
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("11_bhc4a")
+theme_override_font_sizes/font_size = 130
+horizontal_alignment = 1
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]

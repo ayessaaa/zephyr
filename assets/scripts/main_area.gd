@@ -2,6 +2,8 @@ extends Node2D
 
 var english_words := {}
 
+@onready var bg_music: AudioStreamPlayer2D = $BgMusic
+
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
 const ROCKET_BLUE = preload("res://assets/scenes/areas/rocket_blue.tscn")
 const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
@@ -14,6 +16,7 @@ var rocket_position_x = [146.0, 1036.0]
 
 func _ready():
 	#load_word_list("res://words.txt")
+	#bg_music.play()
 	pass
 
 
