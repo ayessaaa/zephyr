@@ -2,6 +2,7 @@ extends Area2D
 
 @export var pattern = ""
 @export var left_or_right = ""
+@export var color = "green"
 
 @onready var balloon = get_parent().get_parent().get_node("Balloon/CollisionShape2D")
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D

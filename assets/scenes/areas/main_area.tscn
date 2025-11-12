@@ -28,8 +28,8 @@ parameters/looping = true
 
 [node name="Bg" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(520.00006, -12564.416)
-scale = Vector2(0.66500837, 2.534064)
+position = Vector2(520.00006, -6745.207)
+scale = Vector2(0.66500837, 1.1795378)
 texture = ExtResource("1_8hxss")
 
 [node name="Balloon" type="RigidBody2D" parent="."]
@@ -60,7 +60,7 @@ gravity_scale = -1.0
 
 [node name="WhiteBg" type="Sprite2D" parent="Rope2"]
 position = Vector2(590.12506, 246.5625)
-scale = Vector2(0.13671088, 0.011822514)
+scale = Vector2(0.11031816, 0.0117310025)
 texture = ExtResource("4_8hxss")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rope2"]
@@ -85,7 +85,7 @@ gravity_scale = -1.0
 
 [node name="WhiteBg" type="Sprite2D" parent="Rope3"]
 position = Vector2(590.12506, 245)
-scale = Vector2(0.13671054, 0.016702875)
+scale = Vector2(0.11031788, 0.014277892)
 texture = ExtResource("4_8hxss")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rope3"]
@@ -110,7 +110,7 @@ gravity_scale = -1.0
 
 [node name="WhiteBg" type="Sprite2D" parent="Rope4"]
 position = Vector2(590.125, 245)
-scale = Vector2(0.13671151, 0.018385978)
+scale = Vector2(0.11031882, 0.018545281)
 texture = ExtResource("4_8hxss")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rope4"]
@@ -135,7 +135,7 @@ gravity_scale = -1.0
 
 [node name="WhiteBg" type="Sprite2D" parent="Rope5"]
 position = Vector2(590.12506, 241.5)
-scale = Vector2(0.13671088, 0.019888543)
+scale = Vector2(0.110318005, 0.019972207)
 texture = ExtResource("4_8hxss")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rope5"]
@@ -411,3 +411,5 @@ position = Vector2(661, -2790)
 
 [node name="Cloud82" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(46, -2719)
+
+[connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]

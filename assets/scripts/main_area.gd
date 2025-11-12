@@ -14,6 +14,9 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 var timer = 10
 var rocket_position_x = [146.0, 1036.0]
 
+var probability_timer = 0
+
+
 func _ready():
 	#load_word_list("res://words.txt")
 	#bg_music.play()
@@ -23,10 +26,35 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer += delta
+	probability_timer += delta*0.25
+	
+	#print("red timer: " + str(red_probability))
+	#print("green timer: " + str(green_probability))
 	if timer >= 4:
 		timer = 0
-		var random_int = randi_range(0, len(rocket_position_x)-1)
-		spawn_rocket(ROCKET_RED, Vector2(rocket_position_x[random_int], player.position.y), random_int)
+		var random_position = randi_range(0, len(rocket_position_x) - 1)
+		var random_probability = randi_range(0, 100)
+		
+		var difficulty_factor = clamp(Global.score / 1000.0, 0.0, 5.0)
+		
+		var blue_threshold = 10 * difficulty_factor
+		var green_threshold = 30 * difficulty_factor
+		
+		var spawn_pos = Vector2(rocket_position_x[random_position], player.position.y)
+		
+		if random_probability < blue_threshold:
+			spawn_rocket(ROCKET_BLUE, spawn_pos, random_position)
+		elif random_probability < blue_threshold + green_threshold:
+			spawn_rocket(ROCKET_GREEN, spawn_pos, random_position)
+		else:
+			spawn_rocket(ROCKET_RED, spawn_pos, random_position)
+			
+		#if random_probability <= red_probability:
+			#spawn_rocket(ROCKET_RED, Vector2(rocket_position_x[random_position], player.position.y), random_position)
+		#elif random_probability <= green_probability:
+			#spawn_rocket(ROCKET_GREEN, Vector2(rocket_position_x[random_position], player.position.y), random_position)
+		#elif random_probability <= blue_probability:
+			#spawn_rocket(ROCKET_BLUE, Vector2(rocket_position_x[random_position], player.position.y), random_position)
 	
 #func load_word_list(path: String):
 	#var file = FileAccess.open(path, FileAccess.READ)
@@ -41,3 +69,7 @@ func spawn_rocket(rocket_scene, pos, left_or_right):
 	rocket.position = pos
 	rocket.left_or_right = left_or_right
 	rockets.add_child(rocket)
+
+
+func _on_bg_music_finished() -> void:
+	bg_music.play()

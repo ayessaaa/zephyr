@@ -1,30 +1,106 @@
-[gd_scene load_steps=4 format=3 uid="uid://sygm6x2k7e7m"]
+[gd_scene load_steps=15 format=3 uid="uid://sygm6x2k7e7m"]
 
-[ext_resource type="Texture2D" uid="uid://bpmdrxg7kc18m" path="res://assets/sprites/IMG_2222.PNG" id="1_pjbck"]
-[ext_resource type="Texture2D" uid="uid://d4ieb241lolo0" path="res://assets/sprites/IMG_2225.PNG" id="2_2wkar"]
+[ext_resource type="Script" uid="uid://dbwwjrvs60j2s" path="res://assets/scripts/rocket_blue.gd" id="1_rjx5b"]
+[ext_resource type="Texture2D" uid="uid://bq1oa8wnhtdjt" path="res://assets/sprites/IMG_2229.PNG" id="2_wvmm3"]
+[ext_resource type="Texture2D" uid="uid://bjrmj8k7x266m" path="res://assets/sprites/IMG_2239.PNG" id="3_cfmfs"]
+[ext_resource type="Texture2D" uid="uid://bj8tqmmowe12h" path="res://assets/sprites/IMG_2231.PNG" id="4_dtllp"]
+[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="4_r1njp"]
+[ext_resource type="AudioStream" uid="uid://ctg80vo0n3uvu" path="res://assets/audio/firewood-burning-sound-179862.mp3" id="5_1dyre"]
+[ext_resource type="Texture2D" uid="uid://dcx7y1btnu4qm" path="res://assets/sprites/IMG_2232.PNG" id="5_t0ip7"]
+[ext_resource type="AudioStream" uid="uid://cc2sf2d65g32d" path="res://assets/audio/explosion-9-340460.mp3" id="6_oyxl1"]
+[ext_resource type="Texture2D" uid="uid://qmyieqgf62og" path="res://assets/sprites/IMG_2233.PNG" id="6_subbk"]
+[ext_resource type="Texture2D" uid="uid://dovaq1uxx3i21" path="res://assets/sprites/IMG_2234.PNG" id="7_la6m3"]
+[ext_resource type="Texture2D" uid="uid://d2vm1xds80ojh" path="res://assets/sprites/IMG_2235.PNG" id="8_12v2l"]
+[ext_resource type="Texture2D" uid="uid://b3wmd3clef6j8" path="res://assets/sprites/IMG_2236.PNG" id="9_077xa"]
+[ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="10_p0lgi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dx7jq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pjbck")
+"texture": ExtResource("2_wvmm3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_2wkar")
+"texture": ExtResource("3_cfmfs")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dtllp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t0ip7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_subbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_la6m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_12v2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_077xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p0lgi")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 8.0
 }]
 
 [node name="RocketBlue" type="Area2D"]
 scale = Vector2(0.116513066, 0.116513066)
+script = ExtResource("1_rjx5b")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.886, 0.886)
 sprite_frames = SubResource("SpriteFrames_dx7jq")
+animation = &"explode"
 autoplay = "default"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(25.748154, 8.582726)
 scale = Vector2(0.886008, 0.886008)
-polygon = PackedVector2Array(-250.29941, -7.5848308, -149.16833, -93.54625, -123.88557, -60.678646, 83.433136, -50.565536, 70.791756, 53.093815, -121.35729, 60.678646, -139.05524, 101.13107, -245.24286, 15.1696615)
+polygon = PackedVector2Array(-261.548, -9.68696, -154.9914, -106.5566, -116.24354, -67.80875, 77.49574, -67.80875, 77.49572, 58.121784, -121.35729, 60.678646, -139.05524, 101.13107, -251.86102, 19.373932)
+
+[node name="LetterPattern" type="Label" parent="."]
+z_index = 1
+offset_left = -231.73366
+offset_top = -248.89912
+offset_right = 154.48912
+offset_bottom = -122.899124
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("4_r1njp")
+theme_override_font_sizes/font_size = 130
+horizontal_alignment = 1
+
+[node name="LetterPattern2" type="Label" parent="."]
+z_index = 1
+offset_left = 197.40271
+offset_top = 248.89905
+offset_right = 583.6255
+offset_bottom = 374.89908
+rotation = -3.1415927
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("4_r1njp")
+theme_override_font_sizes/font_size = 130
+horizontal_alignment = 1
+
+[node name="BurningSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1dyre")
+autoplay = true
+parameters/looping = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_oyxl1")
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]

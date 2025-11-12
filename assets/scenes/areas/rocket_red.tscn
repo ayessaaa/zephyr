@@ -51,7 +51,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"explode",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="RocketRed" type="Area2D"]
@@ -62,8 +62,8 @@ script = ExtResource("1_4jufp")
 z_index = 1
 scale = Vector2(0.886008, 0.886008)
 sprite_frames = SubResource("SpriteFrames_ka46r")
+animation = &"explode"
 autoplay = "default"
-frame_progress = 0.3118621
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 z_index = 1

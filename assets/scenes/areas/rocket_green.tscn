@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://drtkonetbdyed"]
+[gd_scene load_steps=15 format=3 uid="uid://drtkonetbdyed"]
 
 [ext_resource type="Script" uid="uid://o1uwd35rklwp" path="res://assets/scripts/rocket_green.gd" id="1_xhpwr"]
 [ext_resource type="Texture2D" uid="uid://d3ao81e75xkdw" path="res://assets/sprites/IMG_2230.PNG" id="2_1atrr"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://b3wmd3clef6j8" path="res://assets/sprites/IMG_2236.PNG" id="9_4jed1"]
 [ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="10_wy72y"]
 [ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="11_bhc4a"]
+[ext_resource type="AudioStream" uid="uid://ctg80vo0n3uvu" path="res://assets/audio/firewood-burning-sound-179862.mp3" id="12_gjw57"]
+[ext_resource type="AudioStream" uid="uid://cc2sf2d65g32d" path="res://assets/audio/explosion-9-340460.mp3" id="13_han2h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1lea"]
 animations = [{
@@ -23,7 +25,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -60,10 +62,7 @@ script = ExtResource("1_xhpwr")
 z_index = 1
 scale = Vector2(0.886, 0.886)
 sprite_frames = SubResource("SpriteFrames_f1lea")
-animation = &"explode"
 autoplay = "default"
-frame = 6
-frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(17.165455, 8.582727)
@@ -92,5 +91,13 @@ theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
 theme_override_fonts/font = ExtResource("11_bhc4a")
 theme_override_font_sizes/font_size = 130
 horizontal_alignment = 1
+
+[node name="BurningSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_gjw57")
+autoplay = true
+parameters/looping = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_han2h")
 
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]

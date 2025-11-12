@@ -9,6 +9,7 @@ extends Node2D
 @onready var typing_sound: AudioStreamPlayer2D = $TypingSound
 @onready var correct_sound: AudioStreamPlayer2D = $CorrectSound
 @onready var incorrect_sound: AudioStreamPlayer2D = $IncorrectSound
+@onready var score_animation: AnimationPlayer = $"../ScoreAnimation"
 
 #func _ready() -> void:
 	#line_edit.text_submitted.connect(_on_LineEdit_text_entered)
@@ -29,6 +30,15 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			rocket.get_node("Sprite2D").play("explode")
 			rocket.get_node("ExplosionSound").play()
 			correct_sound.play()
+			
+			if rocket.color == "red":
+				Global.score += len(new_text)*27
+			elif rocket.color == "green":
+				Global.score += len(new_text)*48
+			else:
+				Global.score += len(new_text)*69
+			score_animation.play("scored")
+			
 			Global.rocket_list.erase(rocket)
 			return
 			
