@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Global.menu:
+		return
 	position.y -= 30 * delta
 	
 	if Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_right"):

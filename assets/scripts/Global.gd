@@ -16,6 +16,7 @@ func load_word_list(path: String):
 			var line = file.get_line().strip_edges()
 			english_words[line.to_lower()] = true
 		file.close()
+		
 
 var menu = true
 

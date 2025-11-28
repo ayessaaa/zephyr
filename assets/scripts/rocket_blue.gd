@@ -39,5 +39,6 @@ func _on_sprite_2d_animation_finished() -> void:
 
 
 func _on_sprite_2d_animation_changed() -> void:
-	explosion_sound.play()
-	collision_polygon_2d.disabled = true
+	pass
+	#explosion_sound.play()
+	#collision_polygon_2d.disabled = true

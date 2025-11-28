@@ -30,33 +30,6 @@ radius = 49.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y61u2"]
 size = Vector2(2, 21)
 
-[sub_resource type="Animation" id="Animation_hrrj1"]
-resource_name = "scored"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Score/ScoreLabel:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.16078432, 0.19607843, 0.40784314, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.16078432, 0.19607843, 0.40784314, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Score/ScoreLabel:scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16, 0.39, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.5094896, 0.5094896), Vector2(0.52612734, 0.52612734), Vector2(0.52612734, 0.52612734), Vector2(0.5094896, 0.5094896)]
-}
-
 [sub_resource type="Animation" id="Animation_c6vv5"]
 length = 0.001
 tracks/0/type = "value"
@@ -82,6 +55,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.5094896, 0.5094896)]
+}
+
+[sub_resource type="Animation" id="Animation_hrrj1"]
+resource_name = "scored"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score/ScoreLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.16078432, 0.19607843, 0.40784314, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.16078432, 0.19607843, 0.40784314, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Score/ScoreLabel:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.39, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5094896, 0.5094896), Vector2(0.52612734, 0.52612734), Vector2(0.52612734, 0.52612734), Vector2(0.5094896, 0.5094896)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nh07x"]
@@ -542,3 +542,4 @@ libraries = {
 [connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]
+[connection signal="area_exited" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_exited"]

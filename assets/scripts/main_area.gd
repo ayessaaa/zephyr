@@ -29,6 +29,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Global.menu:
+		return
 	timer += delta
 	probability_timer += delta*0.25
 	

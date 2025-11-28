@@ -3,19 +3,22 @@ extends CharacterBody2D
 @export var gravity = 1000
 
 @onready var animation_player: AnimationPlayer = $CatAnimation/AnimationPlayer
+@onready var sprite_2d: AnimatedSprite2D = $CatAnimation/Sprite2D
+@onready var text_input: Node2D = $TextInput
 
 const SPEED = 25.0
 const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	#if Global.menu:
-		#return
-	# Add the gravity.
+	if Global.menu:
+		text_input.visible = false
+		
 	if Global.floating:
 		position.y -= 30 * delta
 	else:
 		velocity.y += gravity * delta
+		sprite_2d.play("scared")
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

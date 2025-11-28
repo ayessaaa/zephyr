@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=25 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
 [ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
 [ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
+[ext_resource type="PackedScene" uid="uid://tmlcdud6k2cr" path="res://menu_buttons.tscn" id="3_60g6h"]
 [ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="4_0hrit"]
 [ext_resource type="Texture2D" uid="uid://byi6ihdwhq0l5" path="res://assets/sprites/IMG_2241.PNG" id="5_c6vv5"]
 [ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="5_o5c66"]
@@ -261,7 +262,12 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("2_0hrit")
 
+[node name="MenuButtons" parent="Camera2D" instance=ExtResource("3_60g6h")]
+position = Vector2(-420.00003, -223.00003)
+scale = Vector2(0.7432222, 0.7432222)
+
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 50
 offset_left = -388.0

@@ -38,6 +38,6 @@ func _on_sprite_2d_animation_finished() -> void:
 	queue_free()
 
 
-func _on_sprite_2d_frame_changed() -> void:
+func _on_sprite_2d_animation_changed() -> void:
 	explosion_sound.play()
 	collision_polygon_2d.disabled = true
