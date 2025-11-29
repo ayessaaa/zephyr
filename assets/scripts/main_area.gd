@@ -3,6 +3,7 @@ extends Node2D
 var english_words := {}
 
 @onready var bg_music: AudioStreamPlayer2D = $BgMusic
+@onready var score: Area2D = $Score
 
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
 const ROCKET_BLUE = preload("res://assets/scenes/areas/rocket_blue.tscn")
@@ -29,6 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	score.visible = !Global.menu
 	if Global.menu:
 		return
 	timer += delta

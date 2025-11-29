@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://tmlcdud6k2cr"]
+[gd_scene load_steps=5 format=3 uid="uid://tmlcdud6k2cr"]
 
-[ext_resource type="Texture2D" uid="uid://c1e7lwtkp3j5g" path="res://assets/sprites/pattern.png" id="1_wql2j"]
+[ext_resource type="Script" uid="uid://csajvvu8ewkk3" path="res://menu_buttons.gd" id="1_n3lci"]
+[ext_resource type="Texture2D" uid="uid://s5tvi0kpditd" path="res://assets/sprites/Frame 14.png" id="1_wql2j"]
+[ext_resource type="Script" uid="uid://dl3kxmac6pwnk" path="res://bottom_1.gd" id="2_2v1kd"]
+[ext_resource type="Texture2D" uid="uid://ct1v285lgy8oa" path="res://assets/sprites/Frame 17.png" id="3_iptu7"]
 
 [node name="MenuButtons" type="Node2D"]
+script = ExtResource("1_n3lci")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(604, 966)
+[node name="Bottom1" type="Sprite2D" parent="."]
+position = Vector2(1438, 643)
 rotation = -0.06953308
 texture = ExtResource("1_wql2j")
+script = ExtResource("2_2v1kd")
+
+[node name="Top1" type="Sprite2D" parent="."]
+position = Vector2(1395.0001, -127.99999)
+rotation = -0.06953308
+texture = ExtResource("1_wql2j")
+script = ExtResource("2_2v1kd")
+
+[node name="Bottom2" type="Sprite2D" parent="."]
+position = Vector2(1697.9999, 718.99994)
+rotation = -0.06981317
+texture = ExtResource("3_iptu7")
+script = ExtResource("2_2v1kd")

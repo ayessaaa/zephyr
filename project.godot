@@ -22,6 +22,7 @@ Global="*res://assets/scripts/Global.gd"
 [display]
 
 window/size/resizable=false
+mouse_cursor/custom_image="uid://b2ogah1oftlxq"
 
 [editor_plugins]
 
