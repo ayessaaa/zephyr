@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://x0y3qhsb0bum"]
+
+[ext_resource type="Texture2D" uid="uid://ct6uxu6ki6nmh" path="res://assets/sprites/buttons/Frame 21-1.png" id="1_7b0lc"]
+[ext_resource type="Texture2D" uid="uid://cet1rsbvx0eph" path="res://assets/sprites/buttons/Frame 18.png" id="2_vskcf"]
+[ext_resource type="Texture2D" uid="uid://6dgjy484nces" path="res://assets/sprites/buttons/Frame 21.png" id="3_ixtdo"]
+[ext_resource type="Texture2D" uid="uid://bb1mxomu803kw" path="res://assets/sprites/buttons/aaa.png" id="4_yvwup"]
+[ext_resource type="Texture2D" uid="uid://3daw02830gqb" path="res://assets/sprites/buttons/Frame 19.png" id="5_sywqf"]
+[ext_resource type="Texture2D" uid="uid://by0cbhsdhe08" path="res://assets/sprites/buttons/Frame 19-1.png" id="6_57bbi"]
+[ext_resource type="Texture2D" uid="uid://b1tjn7gwy1ghw" path="res://assets/sprites/buttons/Frame 20.png" id="7_fv4jg"]
+[ext_resource type="Texture2D" uid="uid://cn0wlhvv08e0v" path="res://assets/sprites/buttons/Frame 20-1.png" id="8_6m700"]
+[ext_resource type="Texture2D" uid="uid://bcvfsfa4ye6xm" path="res://assets/sprites/buttons/Frame 21-2.png" id="9_kjpdr"]
+
+[node name="MenuButtons" type="Node2D"]
+scale = Vector2(0.9396837, 0.9396837)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 318.0
+offset_bottom = 163.0
+scale = Vector2(0.3457428, 0.3457428)
+texture_normal = ExtResource("2_vskcf")
+texture_pressed = ExtResource("3_ixtdo")
+texture_hover = ExtResource("1_7b0lc")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 232.0
+offset_right = 870.0
+offset_bottom = 304.0
+scale = Vector2(0.3497662, 0.3497662)
+texture_normal = ExtResource("5_sywqf")
+texture_pressed = ExtResource("6_57bbi")
+texture_hover = ExtResource("4_yvwup")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 467.0
+offset_right = 1105.0
+offset_bottom = 304.0
+scale = Vector2(0.3497662, 0.3497662)
+texture_normal = ExtResource("7_fv4jg")
+texture_pressed = ExtResource("8_6m700")
+texture_hover = ExtResource("9_kjpdr")
+metadata/_edit_use_anchors_ = true

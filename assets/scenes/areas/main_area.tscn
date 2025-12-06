@@ -93,15 +93,12 @@ _data = {
 [node name="MainArea" type="Node2D"]
 script = ExtResource("1_s6uqe")
 
-[node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_s6uqe")
-autoplay = true
-parameters/looping = true
-
-[node name="Bg" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(520.00006, -7418.2266)
+[node name="ParallaxBg" type="Parallax2D" parent="."]
 scale = Vector2(0.66500837, 1.5733962)
+
+[node name="Bg" type="Sprite2D" parent="ParallaxBg"]
+z_index = -2
+scale = Vector2(0.99999994, 1)
 texture = ExtResource("1_8hxss")
 
 [node name="Balloon" type="RigidBody2D" parent="."]
@@ -113,7 +110,7 @@ script = ExtResource("4_u3uip")
 
 [node name="WhiteBg" type="Sprite2D" parent="Balloon"]
 position = Vector2(590, 208)
-scale = Vector2(0.13255513, 0.13255514)
+scale = Vector2(0.12787092, 0.13255514)
 texture = ExtResource("2_utkpm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Balloon"]
@@ -258,62 +255,51 @@ node_b = NodePath("../../Rope5")
 
 [node name="BgObjects" type="Node" parent="."]
 
-[node name="Cloud1" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(691, 277)
+[node name="Parallax2D" type="Parallax2D" parent="BgObjects"]
+repeat_size = Vector2(1200, 650)
+repeat_times = 2
 
-[node name="Cloud2" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(384, 242)
+[node name="Cloud1" parent="BgObjects/Parallax2D" instance=ExtResource("7_8hxss")]
+position = Vector2(737, 302)
 
-[node name="Cloud3" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(838, -52)
+[node name="Cloud2" parent="BgObjects/Parallax2D" instance=ExtResource("7_8hxss")]
+position = Vector2(400, 249)
 
-[node name="Cloud4" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(462, -218)
+[node name="Cloud3" parent="BgObjects/Parallax2D" instance=ExtResource("7_8hxss")]
+position = Vector2(1044, 605)
 
-[node name="Cloud5" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(226, 456)
+[node name="Cloud4" parent="BgObjects/Parallax2D" instance=ExtResource("7_8hxss")]
+position = Vector2(80, 584)
 
-[node name="Cloud6" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(953, 110)
+[node name="Cloud5" parent="BgObjects/Parallax2D" instance=ExtResource("8_x0hsm")]
+position = Vector2(313, 466)
 
-[node name="Cloud7" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(263, 61)
+[node name="Cloud6" parent="BgObjects/Parallax2D" instance=ExtResource("8_x0hsm")]
+position = Vector2(907, 71)
 
-[node name="Cloud8" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(693, -328)
+[node name="Cloud7" parent="BgObjects/Parallax2D" instance=ExtResource("8_x0hsm")]
+position = Vector2(242, 92)
 
-[node name="Cloud9" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(332, -504)
+[node name="Cloud8" parent="BgObjects/Parallax2D" instance=ExtResource("8_x0hsm")]
+position = Vector2(559, 554)
 
-[node name="Cloud10" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(901, 470)
+[node name="Cloud14" parent="BgObjects/Parallax2D" instance=ExtResource("8_x0hsm")]
+position = Vector2(1077, 295)
 
-[node name="Cloud11" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(585, -6)
+[node name="Cloud15" parent="BgObjects/Parallax2D" instance=ExtResource("8_x0hsm")]
+position = Vector2(100, 286)
+
+[node name="Cloud11" parent="BgObjects/Parallax2D" instance=ExtResource("9_eblat")]
+position = Vector2(592, 145)
+
+[node name="Cloud10" parent="BgObjects/Parallax2D" instance=ExtResource("9_eblat")]
+position = Vector2(864, 456)
 
 [node name="Cloud12" parent="BgObjects" instance=ExtResource("9_eblat")]
 position = Vector2(895, -534)
 
 [node name="Cloud13" parent="BgObjects" instance=ExtResource("8_x0hsm")]
 position = Vector2(164, -253)
-
-[node name="Cloud14" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(1055, -302)
-
-[node name="Cloud15" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(36, 238)
-
-[node name="Cloud16" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(577, -669)
-
-[node name="Cloud17" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(923, -820)
-
-[node name="Cloud18" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(141, -698)
-
-[node name="Cloud19" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(395, -905)
 
 [node name="Cloud20" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(731, -1467)
@@ -342,9 +328,6 @@ position = Vector2(733, -2072)
 [node name="Cloud28" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(372, -2248)
 
-[node name="Cloud29" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(941, -1274)
-
 [node name="Cloud30" parent="BgObjects" instance=ExtResource("9_eblat")]
 position = Vector2(625, -1750)
 
@@ -371,12 +354,6 @@ position = Vector2(181, -2442)
 
 [node name="Cloud38" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(435, -2649)
-
-[node name="Cloud39" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(636, -1107)
-
-[node name="Cloud40" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(59, -1055)
 
 [node name="Cloud41" parent="BgObjects" instance=ExtResource("7_8hxss")]
 position = Vector2(724, -3137)
@@ -539,7 +516,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_nh07x")
 }
 
-[connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
+[node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s6uqe")
+autoplay = true
+bus = &"BgMusic"
+parameters/looping = true
+
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]
 [connection signal="area_exited" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_exited"]

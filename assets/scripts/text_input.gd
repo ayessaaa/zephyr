@@ -43,9 +43,6 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			Global.score += score
 			Global.rocket_speed += score*0.01
 			score_animation.play("scored")
-			#bg_music.pitch_scale += score*0.00001
-			
-			print(bg_music.pitch_scale)
 			
 			Global.rocket_list.erase(rocket)
 			return

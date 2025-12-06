@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://tmlcdud6k2cr"]
+
+[ext_resource type="Texture2D" uid="uid://s5tvi0kpditd" path="res://assets/sprites/Frame 14.png" id="1_4s28h"]
+[ext_resource type="Script" uid="uid://dl3kxmac6pwnk" path="res://bottom_1.gd" id="2_62hxs"]
+[ext_resource type="Texture2D" uid="uid://ct1v285lgy8oa" path="res://assets/sprites/Frame 17.png" id="3_03y8d"]
+
+[node name="MenuBg" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(2936, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="Bottom1" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(1400.0001, 648)
+rotation = 0.00019057095
+texture = ExtResource("1_4s28h")
+script = ExtResource("2_62hxs")
+
+[node name="Top1" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(1400.0001, -130)
+rotation = 0.00019057095
+texture = ExtResource("1_4s28h")
+script = ExtResource("2_62hxs")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+repeat_size = Vector2(2936, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="Bottom2" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1400, 728.0001)
+rotation = -8.951874e-05
+texture = ExtResource("3_03y8d")
+script = ExtResource("2_62hxs")

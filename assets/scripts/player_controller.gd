@@ -45,7 +45,6 @@ func _physics_process(delta: float) -> void:
 				animation_player.queue("cursor_to_left")
 				
 		else:
-			print(mouse_position.y)
 			if mouse_position.y > 25 and mouse_position.y < 200:
 				sprite_2d.play("scared")
 			else:

@@ -69,6 +69,6 @@ func spawn_rocket(rocket_scene, pos, left_or_right):
 	rockets.add_child(rocket)
 
 
-func _on_bg_music_finished() -> void:
-	print("ended")
-	bg_music.play()
+#func _on_bg_music_finished() -> void:
+	#print("ended")
+	#bg_music.play()
