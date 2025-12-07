@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var mouse_position = get_viewport().get_mouse_position()
 		
-	if Global.menu:
+	if Global.menu or Global.tutorial:
 		var direction = 0
 		if mouse_position.x > 635:
 			sprite_2d.play("default")

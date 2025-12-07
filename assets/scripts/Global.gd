@@ -32,7 +32,10 @@ var patterns_hard = [ "tion", "sion", "ment", "able", "less", "ness", "ward", "w
 					"quar", "whic", "phon", "ment", "ture", "ghte", "ough"]
 
 var menu = true
+var tutorial = false
 var rocket_list = []
 var score = 0
 var rocket_speed = 50.0
 var floating = true
+
+var tutorial_number = 1

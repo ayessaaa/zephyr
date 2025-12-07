@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cehx406ulgc6j" path="res://assets/audio/wrong-47985_i4enRPz8.mp3" id="5_3awnq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ucl1"]
-bg_color = Color(0.5647059, 0.61960787, 0.8666667, 0.39215687)
+bg_color = Color(0.2627451, 0.6313726, 0.8039216, 0.39215687)
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -15,7 +15,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3awnq"]
-bg_color = Color(0.5647059, 0.61960787, 0.8666667, 0.4117647)
+bg_color = Color(0.2627451, 0.6313726, 0.8039216, 0.4117647)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.5647059, 0.61960787, 0.8666667, 0.39215687)]
+"values": [Color(0.2627451, 0.6313726, 0.8039216, 0.39215687)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

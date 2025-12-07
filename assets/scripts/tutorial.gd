@@ -1,7 +1,8 @@
 extends Node2D
 @onready var text_animation: AnimationPlayer = $TextAnimation
+@onready var rocket_red: AnimatedSprite2D = $RocketRed
+@onready var label: Label = $RocketRed/Label
 
-var tutorial_number = 4
 var tutorial_done = false
 
 # Called when the node enters the scene tree for the first time.
@@ -12,16 +13,28 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if tutorial_done:
-		if Input.is_action_just_pressed("mouse_click"):
+		if Input.is_action_just_pressed("mouse_click") and Global.tutorial_number != 4:
 			print("click")
-			tutorial_number += 1
-			text_animation.play(str(tutorial_number))
+			Global.tutorial_number += 1
+			text_animation.play(str(Global.tutorial_number))
+		if Global.tutorial_number == 6:
+			rocket_red.play("explode")
+			label.visible = false
+			Global.tutorial_number = 7
+			tutorial_done = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	text_animation.play(str(tutorial_number))
+	text_animation.play(str(Global.tutorial_number))
 
 
 func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 	print("done")
 	tutorial_done = true
+	if Global.tutorial_number == 5:
+		Global.tutorial_number = 6
+
+
+func _on_rocket_red_animation_finished() -> void:
+	tutorial_done = true
+	rocket_red.queue_free()

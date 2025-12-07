@@ -11,6 +11,8 @@ extends Node2D
 @onready var incorrect_sound: AudioStreamPlayer2D = $IncorrectSound
 @onready var score_animation: AnimationPlayer = get_parent().get_parent().get_node("Score/ScoreAnimation")
 @onready var bg_music: AudioStreamPlayer2D = $"../../BgMusic"
+@onready var rocket_red: AnimatedSprite2D = $"../RocketRed"
+@onready var text_animation: AnimationPlayer = $"../TextAnimation"
 
 var score = 0
 
@@ -33,8 +35,11 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		animation_player.play("correct")
 		camera.trigger_shake("green_bg")
 		line_edit.text = ""
+		#rocket_red.play("explode")
 		#rocket.get_node("Sprite2D").play("explode")
+		text_animation.play("5")
 		correct_sound.play()
+		Global.tutorial_number = 5
 		return
 				
 		#Global.score += score

@@ -22,5 +22,5 @@ func _process(delta: float) -> void:
 		offset.y = 30
 	if _shake_strength > 0:
 		_shake_strength = lerp(_shake_strength, 0.0, shake_fade*delta)
-		if !Global.menu:
+		if !Global.menu and !Global.tutorial:
 			offset = Vector2(randf_range(-_shake_strength, _shake_strength), randf_range(-_shake_strength, _shake_strength))

@@ -4,6 +4,10 @@ var english_words := {}
 
 @onready var bg_music: AudioStreamPlayer2D = $Player/BgMusic
 @onready var score: Area2D = $Score
+@onready var menu_buttons: Node2D = $Player/Camera2D/Menu/MenuButtons
+@onready var play_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/PlayButton
+@onready var style_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/StyleButton
+@onready var settings_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/SettingsButton
 
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
 const ROCKET_BLUE = preload("res://assets/scenes/areas/rocket_blue.tscn")
@@ -30,8 +34,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	score.visible = !Global.menu
-	if Global.menu:
+	score.visible = !Global.menu and !Global.tutorial
+	play_button.disabled = !(Global.menu or Global.tutorial)
+	style_button.disabled = !(Global.menu or Global.tutorial)
+	settings_button.disabled = !(Global.menu or Global.tutorial)
+	if Global.menu or Global.tutorial:
 		return
 	timer += delta
 	probability_timer += delta*0.25
