@@ -1,3 +1,779 @@
-[gd_scene format=3 uid="uid://bbxq8ayk2eqm3"]
+[gd_scene load_steps=35 format=3 uid="uid://bbxq8ayk2eqm3"]
+
+[ext_resource type="Script" uid="uid://cflv2bfgqcmsa" path="res://assets/scripts/tutorial.gd" id="1_5jq4b"]
+[ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="1_h7iol"]
+[ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="2_emmeo"]
+[ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="3_rybsf"]
+[ext_resource type="Texture2D" uid="uid://byi6ihdwhq0l5" path="res://assets/sprites/IMG_2241.PNG" id="4_gdqiy"]
+[ext_resource type="Texture2D" uid="uid://cdhwrodsxpxkt" path="res://assets/sprites/IMG_2242.PNG" id="5_a4qfa"]
+[ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="6_trfbv"]
+[ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="7_5jq4b"]
+[ext_resource type="Texture2D" uid="uid://dpnte6mqwblw0" path="res://assets/sprites/IMG_2196.PNG" id="8_trfbv"]
+[ext_resource type="Texture2D" uid="uid://03h3a0dd2eev" path="res://assets/sprites/IMG_2189.PNG" id="9_5jq4b"]
+[ext_resource type="Texture2D" uid="uid://co610mowxe521" path="res://assets/sprites/IMG_2197.PNG" id="10_k553t"]
+[ext_resource type="Texture2D" uid="uid://4ekvcuw6x3wm" path="res://assets/sprites/IMG_2192.PNG" id="11_1hahq"]
+[ext_resource type="Texture2D" uid="uid://byjjsyl7xa3e8" path="res://assets/sprites/IMG_2221.PNG" id="13_1hahq"]
+[ext_resource type="Texture2D" uid="uid://gdh7rptjltx8" path="res://assets/sprites/IMG_2224.PNG" id="14_4c351"]
+
+[sub_resource type="Animation" id="Animation_h7iol"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CatAnimation/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StringBg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BalloonBg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("String:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Balloon:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6cufi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CatAnimation/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StringBg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BalloonBg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("String:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Balloon:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7k2ww"]
+_data = {
+&"RESET": SubResource("Animation_6cufi"),
+&"fade_in": SubResource("Animation_h7iol")
+}
+
+[sub_resource type="Animation" id="Animation_14505"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_c6vv5"]
+resource_name = "cursor_to_left"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.3490658503988659, 0.17453292519943295]
+}
+
+[sub_resource type="Animation" id="Animation_hrrj1"]
+resource_name = "cursor_to_right"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.17453292519943295, 0.3490658503988659]
+}
+
+[sub_resource type="Animation" id="Animation_4wcc8"]
+resource_name = "left_back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.17453292, 0.2617994, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0hrit"]
+resource_name = "right_back"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.3490658503988659, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_s027a"]
+resource_name = "swing"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.2617994, 0.3490658503988659, 0.17453292519943295, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_8sknh"]
+resource_name = "to_left"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.2617994, 0.17453292519943295]
+}
+
+[sub_resource type="Animation" id="Animation_0gfpk"]
+resource_name = "to_right"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.2617994, 0.3490658503988659]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4wcc8"]
+_data = {
+&"RESET": SubResource("Animation_14505"),
+&"cursor_to_left": SubResource("Animation_c6vv5"),
+&"cursor_to_right": SubResource("Animation_hrrj1"),
+&"left_back": SubResource("Animation_4wcc8"),
+&"right_back": SubResource("Animation_0hrit"),
+&"swing": SubResource("Animation_s027a"),
+&"to_left": SubResource("Animation_8sknh"),
+&"to_right": SubResource("Animation_0gfpk")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k553t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_emmeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rybsf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gdqiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a4qfa")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hahq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_trfbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5jq4b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_k553t"]
+resource_name = "1"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextTutorial:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextTutorial2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextTutorial:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["your goal is to not let any rocket touch zephyr's balloon !"]
+}
+
+[sub_resource type="Animation" id="Animation_1hahq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextTutorial:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextTutorial2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RocketRed:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RocketRed:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.07799999, 0.078)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextTutorial:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RocketRed/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RocketRed/Label:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.9270219, 1.9270219)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextTutorial:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["oh no !"]
+}
+
+[sub_resource type="Animation" id="Animation_y7k1j"]
+resource_name = "2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RocketRed:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.26666665, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RocketRed:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.46666664, 0.76666665, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.07799999, 0.078), Vector2(0.1, 0.1), Vector2(0.095, 0.095)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextTutorial2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextTutorial:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RocketRed/Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RocketRed/Label:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.35, 1.49),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.9270219, 1.9270219), Vector2(2.1, 2.1), Vector2(2, 2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextTutorial:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["each rocket have a sequence of letters"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TextTutorial:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.75, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextTutorial2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4c351"]
+resource_name = "3"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextTutorial:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["your goal is to type a word that includes that letter sequence"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextTutorial:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4c351"]
+_data = {
+&"1": SubResource("Animation_k553t"),
+&"2": SubResource("Animation_y7k1j"),
+&"3": SubResource("Animation_4c351"),
+&"RESET": SubResource("Animation_1hahq")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dso2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_1hahq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4c351")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tutorial" type="Node2D"]
+z_index = 35
+script = ExtResource("1_5jq4b")
+
+[node name="Tutorial" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -34.0
+offset_top = -164.0
+offset_right = 201.0
+offset_bottom = -106.0
+scale = Vector2(0.29816437, 0.29816437)
+theme_override_fonts/font = ExtResource("1_h7iol")
+theme_override_font_sizes/font_size = 60
+text = "tutorial"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7k2ww")
+}
+
+[node name="CatAnimation" type="Node2D" parent="."]
+z_index = 35
+position = Vector2(0, 44)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CatAnimation"]
+libraries = {
+&"": SubResource("AnimationLibrary_4wcc8")
+}
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CatAnimation"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(3.9999986, 1)
+rotation = 0.2617994
+scale = Vector2(0.10440334, 0.104403354)
+sprite_frames = SubResource("SpriteFrames_k553t")
+animation = &"scared"
+autoplay = "default"
+
+[node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
+z_index = 35
+z_as_relative = false
+position = Vector2(1.5258789e-05, 0)
+scale = Vector2(0.9961368, 0.99613655)
+sprite_frames = SubResource("SpriteFrames_1hahq")
+autoplay = "default"
+
+[node name="StringBg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(8, -23.250015)
+scale = Vector2(0.10937501, 0.026357811)
+texture = ExtResource("8_trfbv")
+
+[node name="BalloonBg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(7, -80)
+scale = Vector2(0.123, 0.123)
+texture = ExtResource("9_5jq4b")
+
+[node name="String" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(8, -27.749992)
+scale = Vector2(0.10937501, 0.022630466)
+texture = ExtResource("10_k553t")
+
+[node name="Balloon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(7, -80)
+scale = Vector2(0.1228173, 0.1228173)
+texture = ExtResource("11_1hahq")
+
+[node name="TextTutorial" type="Label" parent="."]
+offset_left = -214.0
+offset_top = 140.0
+offset_right = 1310.0
+offset_bottom = 189.0
+scale = Vector2(0.28095078, 0.28095078)
+theme_override_fonts/font = ExtResource("1_h7iol")
+theme_override_font_sizes/font_size = 50
+text = "oh no !"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TextTutorial2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -180.0
+offset_top = 170.0
+offset_right = 1250.0
+offset_bottom = 219.0
+scale = Vector2(0.2516359, 0.2516359)
+theme_override_colors/font_color = Color(0.2627451, 0.6313726, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_h7iol")
+theme_override_font_sizes/font_size = 50
+text = ": click anywhere to continue :"
+horizontal_alignment = 1
+
+[node name="TextAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4c351")
+}
+
+[node name="RocketRed" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(188.186, -2.5000005)
+rotation = 0.39486435
+scale = Vector2(0.07799999, 0.078)
+sprite_frames = SubResource("SpriteFrames_dso2n")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="RocketRed"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -103.44659
+offset_top = -270.49445
+offset_right = -0.4465866
+offset_bottom = -183.49445
+scale = Vector2(1.9270219, 1.9270219)
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("1_h7iol")
+theme_override_font_sizes/font_size = 90
+text = "SO"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="TextAnimation" to="." method="_on_text_animation_animation_finished"]

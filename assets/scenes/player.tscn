@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=48 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://gdh7rptjltx8" path="res://assets/sprites/IMG_2224.PNG" id="12_dvip7"]
 [ext_resource type="Texture2D" uid="uid://bpmdrxg7kc18m" path="res://assets/sprites/IMG_2222.PNG" id="13_beuf1"]
 [ext_resource type="Texture2D" uid="uid://d4ieb241lolo0" path="res://assets/sprites/IMG_2225.PNG" id="14_0e2pd"]
+[ext_resource type="PackedScene" uid="uid://bbxq8ayk2eqm3" path="res://assets/scenes/tutorial.tscn" id="15_msj1n"]
 
 [sub_resource type="Animation" id="Animation_tc801"]
 length = 0.001
@@ -578,7 +579,7 @@ rotation = 0.2712997
 scale = Vector2(0.109999985, 0.10999999)
 sprite_frames = SubResource("SpriteFrames_ay2jx")
 autoplay = "default"
-frame_progress = 0.54878026
+frame_progress = 0.1041721
 
 [node name="RocketRed" type="AnimatedSprite2D" parent="Camera2D/Menu"]
 position = Vector2(436, 17.999992)
@@ -586,7 +587,7 @@ rotation = 0.4422411
 scale = Vector2(0.109999985, 0.10999999)
 sprite_frames = SubResource("SpriteFrames_jukhh")
 autoplay = "default"
-frame_progress = 0.56333435
+frame_progress = 0.11872583
 
 [node name="RocketBlue" type="AnimatedSprite2D" parent="Camera2D/Menu"]
 position = Vector2(-425, -58.000008)
@@ -625,6 +626,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_ratp2")
 }
 autoplay = "subtitle"
+
+[node name="Tutorial" parent="Camera2D/Menu" instance=ExtResource("15_msj1n")]
+position = Vector2(-2, 11)
 
 [node name="CatAnimation" type="Node2D" parent="."]
 position = Vector2(0, 64)

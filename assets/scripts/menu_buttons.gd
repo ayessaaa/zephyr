@@ -4,6 +4,8 @@ extends Node2D
 @onready var settings_button: TextureButton = $SettingsButton
 @onready var hover_music: AudioStreamPlayer2D = $HoverMusic
 @onready var animation_player: AnimationPlayer = $"../MenuBg/AnimationPlayer"
+@onready var select_music: AudioStreamPlayer2D = $SelectMusic
+@onready var tutorial_animation: AnimationPlayer = $"../Tutorial/AnimationPlayer"
 
 var hovering = ""
 
@@ -31,6 +33,8 @@ func _process(delta: float) -> void:
 func _on_play_button_pressed() -> void:
 	#Global.menu = false
 	animation_player.play("transition")
+	select_music.play()
+	tutorial_animation.play("fade_in")
 
 
 func _on_style_button_pressed() -> void:
