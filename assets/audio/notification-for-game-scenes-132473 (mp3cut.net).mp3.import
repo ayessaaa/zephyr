@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj7uivm3ifn0h"
+path="res://.godot/imported/notification-for-game-scenes-132473 (mp3cut.net).mp3-8f6f5c7840de50c9ea0d7724580aff6b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/notification-for-game-scenes-132473 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/notification-for-game-scenes-132473 (mp3cut.net).mp3-8f6f5c7840de50c9ea0d7724580aff6b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

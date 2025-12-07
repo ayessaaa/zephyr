@@ -2,7 +2,7 @@ extends Node2D
 
 var english_words := {}
 
-@onready var bg_music: AudioStreamPlayer2D = $BgMusic
+@onready var bg_music: AudioStreamPlayer2D = $Player/BgMusic
 @onready var score: Area2D = $Score
 
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
@@ -67,8 +67,3 @@ func spawn_rocket(rocket_scene, pos, left_or_right):
 	rocket.position = pos
 	rocket.left_or_right = left_or_right
 	rockets.add_child(rocket)
-
-
-#func _on_bg_music_finished() -> void:
-	#print("ended")
-	#bg_music.play()

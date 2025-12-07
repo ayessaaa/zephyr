@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=24 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
-[ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="2_s6uqe"]
 [ext_resource type="Texture2D" uid="uid://03h3a0dd2eev" path="res://assets/sprites/IMG_2189.PNG" id="2_utkpm"]
 [ext_resource type="PackedScene" uid="uid://dvaotgkjbc0pm" path="res://assets/scenes/player.tscn" id="2_x40lm"]
 [ext_resource type="Texture2D" uid="uid://5sf0rb158ygs" path="res://assets/sprites/IMG_2193.PNG" id="3_6d4cm"]
@@ -98,7 +97,8 @@ scale = Vector2(0.66500837, 1.5733962)
 
 [node name="Bg" type="Sprite2D" parent="ParallaxBg"]
 z_index = -2
-scale = Vector2(0.99999994, 1)
+position = Vector2(1285.6981, 0)
+scale = Vector2(2.0660846, 1)
 texture = ExtResource("1_8hxss")
 
 [node name="Balloon" type="RigidBody2D" parent="."]
@@ -301,186 +301,6 @@ position = Vector2(895, -534)
 [node name="Cloud13" parent="BgObjects" instance=ExtResource("8_x0hsm")]
 position = Vector2(164, -253)
 
-[node name="Cloud20" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(731, -1467)
-
-[node name="Cloud21" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(424, -1502)
-
-[node name="Cloud22" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(878, -1796)
-
-[node name="Cloud23" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(502, -1962)
-
-[node name="Cloud24" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(266, -1288)
-
-[node name="Cloud25" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(993, -1634)
-
-[node name="Cloud26" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(303, -1683)
-
-[node name="Cloud27" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(733, -2072)
-
-[node name="Cloud28" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(372, -2248)
-
-[node name="Cloud30" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(625, -1750)
-
-[node name="Cloud31" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(935, -2278)
-
-[node name="Cloud32" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(204, -1997)
-
-[node name="Cloud33" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(1095, -2046)
-
-[node name="Cloud34" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(76, -1506)
-
-[node name="Cloud35" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(617, -2413)
-
-[node name="Cloud36" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(963, -2564)
-
-[node name="Cloud37" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(181, -2442)
-
-[node name="Cloud38" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(435, -2649)
-
-[node name="Cloud41" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(724, -3137)
-
-[node name="Cloud42" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(417, -3172)
-
-[node name="Cloud43" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(871, -3466)
-
-[node name="Cloud44" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(495, -3632)
-
-[node name="Cloud45" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(259, -2958)
-
-[node name="Cloud46" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(986, -3304)
-
-[node name="Cloud47" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(296, -3353)
-
-[node name="Cloud48" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(726, -3742)
-
-[node name="Cloud49" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(365, -3918)
-
-[node name="Cloud50" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(934, -2944)
-
-[node name="Cloud51" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(618, -3420)
-
-[node name="Cloud52" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(928, -3948)
-
-[node name="Cloud53" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(197, -3667)
-
-[node name="Cloud54" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(1088, -3716)
-
-[node name="Cloud55" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(69, -3176)
-
-[node name="Cloud56" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(610, -4083)
-
-[node name="Cloud57" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(956, -4234)
-
-[node name="Cloud58" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(174, -4112)
-
-[node name="Cloud59" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(428, -4319)
-
-[node name="Cloud60" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(764, -4881)
-
-[node name="Cloud61" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(457, -4916)
-
-[node name="Cloud62" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(911, -5210)
-
-[node name="Cloud63" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(535, -5376)
-
-[node name="Cloud64" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(299, -4702)
-
-[node name="Cloud65" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(1026, -5048)
-
-[node name="Cloud66" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(336, -5097)
-
-[node name="Cloud67" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(766, -5486)
-
-[node name="Cloud68" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(405, -5662)
-
-[node name="Cloud69" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(974, -4688)
-
-[node name="Cloud70" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(658, -5164)
-
-[node name="Cloud71" parent="BgObjects" instance=ExtResource("9_eblat")]
-position = Vector2(968, -5692)
-
-[node name="Cloud72" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(237, -5411)
-
-[node name="Cloud73" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(1128, -5460)
-
-[node name="Cloud74" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(109, -4920)
-
-[node name="Cloud75" parent="BgObjects" instance=ExtResource("8_x0hsm")]
-position = Vector2(650, -5827)
-
-[node name="Cloud76" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(996, -5978)
-
-[node name="Cloud77" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(214, -5856)
-
-[node name="Cloud78" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(468, -6063)
-
-[node name="Cloud79" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(669, -4521)
-
-[node name="Cloud80" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(92, -4469)
-
-[node name="Cloud81" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(661, -2790)
-
-[node name="Cloud82" parent="BgObjects" instance=ExtResource("7_8hxss")]
-position = Vector2(46, -2719)
-
 [node name="MeowSounds" type="Node" parent="."]
 
 [node name="Meow1" type="AudioStreamPlayer2D" parent="MeowSounds"]
@@ -515,12 +335,6 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_nh07x")
 }
-
-[node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_s6uqe")
-autoplay = true
-bus = &"BgMusic"
-parameters/looping = true
 
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]

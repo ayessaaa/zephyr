@@ -18,7 +18,6 @@ func load_word_list(path: String):
 		file.close()
 		
 
-var menu = true
 
 var patterns_easy = ["an", "in", "on", "at", "it", "en", "er", "ar", "or", "us", "um", "is",
 					"th", "sh", "ch", "ph", "st", "tr", "br", "cl", "pr", "dr", "gr", "bl",
@@ -32,6 +31,7 @@ var patterns_hard = [ "tion", "sion", "ment", "able", "less", "ness", "ward", "w
 					"chro", "phor", "ther", "tion", "ough", "ight",
 					"quar", "whic", "phon", "ment", "ture", "ghte", "ough"]
 
+var menu = true
 var rocket_list = []
 var score = 0
 var rocket_speed = 50.0
