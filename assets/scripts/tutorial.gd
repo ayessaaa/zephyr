@@ -1,7 +1,7 @@
 extends Node2D
 @onready var text_animation: AnimationPlayer = $TextAnimation
 
-var tutorial_number = 1
+var tutorial_number = 4
 var tutorial_done = false
 
 # Called when the node enters the scene tree for the first time.

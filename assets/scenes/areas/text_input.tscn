@@ -14,7 +14,12 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs1oq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3awnq"]
+bg_color = Color(0.5647059, 0.61960787, 0.8666667, 0.4117647)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="Animation" id="Animation_bs1oq"]
 length = 0.001
@@ -144,11 +149,12 @@ theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
 theme_override_fonts/font = ExtResource("2_3ucl1")
 theme_override_font_sizes/font_size = 86
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ucl1")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bs1oq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3awnq")
 alignment = 1
 max_length = 20
 keep_editing_on_text_submit = true
 expand_to_text_length = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
