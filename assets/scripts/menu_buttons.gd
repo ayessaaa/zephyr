@@ -16,12 +16,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !Global.menu and !Global.tutorial:
+	if Global.menu and !Global.tutorial:
 		if play_button.is_hovered() and hovering != "play":
 			hover_music.play()
 			hovering = "play"
-			Global.menu = false
-			Global.tutorial = true
 		elif style_button.is_hovered() and hovering != "style":
 			hover_music.play()
 			hovering = "style"

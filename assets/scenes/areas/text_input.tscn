@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://iydwpujjwdhq"]
+[gd_scene load_steps=13 format=3 uid="uid://iydwpujjwdhq"]
 
 [ext_resource type="Script" uid="uid://dg3sqvkkxlmyu" path="res://assets/scripts/text_input.gd" id="1_je6pq"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="2_3ucl1"]
@@ -58,6 +58,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LineEdit:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_3ucl1"]
@@ -128,10 +140,27 @@ tracks/2/keys = {
 "values": [Vector2(1.061493, 1.061493), Vector2(1.1235299, 1.1235299), Vector2(1.061493, 1.061493)]
 }
 
+[sub_resource type="Animation" id="Animation_3awnq"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineEdit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67far"]
 _data = {
 &"RESET": SubResource("Animation_bs1oq"),
 &"correct": SubResource("Animation_3ucl1"),
+&"fade_in": SubResource("Animation_3awnq"),
 &"incorrect": SubResource("Animation_67far")
 }
 
@@ -140,6 +169,7 @@ z_index = 2
 script = ExtResource("1_je6pq")
 
 [node name="LineEdit" type="LineEdit" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = -132.0
 offset_top = -18.0
 offset_right = 757.6561

@@ -4,6 +4,8 @@ extends Area2D
 @export var left_or_right = ""
 @export var color = "blue"
 @export var type = "rocket"
+@export var show_score = false
+@export var score = 0
 
 @onready var balloon = get_parent().get_parent().get_node("Balloon/CollisionShape2D")
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
@@ -11,6 +13,9 @@ extends Area2D
 @onready var letter_pattern_2: Label = $LetterPattern2
 @onready var explosion_sound: AudioStreamPlayer2D = $ExplosionSound
 @onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
+
+@onready var score_texts: Node2D = get_parent().get_parent().get_node("ScoreTexts")
+const SCORE_FLOATING = preload("uid://bhoduwbq1kf51")
 
 
 func _ready() -> void:
@@ -24,6 +29,13 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	if show_score:
+		var score_floating = SCORE_FLOATING.instantiate()
+		score_floating.global_position.x = self.global_position.x - 30
+		score_floating.global_position.y = self.global_position.y - 20
+		score_floating.score = score
+		score_texts.add_child(score_floating)
+		show_score = false
 	if sprite_2d.animation == "explode":
 		letter_pattern.visible = false
 		letter_pattern_2.visible = false

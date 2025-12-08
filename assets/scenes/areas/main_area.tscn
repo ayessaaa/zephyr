@@ -237,6 +237,8 @@ position = Vector2(864, 456)
 stream = ExtResource("13_r6dgb")
 volume_db = -5.0
 
+[node name="ScoreTexts" type="Node2D" parent="."]
+
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]
 [connection signal="area_exited" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_exited"]

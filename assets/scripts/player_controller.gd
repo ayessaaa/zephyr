@@ -11,22 +11,29 @@ extends CharacterBody2D
 const SPEED = 20.0
 const JUMP_VELOCITY = -400.0
 
+var last_y = 0
+
 
 func _physics_process(delta: float) -> void:
 	if Global.menu_hide:
 		hide_animation.play("hide")
 		Global.menu_hide = false
+		
 	text_input.visible = !(Global.menu or Global.tutorial)
 		
 	if Global.floating:
 		position.y -= 30 * delta
+		last_y = position.y
+	#if Global.floating:
+		#await get_tree().create_timer(1.0).timeout
 	else:
-		velocity.y += gravity * delta
-		sprite_2d.play("scared")
+		print(position.y, last_y)
+		if position.y > last_y+500:
+			velocity.y += gravity * delta
+			sprite_2d.play("scared")
+		else:
+			velocity.y = 0
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

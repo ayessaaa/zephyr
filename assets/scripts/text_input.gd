@@ -31,6 +31,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			camera.trigger_shake("green_bg")
 			line_edit.text = ""
 			rocket.get_node("Sprite2D").play("explode")
+			rocket.show_score = true
 			correct_sound.play()
 			
 			if rocket.color == "red":
@@ -40,11 +41,15 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			else:
 				score = len(new_text)*69
 				
+			rocket.score = score
 			Global.score += score
 			Global.rocket_speed += score*0.01
 			score_animation.play("scored")
 			
 			Global.rocket_list.erase(rocket)
+			
+			
+			
 			return
 			
 	animation_player.play("incorrect")

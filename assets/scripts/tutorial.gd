@@ -4,6 +4,7 @@ extends Node2D
 @onready var label: Label = $RocketRed/Label
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("MenuBg/AnimationPlayer")
 @onready var score_animation: AnimationPlayer = get_parent().get_parent().get_node("Score/ScoreAnimation")
+@onready var text_input_animation: AnimationPlayer = $TextInput/AnimationPlayer
 
 
 
@@ -27,7 +28,7 @@ func _process(delta: float) -> void:
 				text_animation.play(str(Global.tutorial_number))
 				#if Global.tutorial_number == 5 or Global.tutorial_number == 4:
 					#Global.tutorial_done = false
-				
+					
 		if Global.tutorial_number == 6:
 			rocket_red.play("explode")
 			label.visible = false
@@ -53,6 +54,8 @@ func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 		menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
 		Global.camera_pos = true
+	if Global.tutorial_number == 4:
+		text_input_animation.play("fade_in")
 	
 
 

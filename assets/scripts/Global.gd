@@ -37,10 +37,10 @@ var menu = true
 var tutorial = false
 var rocket_list = []
 var score = 0
-var rocket_speed = 50.0
+var rocket_speed = 100.0
 var floating = true
 
-var tutorial_number = 6
+var tutorial_number = 1
 
 var menu_hide = false
 
@@ -50,3 +50,6 @@ var camera_pos = false
 var score_fadeout = false
 var score_fadein = false
 var will_show_tutorial = false
+
+var gameover = false
+var gameover_animation = false

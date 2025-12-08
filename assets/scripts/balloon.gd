@@ -29,6 +29,8 @@ func _on_balloon_area_area_entered(area: Area2D) -> void:
 		
 		Global.floating = false
 		Global.score_fadeout = true
+		Global.gameover = true
+		Global.gameover_animation = true
 
 
 func _on_balloon_external_area_area_entered(area: Area2D) -> void:

@@ -9,6 +9,7 @@ var english_words := {}
 @onready var style_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/StyleButton
 @onready var settings_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/SettingsButton
 @onready var score_animation: AnimationPlayer = $Player/Camera2D/Score/ScoreAnimation
+@onready var text_input_animation: AnimationPlayer = $Player/TextInput/AnimationPlayer
 
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
 const ROCKET_BLUE = preload("res://assets/scenes/areas/rocket_blue.tscn")
@@ -71,6 +72,7 @@ func _process(delta: float) -> void:
 			
 	if Global.score_fadein:
 		score_animation.play("fade_in")
+		text_input_animation.play("fade_in")
 		Global.score_fadein = false
 	
 	
