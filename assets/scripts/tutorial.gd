@@ -3,8 +3,9 @@ extends Node2D
 @onready var rocket_red: AnimatedSprite2D = $RocketRed
 @onready var label: Label = $RocketRed/Label
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("MenuBg/AnimationPlayer")
+@onready var score_animation: AnimationPlayer = get_parent().get_parent().get_node("Score/ScoreAnimation")
 
-var tutorial_done = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,9 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if tutorial_done:
+	if Global.tutorial_done:
 		if Input.is_action_just_pressed("mouse_click") and Global.tutorial_number != 4:
-			
 			if Global.tutorial_number == 8:
 				text_animation.play(str(Global.tutorial_number))
 				Global.tutorial_number += 1
@@ -23,15 +23,18 @@ func _process(delta: float) -> void:
 				print("click")
 				Global.tutorial_number += 1
 				text_animation.play(str(Global.tutorial_number))
+				#if Global.tutorial_number == 5 or Global.tutorial_number == 4:
+					#Global.tutorial_done = false
+				
 		if Global.tutorial_number == 6:
 			rocket_red.play("explode")
 			label.visible = false
 			Global.tutorial_number = 7
-			tutorial_done = false
+			Global.tutorial_done = false
 		if Global.tutorial_number == 7:
 			text_animation.play("7")
 			Global.tutorial_number = 8
-			tutorial_done = false
+			Global.tutorial_done = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -40,14 +43,17 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 	print("done")
-	tutorial_done = true
+	Global.tutorial_done = true
 	if Global.tutorial_number == 5:
 		Global.tutorial_number = 6
+		#tutorial_done = false
 	if Global.tutorial_number == 9:
 		menu_transition_animation.play("transition_out")
+		score_animation.play("fade_in")
+		Global.camera_pos = true
 	
 
 
 func _on_rocket_red_animation_finished() -> void:
-	tutorial_done = true
+	Global.tutorial_done = true
 	rocket_red.queue_free()

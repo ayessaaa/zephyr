@@ -18,7 +18,7 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var meow_1: AudioStreamPlayer2D = $MeowSounds/Meow1
 
 var timer = 10
-var rocket_position_x = [146.0, 1036.0]
+var rocket_position_x = [-500, 500]
 
 var meow_timer = 0
 
@@ -34,10 +34,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	score.visible = !Global.menu and !Global.tutorial
+	#score.visible = !Global.menu and !Global.tutorial
 	play_button.disabled = !(Global.menu or Global.tutorial)
 	style_button.disabled = !(Global.menu or Global.tutorial)
 	settings_button.disabled = !(Global.menu or Global.tutorial)
+	
+	meow_timer += delta
+	if meow_timer >= 5:
+		meow_timer = 0
+		meow_1.play()
+		
 	if Global.menu or Global.tutorial:
 		return
 	timer += delta
@@ -53,7 +59,7 @@ func _process(delta: float) -> void:
 		var blue_threshold = 10 * difficulty_factor
 		var green_threshold = 30 * difficulty_factor
 		
-		var spawn_pos = Vector2(rocket_position_x[random_position], player.position.y-100)
+		var spawn_pos = Vector2(player.position.x+rocket_position_x[random_position], player.position.y-100)
 		
 		if random_probability < blue_threshold:
 			spawn_rocket(ROCKET_BLUE, spawn_pos, random_position)
@@ -63,10 +69,7 @@ func _process(delta: float) -> void:
 			spawn_rocket(ROCKET_RED, spawn_pos, random_position)
 			
 			
-	meow_timer += delta
-	if meow_timer >= 5:
-		meow_timer = 0
-		meow_1.play()
+	
 	
 		
 func spawn_rocket(rocket_scene, pos, left_or_right):

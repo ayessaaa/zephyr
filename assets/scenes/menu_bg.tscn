@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://tmlcdud6k2cr"]
 
-[ext_resource type="Texture2D" uid="uid://s5tvi0kpditd" path="res://assets/sprites/Frame 14.png" id="1_4s28h"]
-[ext_resource type="Script" uid="uid://dl3kxmac6pwnk" path="res://bottom_1.gd" id="2_62hxs"]
-[ext_resource type="Texture2D" uid="uid://ct1v285lgy8oa" path="res://assets/sprites/Frame 17.png" id="3_03y8d"]
-[ext_resource type="Texture2D" uid="uid://diutjyni08j0i" path="res://assets/sprites/big_blue_strip.png" id="3_62hxs"]
+[ext_resource type="Script" uid="uid://beh7h47vgh6hc" path="res://assets/sprites/menu_bg.gd" id="1_d8xo4"]
+[ext_resource type="Texture2D" uid="uid://s5tvi0kpditd" path="res://assets/sprites/Frame 14.png" id="2_47r05"]
+[ext_resource type="Texture2D" uid="uid://diutjyni08j0i" path="res://assets/sprites/big_blue_strip.png" id="3_e8okb"]
+[ext_resource type="Texture2D" uid="uid://ct1v285lgy8oa" path="res://assets/sprites/Frame 17.png" id="4_gkm2q"]
 
 [sub_resource type="Animation" id="Animation_03y8d"]
 length = 0.001
@@ -31,6 +31,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1392, -688)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parallax2D/Bottom1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1400.0001, 648)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parallax2D2/Bottom2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1400, 728.0001)]
+}
 
 [sub_resource type="Animation" id="Animation_62hxs"]
 resource_name = "transition"
@@ -46,6 +70,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1400, -363), Vector2(1400, 296), Vector2(1400.0001, 302), Vector2(1400, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parallax2D/Bottom1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400.0001, 648), Vector2(1404.0333, 1007.2798)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parallax2D2/Bottom2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400, 728.0001), Vector2(1404.0332, 1087.2799)]
 }
 
 [sub_resource type="Animation" id="Animation_76354"]
@@ -83,6 +131,7 @@ _data = {
 }
 
 [node name="MenuBg" type="Node2D"]
+script = ExtResource("1_d8xo4")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(2936, 0)
@@ -93,15 +142,13 @@ ignore_camera_scroll = true
 [node name="Bottom1" type="Sprite2D" parent="Parallax2D"]
 position = Vector2(1400.0001, 648)
 rotation = 0.00019057095
-texture = ExtResource("1_4s28h")
-script = ExtResource("2_62hxs")
+texture = ExtResource("2_47r05")
 
 [node name="Top1" type="Sprite2D" parent="Parallax2D"]
 z_index = 30
 position = Vector2(1400, -363)
 rotation = 0.00019057095
-texture = ExtResource("3_62hxs")
-script = ExtResource("2_62hxs")
+texture = ExtResource("3_e8okb")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 repeat_size = Vector2(2936, 0)
@@ -113,16 +160,16 @@ ignore_camera_scroll = true
 z_index = 29
 position = Vector2(1392, -688)
 rotation = -8.951874e-05
-texture = ExtResource("3_03y8d")
-script = ExtResource("2_62hxs")
+texture = ExtResource("4_gkm2q")
 
 [node name="Bottom2" type="Sprite2D" parent="Parallax2D2"]
 position = Vector2(1400, 728.0001)
 rotation = -8.951874e-05
-texture = ExtResource("3_03y8d")
-script = ExtResource("2_62hxs")
+texture = ExtResource("4_gkm2q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_76354")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

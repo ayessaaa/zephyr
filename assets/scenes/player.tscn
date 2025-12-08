@@ -1,11 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=59 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
 [ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
 [ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="2_nh07x"]
 [ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
-[ext_resource type="PackedScene" uid="uid://tmlcdud6k2cr" path="res://menu_bg.tscn" id="3_60g6h"]
+[ext_resource type="PackedScene" uid="uid://tmlcdud6k2cr" path="res://assets/scenes/menu_bg.tscn" id="3_60g6h"]
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="3_c6vv5"]
 [ext_resource type="PackedScene" uid="uid://x0y3qhsb0bum" path="res://assets/scenes/menu_buttons.tscn" id="3_hrrj1"]
 [ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="4_0hrit"]
@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://bpmdrxg7kc18m" path="res://assets/sprites/IMG_2222.PNG" id="13_beuf1"]
 [ext_resource type="Texture2D" uid="uid://d4ieb241lolo0" path="res://assets/sprites/IMG_2225.PNG" id="14_0e2pd"]
 [ext_resource type="PackedScene" uid="uid://bbxq8ayk2eqm3" path="res://assets/scenes/tutorial.tscn" id="15_msj1n"]
+[ext_resource type="Script" uid="uid://wqra5oc8x0pj" path="res://assets/scripts/score.gd" id="16_0e2pd"]
+[ext_resource type="Texture2D" uid="uid://1f2lhdf36kaj" path="res://assets/sprites/Frame 3.png" id="17_ay2jx"]
+[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="18_jukhh"]
+[ext_resource type="Script" uid="uid://eaw5ajy0i0e7" path="res://assets/scripts/score_label.gd" id="19_gdn7j"]
 
 [sub_resource type="Animation" id="Animation_tc801"]
 length = 0.001
@@ -350,6 +354,276 @@ _data = {
 &"subtitle": SubResource("Animation_0bskb")
 }
 
+[sub_resource type="Animation" id="Animation_ktpxd"]
+resource_name = "hide"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RocketGreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RocketRed:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RocketBlue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuButtons:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Logo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Subtitle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_dvip7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RocketGreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RocketRed:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RocketBlue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuButtons:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Logo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Subtitle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_beuf1"]
+_data = {
+&"RESET": SubResource("Animation_dvip7"),
+&"hide": SubResource("Animation_ktpxd")
+}
+
+[sub_resource type="Animation" id="Animation_c6vv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score/ScoreLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.16078432, 0.19607843, 0.40784314, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Score/ScoreLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5094896, 0.5094896)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Score/ScoreSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Score/ScoreLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hrrj1"]
+resource_name = "scored"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score/ScoreLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.16078432, 0.19607843, 0.40784314, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.27450982, 0.29411766, 0.54901963, 1), Color(0.16078432, 0.19607843, 0.40784314, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Score/ScoreLabel:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.39, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5094896, 0.5094896), Vector2(0.52612734, 0.52612734), Vector2(0.52612734, 0.52612734), Vector2(0.5094896, 0.5094896)]
+}
+
+[sub_resource type="Animation" id="Animation_0e2pd"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Score/ScoreSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Score/ScoreLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh07x"]
+_data = {
+&"RESET": SubResource("Animation_c6vv5"),
+&"fade_in": SubResource("Animation_0e2pd"),
+&"scored": SubResource("Animation_hrrj1")
+}
+
 [sub_resource type="Animation" id="Animation_14505"]
 length = 0.001
 tracks/0/type = "value"
@@ -365,7 +639,7 @@ tracks/0/keys = {
 "values": [0.2617994]
 }
 
-[sub_resource type="Animation" id="Animation_c6vv5"]
+[sub_resource type="Animation" id="Animation_6luef"]
 resource_name = "cursor_to_left"
 length = 120.0
 tracks/0/type = "value"
@@ -381,7 +655,7 @@ tracks/0/keys = {
 "values": [0.3490658503988659, 0.17453292519943295]
 }
 
-[sub_resource type="Animation" id="Animation_hrrj1"]
+[sub_resource type="Animation" id="Animation_gmant"]
 resource_name = "cursor_to_right"
 length = 120.0
 tracks/0/type = "value"
@@ -481,8 +755,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4wcc8"]
 _data = {
 &"RESET": SubResource("Animation_14505"),
-&"cursor_to_left": SubResource("Animation_c6vv5"),
-&"cursor_to_right": SubResource("Animation_hrrj1"),
+&"cursor_to_left": SubResource("Animation_6luef"),
+&"cursor_to_right": SubResource("Animation_gmant"),
 &"left_back": SubResource("Animation_4wcc8"),
 &"right_back": SubResource("Animation_0hrit"),
 &"swing": SubResource("Animation_s027a"),
@@ -572,7 +846,6 @@ libraries = {
 }
 
 [node name="Menu" type="Node2D" parent="Camera2D"]
-visible = false
 
 [node name="RocketGreen" type="AnimatedSprite2D" parent="Camera2D/Menu"]
 position = Vector2(446.99994, 156)
@@ -597,7 +870,7 @@ scale = Vector2(0.10999999, 0.10999999)
 sprite_frames = SubResource("SpriteFrames_gdn7j")
 autoplay = "default"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/Menu"]
+[node name="RocketAnimation" type="AnimationPlayer" parent="Camera2D/Menu"]
 libraries = {
 &"": SubResource("AnimationLibrary_ktpxd")
 }
@@ -630,6 +903,42 @@ autoplay = "subtitle"
 
 [node name="Tutorial" parent="Camera2D/Menu" instance=ExtResource("15_msj1n")]
 position = Vector2(-2, 11)
+
+[node name="HideAnimation" type="AnimationPlayer" parent="Camera2D/Menu"]
+libraries = {
+&"": SubResource("AnimationLibrary_beuf1")
+}
+
+[node name="Score" type="Area2D" parent="Camera2D"]
+script = ExtResource("16_0e2pd")
+
+[node name="ScoreSprite" type="Sprite2D" parent="Camera2D/Score"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(-319.28098, -184.36765)
+scale = Vector2(0.17492256, 0.17492256)
+texture = ExtResource("17_ay2jx")
+
+[node name="ScoreLabel" type="Label" parent="Camera2D/Score"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+offset_left = -359.281
+offset_top = -168.36766
+offset_right = -319.281
+offset_bottom = -123.36766
+scale = Vector2(0.5094896, 0.5094896)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("18_jukhh")
+theme_override_font_sizes/font_size = 46
+text = "0"
+script = ExtResource("19_gdn7j")
+
+[node name="ScoreAnimation" type="AnimationPlayer" parent="Camera2D/Score"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_nh07x")
+}
 
 [node name="CatAnimation" type="Node2D" parent="."]
 position = Vector2(0, 64)

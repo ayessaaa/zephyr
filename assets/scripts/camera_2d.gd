@@ -18,8 +18,17 @@ func trigger_shake(bg)-> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.menu:
+	if Global.camera_pos:
+		if offset.y <= 30 and offset.y >= 0:
+			offset.y -= 2
+	elif Global.menu or Global.tutorial:
 		offset.y = 30
+	
+	#if !(Global.menu or Global.tutorial):
+		#if offset.y <= 30 and offset.y >= 0:
+			#offset.y -= 1
+	#else:
+		#offset.y = 30
 	if _shake_strength > 0:
 		_shake_strength = lerp(_shake_strength, 0.0, shake_fade*delta)
 		if !Global.menu and !Global.tutorial:

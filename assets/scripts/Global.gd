@@ -1,9 +1,11 @@
 extends Node
 
 var english_words := {}
+var beam = preload("uid://cj2fdlneamenu")
 
 func _ready():
 	load_word_list("res://words.txt")
+	Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,3 +41,8 @@ var rocket_speed = 50.0
 var floating = true
 
 var tutorial_number = 1
+
+var menu_hide = false
+
+var tutorial_done = false
+var camera_pos = false

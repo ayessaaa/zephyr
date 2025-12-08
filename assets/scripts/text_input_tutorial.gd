@@ -40,6 +40,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		text_animation.play("5")
 		correct_sound.play()
 		Global.tutorial_number = 5
+		Global.tutorial_done = false
 		return
 				
 		#Global.score += score

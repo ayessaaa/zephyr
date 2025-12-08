@@ -6,14 +6,17 @@ extends CharacterBody2D
 @onready var sprite_2d: AnimatedSprite2D = $CatAnimation/Sprite2D
 @onready var text_input: Node2D = $TextInput
 @onready var bg_music: AudioStreamPlayer2D = $BgMusic
+@onready var hide_animation: AnimationPlayer = $Camera2D/Menu/HideAnimation
 
-const SPEED = 25.0
+const SPEED = 20.0
 const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	if Global.menu:
-		text_input.visible = false
+	if Global.menu_hide:
+		hide_animation.play("hide")
+		Global.menu_hide = false
+	text_input.visible = !(Global.menu or Global.tutorial)
 		
 	if Global.floating:
 		position.y -= 30 * delta
@@ -37,14 +40,14 @@ func _physics_process(delta: float) -> void:
 			if animation_player.current_animation != "cursor_to_right":
 				animation_player.stop()
 				animation_player.queue("cursor_to_right")
-			
+				
 		elif mouse_position.x < 490:
 			direction = -1 
 			sprite_2d.play("default")
 			if animation_player.current_animation != "cursor_to_left":
 				animation_player.stop()
 				animation_player.queue("cursor_to_left")
-				
+					
 		else:
 			if mouse_position.y > 25 and mouse_position.y < 200:
 				sprite_2d.play("scared")

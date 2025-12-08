@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bbxq8ayk2eqm3"]
+[gd_scene load_steps=56 format=3 uid="uid://bbxq8ayk2eqm3"]
 
 [ext_resource type="Script" uid="uid://cflv2bfgqcmsa" path="res://assets/scripts/tutorial.gd" id="1_5jq4b"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="1_h7iol"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://byjjsyl7xa3e8" path="res://assets/sprites/IMG_2221.PNG" id="13_1hahq"]
 [ext_resource type="Texture2D" uid="uid://gdh7rptjltx8" path="res://assets/sprites/IMG_2224.PNG" id="14_4c351"]
 [ext_resource type="Texture2D" uid="uid://d4m7nmcd3ev0f" path="res://assets/sprites/big_dark_blue_strip.png" id="15_y7k1j"]
-[ext_resource type="Script" uid="uid://dl3kxmac6pwnk" path="res://bottom_1.gd" id="16_dso2n"]
 [ext_resource type="Texture2D" uid="uid://bj8tqmmowe12h" path="res://assets/sprites/IMG_2231.PNG" id="17_2uqr3"]
 [ext_resource type="PackedScene" uid="uid://iydwpujjwdhq" path="res://assets/scenes/areas/text_input.tscn" id="17_dso2n"]
 [ext_resource type="Texture2D" uid="uid://dcx7y1btnu4qm" path="res://assets/sprites/IMG_2232.PNG" id="18_dqk2k"]
@@ -29,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="23_4fhl6"]
 [ext_resource type="Texture2D" uid="uid://40cmxecg21dk" path="res://assets/sprites/words/Frame 29.png" id="23_re4n7"]
 [ext_resource type="Texture2D" uid="uid://jbe2mrc2jerl" path="res://assets/sprites/words/Frame 31.png" id="24_2uqr3"]
+[ext_resource type="AudioStream" uid="uid://fiurghrf5e1l" path="res://assets/audio/keyboard (mp3cut.net).mp3" id="29_2uqr3"]
 
 [sub_resource type="Animation" id="Animation_6cufi"]
 length = 0.001
@@ -464,6 +464,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-180, 152)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("KeyboardSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.001, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_y7k1j"]
 resource_name = "2"
@@ -600,6 +612,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [&"default", &"scared"]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("KeyboardSound:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.76, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_4c351"]
 resource_name = "3"
@@ -663,6 +687,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("KeyboardSound:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_dso2n"]
@@ -907,6 +943,18 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-180, 141.00002), Vector2(-180, 141.00002)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("KeyboardSound:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(3.09, 6.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_2uqr3"]
@@ -1422,6 +1470,18 @@ tracks/31/keys = {
 "update": 1,
 "values": [&"default"]
 }
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("KeyboardSound:playing")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_5dn6x"]
 resource_name = "7"
@@ -1545,6 +1605,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"scared", &"default"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("KeyboardSound:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_qv87k"]
@@ -1671,6 +1743,26 @@ _data = {
 &"8": SubResource("Animation_qv87k"),
 &"RESET": SubResource("Animation_1hahq")
 }
+
+[sub_resource type="GDScript" id="GDScript_dqk2k"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	#position.y+=.07
+	#position.x-=1
+	pass
+	
+	#if position.x - size
+
+		
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dso2n"]
 animations = [{
@@ -1827,7 +1919,7 @@ z_index = 10
 position = Vector2(2.4165187, -739.4547)
 rotation = -8.951874e-05
 texture = ExtResource("15_y7k1j")
-script = ExtResource("16_dso2n")
+script = SubResource("GDScript_dqk2k")
 
 [node name="RocketRed" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -1900,6 +1992,10 @@ texture = ExtResource("24_2uqr3")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(664.24316, 2414.2754)
 texture = ExtResource("23_re4n7")
+
+[node name="KeyboardSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_2uqr3")
+volume_db = 3.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="TextAnimation" to="." method="_on_text_animation_animation_finished"]
