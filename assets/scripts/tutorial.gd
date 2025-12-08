@@ -2,6 +2,7 @@ extends Node2D
 @onready var text_animation: AnimationPlayer = $TextAnimation
 @onready var rocket_red: AnimatedSprite2D = $RocketRed
 @onready var label: Label = $RocketRed/Label
+@onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("MenuBg/AnimationPlayer")
 
 var tutorial_done = false
 
@@ -14,13 +15,22 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if tutorial_done:
 		if Input.is_action_just_pressed("mouse_click") and Global.tutorial_number != 4:
-			print("click")
-			Global.tutorial_number += 1
-			text_animation.play(str(Global.tutorial_number))
+			
+			if Global.tutorial_number == 8:
+				text_animation.play(str(Global.tutorial_number))
+				Global.tutorial_number += 1
+			else:
+				print("click")
+				Global.tutorial_number += 1
+				text_animation.play(str(Global.tutorial_number))
 		if Global.tutorial_number == 6:
 			rocket_red.play("explode")
 			label.visible = false
 			Global.tutorial_number = 7
+			tutorial_done = false
+		if Global.tutorial_number == 7:
+			text_animation.play("7")
+			Global.tutorial_number = 8
 			tutorial_done = false
 
 
@@ -33,6 +43,9 @@ func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 	tutorial_done = true
 	if Global.tutorial_number == 5:
 		Global.tutorial_number = 6
+	if Global.tutorial_number == 9:
+		menu_transition_animation.play("transition_out")
+	
 
 
 func _on_rocket_red_animation_finished() -> void:
