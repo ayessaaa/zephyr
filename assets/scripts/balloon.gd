@@ -28,6 +28,7 @@ func _on_balloon_area_area_entered(area: Area2D) -> void:
 		rope_5.queue_free()
 		
 		Global.floating = false
+		Global.score_fadeout = true
 
 
 func _on_balloon_external_area_area_entered(area: Area2D) -> void:

@@ -36,11 +36,17 @@ func _process(delta: float) -> void:
 func _on_play_button_pressed() -> void:
 	#Global.menu = false
 	if Global.menu:
-		animation_player.play("transition")
-		select_music.play()
-		tutorial_animation.play("fade_in")
-		Global.menu = false
-		Global.tutorial = true
+		if Global.will_show_tutorial:
+			animation_player.play("transition")
+			select_music.play()
+			tutorial_animation.play("fade_in")
+			Global.menu = false
+			Global.tutorial = true
+		else:
+			animation_player.play("transition_screen")
+			select_music.play()
+			Global.menu = false
+			
 
 
 #func _on_style_button_pressed() -> void:

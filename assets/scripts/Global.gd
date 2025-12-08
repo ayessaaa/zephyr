@@ -40,9 +40,13 @@ var score = 0
 var rocket_speed = 50.0
 var floating = true
 
-var tutorial_number = 1
+var tutorial_number = 6
 
 var menu_hide = false
 
 var tutorial_done = false
 var camera_pos = false
+
+var score_fadeout = false
+var score_fadein = false
+var will_show_tutorial = false

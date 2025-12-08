@@ -14,6 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if !Global.will_show_tutorial:
+		return
 	if Global.tutorial_done:
 		if Input.is_action_just_pressed("mouse_click") and Global.tutorial_number != 4:
 			if Global.tutorial_number == 8:
@@ -49,7 +51,7 @@ func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 		#tutorial_done = false
 	if Global.tutorial_number == 9:
 		menu_transition_animation.play("transition_out")
-		score_animation.play("fade_in")
+		Global.score_fadein = true
 		Global.camera_pos = true
 	
 

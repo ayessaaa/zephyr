@@ -1,4 +1,5 @@
 extends Area2D
+@onready var score_animation: AnimationPlayer = $ScoreAnimation
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,12 +9,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if Global.menu:
-		#return
-	#position.y -= 30 * delta
-	pass
-	
-	#if Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_right"):
-		#position.x -= .4
-	#elif Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left"):
-		#position.x += .4
+	if Global.score_fadeout:
+		score_animation.play("fade_out")
+		Global.score_fadeout = false
