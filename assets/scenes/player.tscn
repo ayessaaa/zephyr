@@ -33,34 +33,6 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.54901963, 1, 0.60784316, 0.19607843)]
-}
-
-[sub_resource type="Animation" id="Animation_60g6h"]
-resource_name = "green_bg"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -77,14 +49,14 @@ tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_o5c66"]
-resource_name = "red_bg"
+[sub_resource type="Animation" id="Animation_60g6h"]
+resource_name = "green_bg"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -108,7 +80,35 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [Color(0.54901963, 1, 0.60784316, 0.19607843)]
+}
+
+[sub_resource type="Animation" id="Animation_o5c66"]
+resource_name = "red_bg"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [Color(1, 0.40784314, 0.4, 0.19607843)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60g6h"]
@@ -842,7 +842,6 @@ script = ExtResource("1_s027a")
 
 [node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nh07x")
-autoplay = true
 bus = &"BgMusic"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -852,21 +851,26 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("2_0hrit")
 
-[node name="Bg" type="Sprite2D" parent="Camera2D"]
-z_index = -2
-position = Vector2(-1.9999695, 10.499992)
-scale = Vector2(0.34245437, 0.02608457)
-texture = ExtResource("3_c6vv5")
+[node name="Bg2" type="ColorRect" parent="Camera2D"]
+offset_left = -402.0
+offset_top = -208.0
+offset_right = 395.0
+offset_bottom = 238.0
+color = Color(0.64705884, 0.9019608, 1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
-visible = false
 modulate = Color(1, 1, 1, 0)
-z_index = 50
 offset_left = -388.0
 offset_top = -222.0
 offset_right = 391.0
 offset_bottom = 224.0
 color = Color(0.54901963, 1, 0.60784316, 0.19607843)
+
+[node name="Bg" type="Sprite2D" parent="Camera2D"]
+visible = false
+position = Vector2(-1.9999695, 10.499992)
+scale = Vector2(0.34245437, 0.02608457)
+texture = ExtResource("3_c6vv5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 libraries = {
@@ -874,6 +878,7 @@ libraries = {
 }
 
 [node name="Menu" type="Node2D" parent="Camera2D"]
+z_index = 4
 
 [node name="RocketGreen" type="AnimatedSprite2D" parent="Camera2D/Menu"]
 position = Vector2(446.99994, 156)
@@ -980,7 +985,7 @@ libraries = {
 }
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CatAnimation"]
-z_index = 2
+z_index = 5
 position = Vector2(3.9999986, 1)
 rotation = 0.2617994
 scale = Vector2(0.10440334, 0.104403354)
@@ -989,7 +994,7 @@ animation = &"scared"
 autoplay = "default"
 
 [node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
-z_index = -1
+z_index = 4
 z_as_relative = false
 position = Vector2(1.5258789e-05, 0)
 scale = Vector2(0.9961368, 0.99613655)

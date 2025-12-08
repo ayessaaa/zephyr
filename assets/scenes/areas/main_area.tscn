@@ -189,7 +189,8 @@ node_b = NodePath("../../Rope5")
 
 [node name="Rockets" type="Node" parent="."]
 
-[node name="BgObjects" type="Node" parent="."]
+[node name="BgObjects" type="Node2D" parent="."]
+z_index = 1
 
 [node name="Parallax2D" type="Parallax2D" parent="BgObjects"]
 repeat_size = Vector2(1200, 650)

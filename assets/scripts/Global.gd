@@ -3,21 +3,29 @@ extends Node
 var english_words := {}
 var beam = preload("uid://cj2fdlneamenu")
 
-func _ready():
-	load_word_list("res://words.txt")
-	Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
-func load_word_list(path: String):
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file:
-		while not file.eof_reached():
-			var line = file.get_line().strip_edges()
+func _ready():
+	load_word_list()
+
+func load_word_list():
+	var path := "res://assets/words.txt"
+	var file := FileAccess.open(path, FileAccess.READ)
+
+	if file == null:
+		push_error("FAILED TO LOAD WORD LIST: " + path)
+		return
+
+	while not file.eof_reached():
+		var line := file.get_line().strip_edges()
+		if line != "":
 			english_words[line.to_lower()] = true
-		file.close()
+
+	file.close()
+	print("Loaded ", english_words.size(), " words.")
 		
 
 
@@ -37,7 +45,7 @@ var menu = true
 var tutorial = false
 var rocket_list = []
 var score = 0
-var rocket_speed = 100.0
+var rocket_speed = 50.0
 var floating = true
 
 var tutorial_number = 1

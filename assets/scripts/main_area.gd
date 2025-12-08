@@ -32,8 +32,8 @@ var probability_timer = 0
 
 func _ready():
 	#load_word_list("res://words.txt")
-	#bg_music.play()
-	pass
+	bg_music.play()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -23,10 +23,16 @@ var score = 0
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	#label.text = new_text
 	for rocket in Global.rocket_list:
+		#if rocket.is_free():
+			#
 		
+		print(new_text, rocket.pattern.to_lower())
 		if not new_text.to_lower().find(rocket.pattern.to_lower()) != -1:
+			print("no sequence")
 			continue
 		elif is_real_word(new_text, rocket.pattern):
+			print("correct")
+			
 			animation_player.play("correct")
 			camera.trigger_shake("green_bg")
 			line_edit.text = ""
@@ -51,6 +57,9 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			
 			
 			return
+		else:
+			print("not found")
+			
 			
 	animation_player.play("incorrect")
 	camera.trigger_shake("red_bg")

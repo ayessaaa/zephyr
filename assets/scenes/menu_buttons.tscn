@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dj7uivm3ifn0h" path="res://assets/audio/notification-for-game-scenes-132473 (mp3cut.net).mp3" id="12_4xe7n"]
 
 [node name="MenuButtons" type="Node2D"]
+z_index = 5
 scale = Vector2(0.9396837, 0.9396837)
 script = ExtResource("1_6m700")
 
