@@ -53,3 +53,6 @@ var will_show_tutorial = false
 
 var gameover = false
 var gameover_animation = false
+
+var line_edit_visible = false
+var best_score = 99999

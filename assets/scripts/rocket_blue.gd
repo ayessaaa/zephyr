@@ -29,6 +29,8 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	if Global.gameover:
+		queue_free()
 	if show_score:
 		var score_floating = SCORE_FLOATING.instantiate()
 		score_floating.global_position.x = self.global_position.x - 30

@@ -27,12 +27,13 @@ func _physics_process(delta: float) -> void:
 	#if Global.floating:
 		#await get_tree().create_timer(1.0).timeout
 	else:
-		print(position.y, last_y)
-		if position.y > last_y+500:
-			velocity.y += gravity * delta
-			sprite_2d.play("scared")
-		else:
-			velocity.y = 0
+		#print(position.y, last_y)
+		#if position.y > last_y+500:
+			#velocity.y += gravity * delta
+			#sprite_2d.play("scared")
+		#else:
+			#velocity.y = 0
+		sprite_2d.play("scared")
 
 
 	# Get the input direction and handle the movement/deceleration.

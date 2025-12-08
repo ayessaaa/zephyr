@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 		if play_button.is_hovered() and hovering != "play":
 			hover_music.play()
 			hovering = "play"
+			Global.line_edit_visible = true
 		elif style_button.is_hovered() and hovering != "style":
 			hover_music.play()
 			hovering = "style"

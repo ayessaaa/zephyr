@@ -9,6 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.score_fadeout:
-		score_animation.play("fade_out")
-		Global.score_fadeout = false
+	#if Global.score_fadeout:
+		#score_animation.play("fade_out")
+		#Global.score_fadeout = false
+	pass

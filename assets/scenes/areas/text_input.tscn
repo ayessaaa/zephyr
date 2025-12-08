@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://iydwpujjwdhq"]
+[gd_scene load_steps=14 format=3 uid="uid://iydwpujjwdhq"]
 
 [ext_resource type="Script" uid="uid://dg3sqvkkxlmyu" path="res://assets/scripts/text_input.gd" id="1_je6pq"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="2_3ucl1"]
@@ -9,6 +9,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ucl1"]
 bg_color = Color(0.2627451, 0.6313726, 0.8039216, 0.39215687)
 border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_247d2"]
+bg_color = Color(0.15400851, 0.48238766, 0.8128793, 0.4117647)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -100,6 +107,22 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(1.061493, 1.061493), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_3awnq"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LineEdit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_67far"]
 resource_name = "incorrect"
 length = 0.5
@@ -140,22 +163,6 @@ tracks/2/keys = {
 "values": [Vector2(1.061493, 1.061493), Vector2(1.1235299, 1.1235299), Vector2(1.061493, 1.061493)]
 }
 
-[sub_resource type="Animation" id="Animation_3awnq"]
-resource_name = "fade_in"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LineEdit:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67far"]
 _data = {
 &"RESET": SubResource("Animation_bs1oq"),
@@ -179,6 +186,7 @@ theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
 theme_override_fonts/font = ExtResource("2_3ucl1")
 theme_override_font_sizes/font_size = 86
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ucl1")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_247d2")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3awnq")
 alignment = 1
 max_length = 20
