@@ -21,6 +21,8 @@ var score = 0
 	#label.text = new_text
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
+	if Global.gameover:
+		return
 	#label.text = new_text
 	for rocket in Global.rocket_list:
 		#if rocket.is_free():

@@ -2,7 +2,7 @@ extends Node2D
 
 var english_words := {}
 
-@onready var bg_music: AudioStreamPlayer2D = $Player/BgMusic
+@onready var bg_music: AudioStreamPlayer2D = $BgMusic
 @onready var score: Area2D = $Score
 @onready var menu_buttons: Node2D = $Player/Camera2D/Menu/MenuButtons
 @onready var play_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/PlayButton
@@ -32,7 +32,9 @@ var probability_timer = 0
 
 func _ready():
 	#load_word_list("res://words.txt")
-	bg_music.play()
+	#bg_music.play()
+	
+	sound_button()
 	
 
 
@@ -89,3 +91,12 @@ func spawn_rocket(rocket_scene, pos, left_or_right):
 	rocket.position = pos
 	rocket.left_or_right = left_or_right
 	rockets.add_child(rocket)
+
+
+func _on_bg_music_finished() -> void:
+	bg_music.play()
+	
+func sound_button() -> void:
+	var music_bus_index = AudioServer.get_bus_index("Master")
+	var current_mute_state = AudioServer.is_bus_mute(music_bus_index)
+	AudioServer.set_bus_mute(music_bus_index, not current_mute_state)

@@ -101,3 +101,10 @@ func _physics_process(delta: float) -> void:
 func _on_bg_music_finished() -> void:
 	print("ended")
 	bg_music.play()
+
+
+func _on_sound_button_pressed() -> void:
+	bg_music.play()
+	var music_bus_index = AudioServer.get_bus_index("Master")
+	var current_mute_state = AudioServer.is_bus_mute(music_bus_index)
+	AudioServer.set_bus_mute(music_bus_index, not current_mute_state)
