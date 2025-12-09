@@ -34,8 +34,8 @@ func _ready():
 	#load_word_list("res://words.txt")
 	#bg_music.play()
 	
-	sound_button()
-	
+	#sound_button()
+	pass	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

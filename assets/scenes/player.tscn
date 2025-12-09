@@ -1,9 +1,8 @@
-[gd_scene load_steps=65 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=64 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
 [ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
-[ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="2_nh07x"]
 [ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://tmlcdud6k2cr" path="res://assets/scenes/menu_bg.tscn" id="3_60g6h"]
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="3_c6vv5"]
@@ -868,10 +867,6 @@ height = 146.0
 motion_mode = 1
 script = ExtResource("1_s027a")
 
-[node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_nh07x")
-bus = &"BgMusic"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, -11)
 zoom = Vector2(1.5, 1.5)
@@ -1049,7 +1044,6 @@ shape = SubResource("CapsuleShape2D_rwm0n")
 [node name="TextInput" parent="." instance=ExtResource("6_0gfpk")]
 position = Vector2(0, 155)
 
-[connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
 [connection signal="pressed" from="Camera2D/Menu/SoundButton" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="Camera2D/Menu/SoundButton" to="Camera2D/Menu/SoundButton" method="_on_pressed"]
 [connection signal="animation_finished" from="CatAnimation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

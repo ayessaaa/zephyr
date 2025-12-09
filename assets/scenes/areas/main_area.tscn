@@ -253,9 +253,9 @@ volume_db = -5.0
 
 [node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_7i2xy")
-bus = &"BgMusic"
+autoplay = true
+parameters/looping = true
 
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]
 [connection signal="area_exited" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_exited"]
-[connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
