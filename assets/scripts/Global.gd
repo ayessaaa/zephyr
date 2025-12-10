@@ -57,7 +57,7 @@ var camera_pos = false
 
 var score_fadeout = false
 var score_fadein = false
-var will_show_tutorial = false
+var will_show_tutorial = true
 
 var gameover = false
 var gameover_animation = false

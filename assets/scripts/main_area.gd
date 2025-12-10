@@ -35,7 +35,11 @@ func _ready():
 	#bg_music.play()
 	
 	#sound_button()
-	pass	
+	var custom_cursor_texture = preload("uid://cj2fdlneamenu")
+	var hand_cursor_texture = preload("uid://bapm1li2vjkau")
+	Input.set_custom_mouse_cursor(custom_cursor_texture, Input.CURSOR_IBEAM)
+	Input.set_custom_mouse_cursor(hand_cursor_texture, Input.CURSOR_POINTING_HAND)
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

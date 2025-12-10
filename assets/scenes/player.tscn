@@ -966,11 +966,13 @@ libraries = {
 }
 
 [node name="SoundButton" type="TextureButton" parent="Camera2D/Menu"]
+visible = false
 offset_left = 289.0
 offset_top = -165.0
 offset_right = 667.0
 offset_bottom = 99.0
 scale = Vector2(0.21025734, 0.21025734)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("16_6luef")
 texture_pressed = ExtResource("18_omckb")
 texture_hover = ExtResource("17_gmant")
