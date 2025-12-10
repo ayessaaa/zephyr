@@ -20,6 +20,14 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 
 @onready var player: CharacterBody2D = $Player
 @onready var meow_1: AudioStreamPlayer2D = $MeowSounds/Meow1
+@onready var menu: Node2D = $Player/Camera2D/Menu
+@onready var rocket_green: AnimatedSprite2D = $Player/Camera2D/Menu/RocketGreen
+@onready var rocket_red: AnimatedSprite2D = $Player/Camera2D/Menu/RocketRed
+@onready var rocket_blue: AnimatedSprite2D = $Player/Camera2D/Menu/RocketBlue
+@onready var logo: Sprite2D = $Player/Camera2D/Menu/Logo
+@onready var subtitle: Sprite2D = $Player/Camera2D/Menu/Subtitle
+@onready var menu_bg_animation: AnimationPlayer = $Player/Camera2D/Menu/MenuBg/AnimationPlayer
+@onready var gameover: Node2D = $Player/Camera2D/Gameover
 
 var timer = 10
 var rocket_position_x = [-500, 500]
@@ -44,6 +52,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	menu_buttons.visible = Global.menu
+	rocket_green.visible = Global.menu
+	rocket_red.visible = Global.menu
+	rocket_blue.visible = Global.menu
+	logo.visible = Global.menu
+	subtitle.visible = Global.menu
+	gameover.visible = Global.gameover
+	if Global.restart:
+		Global.restart = false
+		get_tree().reload_current_scene()
+		return
+		
+	if !Global.menu and !Global.tutorial and !Global.gameover:
+		menu_bg_animation.play("outside_screen")
+	#elif Global.menu:
+		#menu_bg_animation.play("outside_screen")
+		
 	#score.visible = !Global.menu and !Global.tutorial
 	line_edit.visible = Global.line_edit_visible 
 	play_button.disabled = !(Global.menu or Global.tutorial)
@@ -87,6 +112,7 @@ func _process(delta: float) -> void:
 		score_animation.play("fade_in")
 		text_input_animation.play("fade_in")
 		Global.score_fadein = false
+		print("run")
 	
 	
 		

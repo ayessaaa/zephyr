@@ -39,7 +39,6 @@ func _on_play_button_pressed() -> void:
 			animation_player.play("transition")
 			select_music.play()
 			tutorial_animation.play("fade_in")
-			Global.menu = false
 			Global.tutorial = true
 		else:
 			animation_player.play("transition_screen")

@@ -27,8 +27,6 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	for rocket in Global.rocket_list:
 		#if rocket.is_free():
 			#
-		
-		print(new_text, rocket.pattern.to_lower())
 		if not new_text.to_lower().find(rocket.pattern.to_lower()) != -1:
 			print("no sequence")
 			continue

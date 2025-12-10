@@ -45,7 +45,7 @@ var menu = true
 var tutorial = false
 var rocket_list = []
 var score = 0
-var rocket_speed = 50.0
+var rocket_speed = 100.0
 var floating = true
 
 var tutorial_number = 1
@@ -63,4 +63,7 @@ var gameover = false
 var gameover_animation = false
 
 var line_edit_visible = false
-var best_score = 99999
+var best_score = 0
+
+var restart = false
+#var first_load = true

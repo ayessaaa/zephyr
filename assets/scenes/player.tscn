@@ -370,7 +370,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -382,7 +382,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -394,7 +394,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -406,7 +406,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -418,7 +418,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -430,7 +430,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -455,10 +455,10 @@ tracks/0/path = NodePath("RocketGreen:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -467,10 +467,10 @@ tracks/1/path = NodePath("RocketRed:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -479,10 +479,10 @@ tracks/2/path = NodePath("RocketBlue:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -491,10 +491,10 @@ tracks/3/path = NodePath("MenuButtons:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -503,10 +503,10 @@ tracks/4/path = NodePath("Logo:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -515,10 +515,10 @@ tracks/5/path = NodePath("Subtitle:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -527,10 +527,10 @@ tracks/6/path = NodePath("SoundButton:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.0009999999),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(-1.1641532e-10),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_beuf1"]
@@ -904,6 +904,7 @@ libraries = {
 z_index = 4
 
 [node name="RocketGreen" type="AnimatedSprite2D" parent="Camera2D/Menu"]
+visible = false
 position = Vector2(446.99994, 156)
 rotation = 0.2712997
 scale = Vector2(0.109999985, 0.10999999)
@@ -912,6 +913,7 @@ autoplay = "default"
 frame_progress = 0.1041721
 
 [node name="RocketRed" type="AnimatedSprite2D" parent="Camera2D/Menu"]
+visible = false
 position = Vector2(436, 17.999992)
 rotation = 0.4422411
 scale = Vector2(0.109999985, 0.10999999)
@@ -920,6 +922,7 @@ autoplay = "default"
 frame_progress = 0.11872583
 
 [node name="RocketBlue" type="AnimatedSprite2D" parent="Camera2D/Menu"]
+visible = false
 position = Vector2(-425, -58.000008)
 rotation = -0.2617994
 scale = Vector2(0.10999999, 0.10999999)
@@ -938,14 +941,17 @@ rotation = -0.06822288
 scale = Vector2(0.74322224, 0.74322224)
 
 [node name="MenuButtons" parent="Camera2D/Menu" instance=ExtResource("3_hrrj1")]
+visible = false
 position = Vector2(-354, 121.99999)
 
 [node name="Logo" type="Sprite2D" parent="Camera2D/Menu"]
+visible = false
 position = Vector2(15.000032, -35.999996)
 scale = Vector2(0.56593406, 0.56593406)
 texture = ExtResource("7_00pic")
 
 [node name="Subtitle" type="Sprite2D" parent="Camera2D/Menu"]
+visible = false
 position = Vector2(226.03961, 11.464039)
 rotation = -0.3718003
 scale = Vector2(0.3235294, 0.32352945)
@@ -1048,4 +1054,5 @@ position = Vector2(0, 155)
 
 [connection signal="pressed" from="Camera2D/Menu/SoundButton" to="." method="_on_sound_button_pressed"]
 [connection signal="pressed" from="Camera2D/Menu/SoundButton" to="Camera2D/Menu/SoundButton" method="_on_pressed"]
+[connection signal="animation_finished" from="Camera2D/Score/ScoreAnimation" to="." method="_on_score_animation_animation_finished"]
 [connection signal="animation_finished" from="CatAnimation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

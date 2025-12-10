@@ -57,6 +57,7 @@ func _process(delta: float) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	text_animation.play(str(Global.tutorial_number))
+	Global.menu = false
 
 
 func _on_text_animation_animation_finished(anim_name: StringName) -> void:

@@ -8,6 +8,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var score: Label = $TextureRect/Score
 @onready var best_score_text: Label = $BestScoreText
+@onready var hide_animation: AnimationPlayer = $"../Menu/HideAnimation"
 
 var hovering = ""
 
@@ -21,6 +22,8 @@ func _process(delta: float) -> void:
 	score.text = str(Global.score)
 	best_score_text.text = "best score: "+str(Global.best_score)
 	if Global.gameover_animation:
+		if Global.best_score < Global.score:
+			Global.best_score = Global.score
 		print("dead")
 		bg_animation.play("in")
 		Global.gameover_animation = false
@@ -37,3 +40,24 @@ func _process(delta: float) -> void:
 			hovering = "main_menu"
 		if !play_again.is_hovered() and !main_menu.is_hovered():
 			hovering = ""
+
+
+func _on_play_again_pressed() -> void:
+	animation_player.play("fade_out")
+	#bg_animation.play("out")
+	#Global.gameover = false
+	#Global.restart = true
+	#Global.floating = true
+	#Global.score_fadeout = false
+	#Global.gameover_animation = false
+	#Global.line_edit_visible = true
+	#Global.rocket_list = []
+	#Global.score = 0
+	#Global.rocket_speed = 50.0
+	##menu_transition_animation.play("transition_out")
+	#Global.score_fadein = true
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "fade_out":
+		bg_animation.play("out")

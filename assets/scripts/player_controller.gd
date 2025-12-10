@@ -108,3 +108,7 @@ func _on_bg_music_finished() -> void:
 	#var music_bus_index = AudioServer.get_bus_index("Master")
 	#var current_mute_state = AudioServer.is_bus_mute(music_bus_index)
 	#AudioServer.set_bus_mute(music_bus_index, not current_mute_state)
+
+
+func _on_score_animation_animation_finished(anim_name: StringName) -> void:
+	Global.score_fadein = false

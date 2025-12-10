@@ -22,6 +22,18 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.tutorial = false
 	if anim_name == "in" and Global.gameover:
 		Global.line_edit_visible = false
+	if anim_name == "out":
+		Global.gameover = false
+		Global.restart = true
+		Global.floating = true
+		Global.score_fadeout = false
+		Global.gameover_animation = false
+		Global.line_edit_visible = true
+		Global.rocket_list = []
+		Global.score = 0
+		Global.rocket_speed = 50.0
+		#menu_transition_animation.play("transition_out")
+		Global.score_fadein = true
 		
 
 
