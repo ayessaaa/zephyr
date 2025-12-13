@@ -6,6 +6,7 @@ extends RigidBody2D
 @onready var rope_4: RigidBody2D = $"../Rope4"
 @onready var rope_5: RigidBody2D = $"../Rope5"
 @onready var player: CharacterBody2D = $"../Player"
+@onready var balloon_pop_sound: AudioStreamPlayer2D = $BalloonPopSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +32,7 @@ func _on_balloon_area_area_entered(area: Area2D) -> void:
 		Global.score_fadeout = true
 		Global.gameover = true
 		Global.gameover_animation = true
+		balloon_pop_sound.play()
 
 
 func _on_balloon_external_area_area_entered(area: Area2D) -> void:

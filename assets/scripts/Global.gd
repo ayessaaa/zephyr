@@ -66,4 +66,5 @@ var line_edit_visible = false
 var best_score = 0
 
 var restart = false
+var playing = false
 #var first_load = true

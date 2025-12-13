@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 		return
 		
 	if !Global.menu and !Global.tutorial and !Global.gameover:
-		menu_bg_animation.play("outside_screen")
+		menu_bg_animation.queue("outside_screen")
 	#elif Global.menu:
 		#menu_bg_animation.play("outside_screen")
 		
@@ -106,7 +106,7 @@ func _process(delta: float) -> void:
 		elif random_probability < blue_threshold + green_threshold:
 			spawn_rocket(ROCKET_GREEN, spawn_pos, random_position)
 		else:
-			spawn_rocket(ROCKET_BLUE, spawn_pos, random_position)
+			spawn_rocket(ROCKET_RED, spawn_pos, random_position)
 			
 	if Global.score_fadein:
 		score_animation.play("fade_in")

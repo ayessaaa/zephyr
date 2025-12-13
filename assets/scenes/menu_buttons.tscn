@@ -52,9 +52,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HoverMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_kjpdr")
+bus = &"SFX"
 
 [node name="SelectMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_4xe7n")
+bus = &"SFX"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="StyleButton" to="." method="_on_style_button_pressed"]

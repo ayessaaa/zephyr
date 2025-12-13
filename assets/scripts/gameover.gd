@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 
 func _on_play_again_pressed() -> void:
 	animation_player.play("fade_out")
+	Global.playing = true
 	#bg_animation.play("out")
 	#Global.gameover = false
 	#Global.restart = true
@@ -79,3 +80,4 @@ func _on_main_menu_pressed() -> void:
 	Global.score_fadein = true
 	Global.menu = true
 	Global.camera_pos = false
+	Global.will_show_tutorial = false

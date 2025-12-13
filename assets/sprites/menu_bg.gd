@@ -6,7 +6,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animation_player.queue("inside_screen")
+	if !Global.playing:
+		animation_player.queue("inside_screen")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,6 +37,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		#menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
 		
+	#if anim_name == "transition_screen" and Global.menu
+		
 	
 
 
@@ -45,4 +48,6 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 		Global.menu_hide = true
 		Global.camera_pos = true
 		Global.score_fadein = true
+		#await get_tree().create_timer(1.0).timeout
+		Global.menu = false
 	

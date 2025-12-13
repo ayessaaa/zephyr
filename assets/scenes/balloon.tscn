@@ -12,6 +12,7 @@ radius = 26.019224
 size = Vector2(2, 21)
 
 [node name="Balloon" type="Node2D"]
+visible = false
 
 [node name="Balloon" type="RigidBody2D" parent="."]
 z_index = 1

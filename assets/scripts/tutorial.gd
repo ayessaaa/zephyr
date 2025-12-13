@@ -9,6 +9,7 @@ extends Node2D
 @onready var exit_animation_player: AnimationPlayer = $ExitButton/AnimationPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var exit_sound: AudioStreamPlayer2D = $ExitSound
 
 const light_blue_pressed = preload("uid://cktqipxapbjgj")
 const light_blue_hover = preload("uid://ceb8184idqbpc")
@@ -82,6 +83,7 @@ func _on_rocket_red_animation_finished() -> void:
 
 func _on_exit_button_pressed() -> void:
 	text_animation.stop()
+	exit_sound.play()
 	if Global.tutorial_number == 4 or Global.tutorial_number == 5:
 		animation_player.play("fade_out_2")
 	else:
@@ -93,4 +95,5 @@ func _on_exit_button_pressed() -> void:
 	await get_tree().create_timer(.5).timeout 
 	Global.camera_pos = true
 	menu_transition_animation.play("transition_out")
+	
 	

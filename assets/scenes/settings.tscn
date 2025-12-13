@@ -1,0 +1,140 @@
+[gd_scene load_steps=18 format=3 uid="uid://b45ma70rpfndx"]
+
+[ext_resource type="Script" uid="uid://cepwjbwfdpaeh" path="res://assets/scripts/settings.gd" id="1_17tup"]
+[ext_resource type="Texture2D" uid="uid://diutjyni08j0i" path="res://assets/sprites/big_blue_strip.png" id="2_48ty2"]
+[ext_resource type="Texture2D" uid="uid://de30dhkg1cywm" path="res://assets/sprites/asdasd.png" id="3_dyhpl"]
+[ext_resource type="Texture2D" uid="uid://eule6d3ytlbr" path="res://assets/sprites/asdasdasd.png" id="4_dyhpl"]
+[ext_resource type="Texture2D" uid="uid://b26wm75m1k8yh" path="res://assets/sprites/Frame 45.png" id="5_fjali"]
+[ext_resource type="Texture2D" uid="uid://bb6ixeipcm7xr" path="res://assets/sprites/Rectangle 17.png" id="5_s7awf"]
+[ext_resource type="Texture2D" uid="uid://chkq7lo24qgpq" path="res://assets/sprites/Rectangle 18.png" id="6_dvflm"]
+[ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="8_fjali"]
+[ext_resource type="Texture2D" uid="uid://dr3syon6hhi8o" path="res://assets/sprites/sound.png" id="9_pp2u4"]
+[ext_resource type="Texture2D" uid="uid://s86bggn73e7a" path="res://assets/sprites/sound2.png" id="10_pp2u4"]
+[ext_resource type="Texture2D" uid="uid://degcbywhx62an" path="res://assets/sprites/Frame 52.png" id="11_fyvcn"]
+[ext_resource type="Texture2D" uid="uid://bxf2urndutdx3" path="res://assets/sprites/Frame 53.png" id="12_6imsu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvflm"]
+texture = ExtResource("5_s7awf")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyhpl"]
+texture = ExtResource("6_dvflm")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5j1l"]
+texture = ExtResource("6_dvflm")
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36vnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_pp2u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pp2u4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60l1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_fyvcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6imsu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Settings" type="Node2D"]
+position = Vector2(-268, -21)
+script = ExtResource("1_17tup")
+
+[node name="Top1" type="Sprite2D" parent="."]
+z_index = 30
+position = Vector2(603, 95.00003)
+rotation = 0.00019057095
+texture = ExtResource("2_48ty2")
+
+[node name="SFX" type="HSlider" parent="."]
+z_index = 40
+offset_left = 143.0
+offset_top = 6.0
+offset_right = 584.6498
+offset_bottom = 52.0
+scale = Vector2(0.56605935, 0.56605935)
+theme_override_icons/grabber = ExtResource("3_dyhpl")
+theme_override_icons/grabber_highlight = ExtResource("4_dyhpl")
+theme_override_icons/grabber_disabled = ExtResource("5_fjali")
+theme_override_styles/slider = SubResource("StyleBoxTexture_dvflm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_dyhpl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_q5j1l")
+min_value = -20.0
+max_value = 5.0
+step = 0.2
+
+[node name="Music" type="HSlider" parent="."]
+z_index = 40
+offset_left = 75.0
+offset_top = 81.0
+offset_right = 461.0
+offset_bottom = 97.0
+min_value = -20.0
+max_value = 5.0
+step = 0.2
+
+[node name="SFXLabel" type="Label" parent="."]
+z_index = 40
+offset_left = 246.0
+offset_top = -34.0
+offset_right = 356.0
+offset_bottom = 24.0
+scale = Vector2(0.3921008, 0.3921008)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 60
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="Mute1" type="AnimatedSprite2D" parent="."]
+z_index = 40
+position = Vector2(106, 25.999998)
+scale = Vector2(0.20377709, 0.20377709)
+sprite_frames = SubResource("SpriteFrames_36vnf")
+autoplay = "default"
+frame_progress = 0.85779357
+
+[node name="Mute2" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 40
+position = Vector2(106, 25.999998)
+scale = Vector2(0.20377709, 0.20377709)
+sprite_frames = SubResource("SpriteFrames_36vnf")
+autoplay = "default"
+frame_progress = 0.6946231
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 40
+position = Vector2(432.00003, 25.000002)
+scale = Vector2(0.204, 0.204)
+sprite_frames = SubResource("SpriteFrames_60l1e")
+autoplay = "default"
+frame_progress = 0.3840106
+
+[connection signal="value_changed" from="SFX" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Music" to="." method="_on_music_value_changed"]
