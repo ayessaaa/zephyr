@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://iydwpujjwdhq"]
+[gd_scene load_steps=15 format=3 uid="uid://iydwpujjwdhq"]
 
 [ext_resource type="Script" uid="uid://dg3sqvkkxlmyu" path="res://assets/scripts/text_input.gd" id="1_je6pq"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="2_3ucl1"]
 [ext_resource type="AudioStream" uid="uid://ek3qfvvmrlx2" path="res://assets/audio/typing-sound-02-229861.mp3" id="3_bs1oq"]
 [ext_resource type="AudioStream" uid="uid://b04ak12fahyos" path="res://assets/audio/success-videogame-sfx-423626_CaXLxBsQ.mp3" id="4_3awnq"]
 [ext_resource type="AudioStream" uid="uid://cehx406ulgc6j" path="res://assets/audio/wrong-47985_i4enRPz8.mp3" id="5_3awnq"]
+[ext_resource type="AudioStream" uid="uid://cc2sf2d65g32d" path="res://assets/audio/explosion-9-340460.mp3" id="6_247d2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ucl1"]
 bg_color = Color(0.2627451, 0.6313726, 0.8039216, 0.39215687)
@@ -207,6 +208,10 @@ stream = ExtResource("4_3awnq")
 
 [node name="IncorrectSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_3awnq")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_247d2")
+volume_db = 5.0
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

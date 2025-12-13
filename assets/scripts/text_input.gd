@@ -11,6 +11,7 @@ extends Node2D
 @onready var incorrect_sound: AudioStreamPlayer2D = $IncorrectSound
 @onready var score_animation: AnimationPlayer = get_parent().get_node("Camera2D/Score/ScoreAnimation")
 @onready var bg_music: AudioStreamPlayer2D = $"../../BgMusic"
+@onready var explosion_sound: AudioStreamPlayer2D = $ExplosionSound
 
 var score = 0
 
@@ -53,6 +54,9 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			score_animation.play("scored")
 			
 			Global.rocket_list.erase(rocket)
+			
+			explosion_sound.play()
+			rocket.get_node("CollisionPolygon2D").disabled = true
 			
 			
 			

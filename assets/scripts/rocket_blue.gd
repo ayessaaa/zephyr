@@ -26,6 +26,8 @@ func _ready() -> void:
 		sprite_2d.flip_v = true
 	else:
 		letter_pattern.text = pattern.to_upper()
+		
+	print("blue")
 	
 
 func _process(delta: float) -> void:
@@ -53,6 +55,7 @@ func _on_sprite_2d_animation_finished() -> void:
 
 
 func _on_sprite_2d_animation_changed() -> void:
-	pass
+	#pass
+	print("changed")
 	#explosion_sound.play()
 	#collision_polygon_2d.disabled = true

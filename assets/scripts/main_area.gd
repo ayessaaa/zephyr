@@ -106,7 +106,7 @@ func _process(delta: float) -> void:
 		elif random_probability < blue_threshold + green_threshold:
 			spawn_rocket(ROCKET_GREEN, spawn_pos, random_position)
 		else:
-			spawn_rocket(ROCKET_RED, spawn_pos, random_position)
+			spawn_rocket(ROCKET_BLUE, spawn_pos, random_position)
 			
 	if Global.score_fadein:
 		score_animation.play("fade_in")
