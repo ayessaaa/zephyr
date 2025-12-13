@@ -45,9 +45,23 @@ func _on_play_button_pressed() -> void:
 		select_music.play()
 		#Global.menu = false
 		print("transition")
+		Global.playing = true
 			
 
 
 #func _on_style_button_pressed() -> void:
 	#if Global.menu:
 		#animation_player.play("transition_out")
+
+
+func _on_settings_button_pressed() -> void:
+	#if Global.will_show_tutorial:
+	animation_player.queue("transition")
+	select_music.play()
+	#tutorial_animation.play("fade_in")
+	Global.settings = true
+	#else:
+		#animation_player.queue("transition_screen")
+		#select_music.play()
+		##Global.menu = false
+		#print("transition")

@@ -10,6 +10,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var exit_sound: AudioStreamPlayer2D = $ExitSound
+@onready var keyboard_sound: AudioStreamPlayer2D = $KeyboardSound
 
 const light_blue_pressed = preload("uid://cktqipxapbjgj")
 const light_blue_hover = preload("uid://ceb8184idqbpc")
@@ -24,6 +25,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	exit_button.visible = Global.tutorial
+	if !Global.tutorial:
+		keyboard_sound.stop()
+		
 	if !Global.will_show_tutorial:
 		return
 	if Global.tutorial_done:
@@ -71,6 +75,7 @@ func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 		menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
 		Global.camera_pos = true
+		Global.playing = true
 	if Global.tutorial_number == 4:
 		text_input_animation.play("fade_in")
 	
@@ -95,5 +100,6 @@ func _on_exit_button_pressed() -> void:
 	await get_tree().create_timer(.5).timeout 
 	Global.camera_pos = true
 	menu_transition_animation.play("transition_out")
+	Global.playing = true 
 	
 	

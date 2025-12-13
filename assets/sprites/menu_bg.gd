@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "transition_out" and Global.tutorial:
 		Global.tutorial = false
-	if anim_name == "transition":
+	if anim_name == "transition" and Global.tutorial:
 		Global.menu_hide = true
 	if anim_name == "transition_screen" and !Global.will_show_tutorial:
 		Global.tutorial = false
@@ -36,7 +36,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.rocket_speed = 50.0
 		#menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
-		
+	if anim_name == "transition" and Global.settings:
+		Global.menu = false
 	#if anim_name == "transition_screen" and Global.menu
 		
 	

@@ -292,6 +292,7 @@ script = ExtResource("1_w7pm3")
 [node name="GameoverSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -91.504234)
 stream = ExtResource("2_6om16")
+bus = &"SFX"
 
 [node name="Gameover" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -384,9 +385,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HoverMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ldmw1")
+bus = &"SFX"
 
 [node name="SelectMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_klkxl")
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

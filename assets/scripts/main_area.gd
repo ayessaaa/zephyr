@@ -28,6 +28,7 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var subtitle: Sprite2D = $Player/Camera2D/Menu/Subtitle
 @onready var menu_bg_animation: AnimationPlayer = $Player/Camera2D/Menu/MenuBg/AnimationPlayer
 @onready var gameover: Node2D = $Player/Camera2D/Gameover
+@onready var settings: Node2D = $Player/Camera2D/Settings
 
 var timer = 10
 var rocket_position_x = [-500, 500]
@@ -59,15 +60,22 @@ func _process(delta: float) -> void:
 	logo.visible = Global.menu
 	subtitle.visible = Global.menu
 	gameover.visible = Global.gameover
+	settings.visible = Global.settings
+	
+	
+	
 	if Global.restart:
 		Global.restart = false
 		get_tree().reload_current_scene()
 		return
 		
-	if !Global.menu and !Global.tutorial and !Global.gameover:
+	if !Global.menu and !Global.tutorial and !Global.gameover and !Global.settings:
 		menu_bg_animation.queue("outside_screen")
 	#elif Global.menu:
 		#menu_bg_animation.play("outside_screen")
+		
+	if !Global.playing:
+		return
 		
 	#score.visible = !Global.menu and !Global.tutorial
 	line_edit.visible = Global.line_edit_visible 

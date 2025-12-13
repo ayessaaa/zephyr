@@ -2,10 +2,15 @@ extends Node2D
 
 @onready var BG_MUSIC = AudioServer.get_bus_index("BgMusic")
 @onready var SFX = AudioServer.get_bus_index("SFX")
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("Menu/MenuBg/AnimationPlayer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	AudioServer.set_bus_volume_db(SFX, Global.sfx_volume)
+	AudioServer.set_bus_volume_db(BG_MUSIC, Global.music_volume)
+	await get_tree().create_timer(2.0).timeout 
+	animation_player.play("fade_in")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +20,29 @@ func _process(delta: float) -> void:
 
 func _on_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX, value)
+	if value == -20:
+		AudioServer.set_bus_mute(SFX, true)
+	else:
+		AudioServer.set_bus_mute(SFX, false)
+	Global.sfx_volume = value
 
 
 func _on_music_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(BG_MUSIC, value)
+	if value == -20:
+		AudioServer.set_bus_mute(BG_MUSIC, true)
+	else:
+		AudioServer.set_bus_mute(BG_MUSIC, false)
+	Global.music_volume = value
+	
+
+func _on_exit_button_pressed() -> void:
+	animation_player.play("fade_out")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "fade_out":
+		Global.menu = true
+		Global.settings = false
+		menu_transition_animation.play("transition_out")
+		menu_transition_animation.queue("inside_screen")

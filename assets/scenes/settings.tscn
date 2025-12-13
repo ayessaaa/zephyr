@@ -1,34 +1,81 @@
-[gd_scene load_steps=18 format=3 uid="uid://b45ma70rpfndx"]
+[gd_scene load_steps=30 format=3 uid="uid://b45ma70rpfndx"]
 
 [ext_resource type="Script" uid="uid://cepwjbwfdpaeh" path="res://assets/scripts/settings.gd" id="1_17tup"]
 [ext_resource type="Texture2D" uid="uid://diutjyni08j0i" path="res://assets/sprites/big_blue_strip.png" id="2_48ty2"]
 [ext_resource type="Texture2D" uid="uid://de30dhkg1cywm" path="res://assets/sprites/asdasd.png" id="3_dyhpl"]
 [ext_resource type="Texture2D" uid="uid://eule6d3ytlbr" path="res://assets/sprites/asdasdasd.png" id="4_dyhpl"]
 [ext_resource type="Texture2D" uid="uid://b26wm75m1k8yh" path="res://assets/sprites/Frame 45.png" id="5_fjali"]
-[ext_resource type="Texture2D" uid="uid://bb6ixeipcm7xr" path="res://assets/sprites/Rectangle 17.png" id="5_s7awf"]
-[ext_resource type="Texture2D" uid="uid://chkq7lo24qgpq" path="res://assets/sprites/Rectangle 18.png" id="6_dvflm"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="8_fjali"]
 [ext_resource type="Texture2D" uid="uid://dr3syon6hhi8o" path="res://assets/sprites/sound.png" id="9_pp2u4"]
 [ext_resource type="Texture2D" uid="uid://s86bggn73e7a" path="res://assets/sprites/sound2.png" id="10_pp2u4"]
+[ext_resource type="Texture2D" uid="uid://bcchkkrs7ngl" path="res://assets/sprites/close.png" id="11_60l1e"]
 [ext_resource type="Texture2D" uid="uid://degcbywhx62an" path="res://assets/sprites/Frame 52.png" id="11_fyvcn"]
 [ext_resource type="Texture2D" uid="uid://bxf2urndutdx3" path="res://assets/sprites/Frame 53.png" id="12_6imsu"]
+[ext_resource type="Texture2D" uid="uid://cktqipxapbjgj" path="res://assets/sprites/fi_1828774-1.png" id="12_45trt"]
+[ext_resource type="Texture2D" uid="uid://ceb8184idqbpc" path="res://assets/sprites/fi_1828774.png" id="13_dia3x"]
+[ext_resource type="AudioStream" uid="uid://b18ftd7o56nn7" path="res://assets/audio/new-notification-019-363747.mp3" id="14_cuai4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvflm"]
-texture = ExtResource("5_s7awf")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp2u4"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyhpl"]
-texture = ExtResource("6_dvflm")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36vnf"]
+bg_color = Color(0.64705884, 0.9019608, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5j1l"]
-texture = ExtResource("6_dvflm")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyvcn"]
+bg_color = Color(0.63529414, 0.8235294, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6imsu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60l1e"]
+bg_color = Color(0.64705884, 0.9019608, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45trt"]
+bg_color = Color(0.63529414, 0.8235294, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
@@ -62,79 +109,831 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_8eue5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rhcal"]
+resource_name = "fade_out"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fhl6"]
+_data = {
+&"RESET": SubResource("Animation_8eue5"),
+&"fade_out": SubResource("Animation_rhcal")
+}
+
+[sub_resource type="Animation" id="Animation_45trt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mute1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds1:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BgMusicLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mute2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sounds2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Pixabay:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("V:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MadeBy:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Github:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ExitButton:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ExitSound:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_60l1e"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mute1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.75, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.75, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds1:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.75, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BgMusicLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mute2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sounds2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Pixabay:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("V:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MadeBy:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Github:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ExitButton:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dia3x"]
+resource_name = "fade_out"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExitSound:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExitButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Github:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pixabay:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("V:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MadeBy:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SettingsLabel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Mute2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BgMusicLabel:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sounds1:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Mute1:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SFXLabel:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Music:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SFX:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dia3x"]
+_data = {
+&"RESET": SubResource("Animation_45trt"),
+&"fade_in": SubResource("Animation_60l1e"),
+&"fade_out": SubResource("Animation_dia3x")
+}
+
 [node name="Settings" type="Node2D"]
 position = Vector2(-268, -21)
 script = ExtResource("1_17tup")
 
 [node name="Top1" type="Sprite2D" parent="."]
+visible = false
 z_index = 30
 position = Vector2(603, 95.00003)
 rotation = 0.00019057095
 texture = ExtResource("2_48ty2")
 
 [node name="SFX" type="HSlider" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 40
-offset_left = 143.0
-offset_top = 6.0
-offset_right = 584.6498
-offset_bottom = 52.0
-scale = Vector2(0.56605935, 0.56605935)
+offset_left = 153.9538
+offset_top = -13.0
+offset_right = 595.6036
+offset_bottom = 56.0
+scale = Vector2(0.51923937, 0.51923937)
+mouse_default_cursor_shape = 2
 theme_override_icons/grabber = ExtResource("3_dyhpl")
 theme_override_icons/grabber_highlight = ExtResource("4_dyhpl")
 theme_override_icons/grabber_disabled = ExtResource("5_fjali")
-theme_override_styles/slider = SubResource("StyleBoxTexture_dvflm")
-theme_override_styles/grabber_area = SubResource("StyleBoxTexture_dyhpl")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_q5j1l")
+theme_override_styles/slider = SubResource("StyleBoxFlat_pp2u4")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_36vnf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fyvcn")
 min_value = -20.0
 max_value = 5.0
 step = 0.2
+metadata/_edit_use_anchors_ = true
 
 [node name="Music" type="HSlider" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 40
-offset_left = 75.0
-offset_top = 81.0
-offset_right = 461.0
-offset_bottom = 97.0
+offset_left = 153.9538
+offset_top = 56.0
+offset_right = 595.6499
+offset_bottom = 125.0
+scale = Vector2(0.5191851, 0.5191851)
+mouse_default_cursor_shape = 2
+theme_override_icons/grabber = ExtResource("3_dyhpl")
+theme_override_icons/grabber_highlight = ExtResource("4_dyhpl")
+theme_override_styles/slider = SubResource("StyleBoxFlat_6imsu")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_60l1e")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_45trt")
 min_value = -20.0
 max_value = 5.0
 step = 0.2
+metadata/_edit_use_anchors_ = true
 
 [node name="SFXLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 40
-offset_left = 246.0
-offset_top = -34.0
-offset_right = 356.0
-offset_bottom = 24.0
-scale = Vector2(0.3921008, 0.3921008)
+offset_left = 148.9538
+offset_top = -31.0
+offset_right = 258.9538
+offset_bottom = 27.0
+scale = Vector2(0.3596693, 0.3596693)
 theme_override_fonts/font = ExtResource("8_fjali")
 theme_override_font_sizes/font_size = 60
 text = "SFX"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Mute1" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 40
-position = Vector2(106, 25.999998)
-scale = Vector2(0.20377709, 0.20377709)
+position = Vector2(117.953735, 5)
+scale = Vector2(0.18692224, 0.18692224)
 sprite_frames = SubResource("SpriteFrames_36vnf")
 autoplay = "default"
-frame_progress = 0.85779357
+frame_progress = 0.99175256
 
-[node name="Mute2" type="AnimatedSprite2D" parent="."]
-visible = false
+[node name="Sounds1" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 40
-position = Vector2(106, 25.999998)
-scale = Vector2(0.20377709, 0.20377709)
-sprite_frames = SubResource("SpriteFrames_36vnf")
-autoplay = "default"
-frame_progress = 0.6946231
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 40
-position = Vector2(432.00003, 25.000002)
-scale = Vector2(0.204, 0.204)
+position = Vector2(420.95374, 4.9999924)
+scale = Vector2(0.18712667, 0.18712667)
 sprite_frames = SubResource("SpriteFrames_60l1e")
 autoplay = "default"
-frame_progress = 0.3840106
+frame_progress = 0.5179688
+
+[node name="BgMusicLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 136.9538
+offset_top = 38.0
+offset_right = 391.364
+offset_bottom = 96.0
+scale = Vector2(0.3596693, 0.3596693)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 60
+text = "MUSIC"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mute2" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+position = Vector2(117.953735, 72)
+scale = Vector2(0.18692224, 0.18692224)
+sprite_frames = SubResource("SpriteFrames_36vnf")
+autoplay = "default"
+frame_progress = 0.038068082
+
+[node name="Sounds2" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+position = Vector2(420.95374, 72.00001)
+scale = Vector2(0.18712667, 0.18712667)
+sprite_frames = SubResource("SpriteFrames_60l1e")
+autoplay = "default"
+frame_progress = 0.56428266
+
+[node name="SettingsLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 200.9538
+offset_top = -115.0
+offset_right = 555.9538
+offset_bottom = -42.0
+scale = Vector2(0.3921008, 0.3921008)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 75
+text = "SETTINGS"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MadeBy" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 139.0
+offset_top = 208.0
+offset_right = 1007.0
+offset_bottom = 266.0
+scale = Vector2(0.29909942, 0.29909942)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 50
+text = "zephyr is made w/    3 by yessa"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="V" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 308.0
+offset_top = 210.0
+offset_right = 342.0
+offset_bottom = 268.0
+rotation = 1.5707964
+scale = Vector2(0.29909942, 0.29909942)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 55
+text = "v"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pixabay" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 121.0
+offset_top = 103.0
+offset_right = 1107.0
+offset_bottom = 161.0
+scale = Vector2(0.29909942, 0.29909942)
+theme_override_colors/font_color = Color(0.13647816, 0.57038546, 0.77726614, 1)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 40
+text = "sounds & music from pixabay.com"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Github" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 97.0
+offset_top = 228.0
+offset_right = 1239.0
+offset_bottom = 286.0
+scale = Vector2(0.29909942, 0.29909942)
+theme_override_colors/font_color = Color(0.13725491, 0.5686275, 0.7764706, 1)
+theme_override_fonts/font = ExtResource("8_fjali")
+theme_override_font_sizes/font_size = 40
+text = "open sourced at github.com/ayessaaa/zephyr"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 40
+offset_left = 496.95386
+offset_top = -117.0
+offset_right = 624.95386
+offset_bottom = 11.0
+scale = Vector2(0.115772665, 0.115772665)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_60l1e")
+texture_pressed = ExtResource("12_45trt")
+texture_hover = ExtResource("13_dia3x")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ExitButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_4fhl6")
+}
+
+[node name="ExitSound" type="AudioStreamPlayer2D" parent="."]
+z_index = 40
+position = Vector2(160.99998, 68.000015)
+stream = ExtResource("14_cuai4")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dia3x")
+}
 
 [connection signal="value_changed" from="SFX" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="Music" to="." method="_on_music_value_changed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
