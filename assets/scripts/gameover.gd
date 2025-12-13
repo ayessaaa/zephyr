@@ -61,3 +61,21 @@ func _on_play_again_pressed() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_out":
 		bg_animation.play("out")
+
+
+func _on_main_menu_pressed() -> void:
+	bg_animation.play("out")
+	#bg_animation.queue("inside_screen")
+	Global.gameover = false
+	
+	Global.floating = true
+	Global.score_fadeout = false
+	Global.gameover_animation = false
+	Global.line_edit_visible = true
+	Global.rocket_list = []
+	Global.score = 0
+	Global.rocket_speed = 50.0
+	#menu_transition_animation.play("transition_out")
+	Global.score_fadein = true
+	Global.menu = true
+	Global.camera_pos = false

@@ -1,11 +1,12 @@
 extends Node2D
 @onready var hide_animation: AnimationPlayer = $"../HideAnimation"
 #@onready var line_edit: LineEdit = get_parent().get_parent().get_parent().get_node("LineEdit")
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	animation_player.queue("inside_screen")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,6 +36,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		#menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
 		
+	
 
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
