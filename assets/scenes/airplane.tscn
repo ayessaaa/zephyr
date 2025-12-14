@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwcn3ybunn6nu"]
+
+[ext_resource type="Texture2D" uid="uid://dkoqytocb5mur" path="res://assets/sprites/IMG_2289.PNG" id="1_876u6"]
+[ext_resource type="Script" uid="uid://c6jtsqnvi60h1" path="res://assets/scripts/airplane_path_follow_2d.gd" id="1_nxl02"]
+[ext_resource type="PackedScene" uid="uid://ds40g3tirdeha" path="res://assets/scenes/dash.tscn" id="1_trq7a"]
+[ext_resource type="Texture2D" uid="uid://pjcx8cg5fdbt" path="res://assets/sprites/IMG_2290.PNG" id="2_nxl02"]
+[ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="4_r2c0o"]
+
+[sub_resource type="Curve2D" id="Curve2D_r2c0o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1504, 519, 245.1419, 231.49486, -245.1419, -231.49486, 1039, -980, 110.111496, -125.56762, -110.111496, 125.56762, 423, -884, 130.30676, -180.80942, -130.30676, 180.80942, -364.81152, 324.8318, 167.78285, 3.278223, -167.78285, -3.278223, -854.5576, 589.6946, 26.072508, 249.26039, -26.072508, -249.26039, -1234.3611, 239.87573, -143.47543, 13.518121, 143.47543, -13.518121, -884.54224, -174.90942, -51.031776, -192.49211, 51.031776, 192.49211, -464.75977, 109.943115, 136.00221, -206.26262, -136.00221, 206.26262, -589.6948, 784.5935, 272.23584, -10.717946, -272.23584, 10.717946, -1314.3196, 1164.3967, 188.26, 237.97687, -188.26, -237.97687, -2158, 857, 53.507515, 249.53023, -53.507515, -249.53023, -2463.724, 19.989502, 268.247, 19.210085, -268.247, -19.210085, -2868.5146, -614.68164, 57.876907, -79.312805, -57.876907, 79.312805, -3423.227, -174.90942, 135.04613, -90.03075, -135.04613, 90.03075, -3828.0176, 309.83936, 139.3333, -2.1435893, -139.3333, 2.1435893, -4328, 446, 242.86868, 23.579483, -242.86868, -23.579483, -4969, 368)
+}
+point_count = 17
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r2c0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_876u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nxl02")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Airplane" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(881.00006, 426)
+scale = Vector2(0.2001036, 0.2001036)
+curve = SubResource("Curve2D_r2c0o")
+
+[node name="Dashes" type="Node2D" parent="Path2D"]
+position = Vector2(-4933.1216, 381.33057)
+rotation = -0.86853105
+scale = Vector2(1.0000002, 1.0000002)
+
+[node name="Dash" parent="Path2D/Dashes" instance=ExtResource("1_trq7a")]
+position = Vector2(4078.0698, 4995.0313)
+rotation = 0.868531
+scale = Vector2(0.99999976, 0.99999976)
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1357.6805, -166.76555)
+rotation = -1.816364
+progress = 701.33124
+script = ExtResource("1_nxl02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-36.999268, -9.80072)
+rotation = 2.1762776
+sprite_frames = SubResource("SpriteFrames_r2c0o")
+autoplay = "default"
+frame_progress = 0.089254946
+
+[node name="Letters" type="Label" parent="Path2D/PathFollow2D/AnimatedSprite2D"]
+offset_left = -109.62098
+offset_top = -325.32733
+offset_right = 35.37902
+offset_bottom = -247.32733
+rotation = 0.15213028
+scale = Vector2(1.5024081, 1.5024081)
+theme_override_colors/font_color = Color(0.27450982, 0.29411766, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_r2c0o")
+theme_override_font_sizes/font_size = 80
+text = "INA"

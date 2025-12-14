@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds40g3tirdeha"]
+
+[ext_resource type="Texture2D" uid="uid://csuthjeu1wr6j" path="res://assets/sprites/IMG_2291.PNG" id="1_8k6pd"]
+
+[node name="Dash" type="Sprite2D"]
+position = Vector2(599, 319)
+texture = ExtResource("1_8k6pd")
