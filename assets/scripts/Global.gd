@@ -38,14 +38,14 @@ var patterns_medium = [ "str", "ing", "ack", "est", "art", "and", "ant", "ell", 
 					"ing", "ous", "ful", "est", "ity", "ive", "ent",
 					"tch", "dge", "ght", "que", "sci", "phr", "chr"]
 var patterns_hard = [ "tion", "sion", "ment", "able", "less", "ness", "ward", "wise", "ship", "hood",
-					"chro", "phor", "ther", "tion", "ough", "ight",
-					"quar", "whic", "phon", "ment", "ture", "ghte", "ough"]
+					"chro", "phor", "ther", "tion", "ight",
+					"quar", "whic", "phon", "ment", "ture", "ghte"]
 
 var menu = true
 var tutorial = false
 var rocket_list = []
 var score = 0
-var rocket_speed = 100.0
+var rocket_speed = 50.0
 var floating = true
 
 var tutorial_number = 1
@@ -72,3 +72,5 @@ var settings = false
 var sfx_volume = 0
 var music_volume = 0
 #var first_load = true
+
+var powerup_letters = ""

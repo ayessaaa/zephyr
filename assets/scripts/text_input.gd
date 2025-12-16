@@ -31,7 +31,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		if not new_text.to_lower().find(rocket.pattern.to_lower()) != -1:
 			print("no sequence")
 			continue
-		elif is_real_word(new_text, rocket.pattern):
+		if is_real_word(new_text, rocket.pattern):
 			print("correct")
 			
 			animation_player.play("correct")
@@ -58,12 +58,15 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			explosion_sound.play()
 			rocket.get_node("CollisionPolygon2D").disabled = true
 			
-			
-			
 			return
+			
+		
 		else:
 			print("not found")
 			
+	if new_text.to_lower().find(Global.powerup_letters.to_lower()):
+		print("POWERUP")
+		return
 			
 	animation_player.play("incorrect")
 	camera.trigger_shake("red_bg")

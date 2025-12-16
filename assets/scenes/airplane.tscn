@@ -44,9 +44,8 @@ scale = Vector2(0.2001036, 0.2001036)
 curve = SubResource("Curve2D_r2c0o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1073.9431, -34.919323)
-rotation = -2.257783
-progress = 701.33124
+position = Vector2(1504, 519)
+rotation = -2.2057478
 loop = false
 script = ExtResource("1_nxl02")
 
@@ -58,16 +57,16 @@ autoplay = "default"
 frame_progress = 0.089254946
 
 [node name="Letters" type="Label" parent="Path2D/PathFollow2D/AnimatedSprite2D"]
-offset_left = -109.62098
-offset_top = -325.32733
-offset_right = 35.37902
-offset_bottom = -247.32733
+offset_left = -186.5039
+offset_top = -361.10712
+offset_right = 10.496094
+offset_bottom = -283.10712
 rotation = 0.15213028
-scale = Vector2(1.5024081, 1.5024081)
-theme_override_colors/font_color = Color(0.27450982, 0.29411766, 0.54901963, 1)
+scale = Vector2(1.8205872, 1.8205872)
+theme_override_colors/font_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
 theme_override_fonts/font = ExtResource("4_r2c0o")
 theme_override_font_sizes/font_size = 80
-text = "INA"
+text = "INAT"
 
 [node name="SpawnSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_25y5m")
