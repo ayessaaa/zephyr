@@ -1021,6 +1021,8 @@ libraries = {
 [node name="Gameover" parent="Camera2D" instance=ExtResource("20_ay2jx")]
 position = Vector2(-2, 11)
 
+[node name="Airplanes" type="Node2D" parent="Camera2D"]
+
 [node name="CatAnimation" type="Node2D" parent="."]
 position = Vector2(0, 64)
 

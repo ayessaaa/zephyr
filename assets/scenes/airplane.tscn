@@ -1,16 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwcn3ybunn6nu"]
+[gd_scene load_steps=10 format=3 uid="uid://cwcn3ybunn6nu"]
 
+[ext_resource type="Script" uid="uid://dyho1nt1wdk0j" path="res://assets/scripts/airplane.gd" id="1_8ih4i"]
 [ext_resource type="Texture2D" uid="uid://dkoqytocb5mur" path="res://assets/sprites/IMG_2289.PNG" id="1_876u6"]
 [ext_resource type="Script" uid="uid://c6jtsqnvi60h1" path="res://assets/scripts/airplane_path_follow_2d.gd" id="1_nxl02"]
-[ext_resource type="PackedScene" uid="uid://ds40g3tirdeha" path="res://assets/scenes/dash.tscn" id="1_trq7a"]
 [ext_resource type="Texture2D" uid="uid://pjcx8cg5fdbt" path="res://assets/sprites/IMG_2290.PNG" id="2_nxl02"]
 [ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="4_r2c0o"]
+[ext_resource type="Texture2D" uid="uid://brtd4k0cn8juc" path="res://assets/sprites/IMG_2227.PNG" id="6_trq7a"]
+[ext_resource type="AudioStream" uid="uid://gjaulv0kl1sl" path="res://assets/audio/classic-game-action-positive-1-224407 (1).mp3" id="7_25y5m"]
 
 [sub_resource type="Curve2D" id="Curve2D_r2c0o"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1504, 519, 245.1419, 231.49486, -245.1419, -231.49486, 1039, -980, 110.111496, -125.56762, -110.111496, 125.56762, 423, -884, 130.30676, -180.80942, -130.30676, 180.80942, -364.81152, 324.8318, 167.78285, 3.278223, -167.78285, -3.278223, -854.5576, 589.6946, 26.072508, 249.26039, -26.072508, -249.26039, -1234.3611, 239.87573, -143.47543, 13.518121, 143.47543, -13.518121, -884.54224, -174.90942, -51.031776, -192.49211, 51.031776, 192.49211, -464.75977, 109.943115, 136.00221, -206.26262, -136.00221, 206.26262, -589.6948, 784.5935, 272.23584, -10.717946, -272.23584, 10.717946, -1314.3196, 1164.3967, 188.26, 237.97687, -188.26, -237.97687, -2158, 857, 53.507515, 249.53023, -53.507515, -249.53023, -2463.724, 19.989502, 268.247, 19.210085, -268.247, -19.210085, -2868.5146, -614.68164, 57.876907, -79.312805, -57.876907, 79.312805, -3423.227, -174.90942, 135.04613, -90.03075, -135.04613, 90.03075, -3828.0176, 309.83936, 139.3333, -2.1435893, -139.3333, 2.1435893, -4328, 446, 242.86868, 23.579483, -242.86868, -23.579483, -4969, 368)
+"points": PackedVector2Array(0, 0, 0, 0, 1504, 519, 245.1419, 231.49486, -245.1419, -231.49486, 774.59814, -369.80847, 110.111496, -125.56762, -110.111496, 125.56762, 199.896, -269.86023, 168.62424, -155.15286, -168.62424, 155.15286, -364.81152, 324.8318, 159.68246, 13.2730465, -159.68246, -13.2730465, -834.5681, 554.71265, 13.660512, 205.8184, -13.660512, -205.8184, -1189.3843, 214.88867, -179.82025, -0.11118317, 179.82025, 0.11118317, -839.5654, -144.92493, -32.85937, -160.6904, 32.85937, 160.6904, -464.75977, 109.943115, 226.40993, -177.64108, -226.40993, 177.64108, -704.6355, 639.6687, 276.77893, 16.54066, -276.77893, -16.54066, -1749.0942, 859.5547, 316.36365, 201.37582, -316.36365, -201.37582, -2818.5405, 524.7283, 278.18115, 194.59369, -278.18115, -194.59369, -3668.1003, -54.971436, 185.98508, -17.938446, -185.98508, 17.938446, -4322.761, -374.8059, 145.96143, -128.19295, -145.96143, 128.19295, -4842.4917, -34.981934, 157.76163, -80.94454, -157.76163, 80.94454, -5237.2876, 244.87305, 167.3478, -26.410595, -167.3478, 26.410595, -5831.9795, 404.79028, 374.81122, 7.5402794, -374.81122, -7.5402794, -6766.495, 454.7644, 306.18823, 85.549545, -306.18823, -85.549545, -7910.9023, 364.81104)
 }
-point_count = 17
+point_count = 18
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r2c0o"]
 animations = [{
@@ -27,26 +29,25 @@ animations = [{
 }]
 
 [node name="Airplane" type="Node2D"]
+z_index = 2
+script = ExtResource("1_8ih4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(645, 388)
+scale = Vector2(1.42745, 2.5231364)
+texture = ExtResource("6_trq7a")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(881.00006, 426)
+position = Vector2(1203.0001, 423)
 scale = Vector2(0.2001036, 0.2001036)
 curve = SubResource("Curve2D_r2c0o")
 
-[node name="Dashes" type="Node2D" parent="Path2D"]
-position = Vector2(-4933.1216, 381.33057)
-rotation = -0.86853105
-scale = Vector2(1.0000002, 1.0000002)
-
-[node name="Dash" parent="Path2D/Dashes" instance=ExtResource("1_trq7a")]
-position = Vector2(4078.0698, 4995.0313)
-rotation = 0.868531
-scale = Vector2(0.99999976, 0.99999976)
-
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1357.6805, -166.76555)
-rotation = -1.816364
+position = Vector2(1073.9431, -34.919323)
+rotation = -2.257783
 progress = 701.33124
+loop = false
 script = ExtResource("1_nxl02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
@@ -67,3 +68,6 @@ theme_override_colors/font_color = Color(0.27450982, 0.29411766, 0.54901963, 1)
 theme_override_fonts/font = ExtResource("4_r2c0o")
 theme_override_font_sizes/font_size = 80
 text = "INA"
+
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_25y5m")

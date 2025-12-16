@@ -30,6 +30,9 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var gameover: Node2D = $Player/Camera2D/Gameover
 @onready var settings: Node2D = $Player/Camera2D/Settings
 
+const AIRPLANE = preload("uid://cwcn3ybunn6nu")
+@onready var airplanes: Node2D = $Player/Camera2D
+
 var timer = 10
 var rocket_position_x = [-500, 500]
 
@@ -37,6 +40,8 @@ var meow_timer = 0
 
 
 var probability_timer = 0
+
+var powerup_timer = 0.0
 
 
 func _ready():
@@ -121,6 +126,15 @@ func _process(delta: float) -> void:
 		text_input_animation.play("fade_in")
 		Global.score_fadein = false
 		print("run")
+		
+	powerup_timer += delta
+	
+	if powerup_timer > 5:
+		var random_x = randi_range(0, 10)
+		powerup_timer = 0
+		if random_x > 0:
+			spawn_airplane()
+			print("airplane")
 	
 	
 		
@@ -130,6 +144,12 @@ func spawn_rocket(rocket_scene, pos, left_or_right):
 	rocket.left_or_right = left_or_right
 	rockets.add_child(rocket)
 
+func spawn_airplane():
+	var airplane = AIRPLANE.instantiate()
+	airplane.global_position = Vector2(-250, -200)
+	#airplane.rotation = 
+	airplane.scale = Vector2(.5,.5)
+	airplanes.add_child(airplane)
 
 func _on_bg_music_finished() -> void:
 	bg_music.play()
