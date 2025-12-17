@@ -74,3 +74,4 @@ var music_volume = 0
 #var first_load = true
 
 var powerup_letters = ""
+var powerup = false

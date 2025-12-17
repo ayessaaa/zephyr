@@ -31,7 +31,7 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var settings: Node2D = $Player/Camera2D/Settings
 
 const AIRPLANE = preload("uid://cwcn3ybunn6nu")
-@onready var airplanes: Node2D = $Player/Camera2D
+@onready var airplanes: Node2D = $Player/Camera2D/Airplanes
 
 var timer = 10
 var rocket_position_x = [-500, 500]
@@ -131,8 +131,8 @@ func _process(delta: float) -> void:
 	
 	if powerup_timer > 5:
 		var random_x = randi_range(0, 10)
-		powerup_timer = 0
-		if random_x > 0:
+		powerup_timer = -1000
+		if random_x > 0 and Global.powerup_letters == "":
 			spawn_airplane()
 			print("airplane")
 	

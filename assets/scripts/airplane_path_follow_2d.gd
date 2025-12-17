@@ -13,6 +13,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Global.powerup:
+		return
 	progress_ratio += delta * speed
 	if progress_ratio == 1.0:
 		queue_free()

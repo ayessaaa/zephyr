@@ -1,12 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwcn3ybunn6nu"]
+[gd_scene load_steps=18 format=3 uid="uid://cwcn3ybunn6nu"]
 
 [ext_resource type="Script" uid="uid://dyho1nt1wdk0j" path="res://assets/scripts/airplane.gd" id="1_8ih4i"]
 [ext_resource type="Texture2D" uid="uid://dkoqytocb5mur" path="res://assets/sprites/IMG_2289.PNG" id="1_876u6"]
 [ext_resource type="Script" uid="uid://c6jtsqnvi60h1" path="res://assets/scripts/airplane_path_follow_2d.gd" id="1_nxl02"]
 [ext_resource type="Texture2D" uid="uid://pjcx8cg5fdbt" path="res://assets/sprites/IMG_2290.PNG" id="2_nxl02"]
 [ext_resource type="FontFile" uid="uid://cyg4wv0fyxv1f" path="res://assets/fonts/Poppin-Regular.ttf" id="4_r2c0o"]
+[ext_resource type="Texture2D" uid="uid://c6211ixjq6yln" path="res://assets/sprites/IMG_2321.PNG" id="6_isxro"]
 [ext_resource type="Texture2D" uid="uid://brtd4k0cn8juc" path="res://assets/sprites/IMG_2227.PNG" id="6_trq7a"]
+[ext_resource type="Texture2D" uid="uid://dy6iq3nr7hnde" path="res://assets/sprites/IMG_2322.PNG" id="7_3a003"]
 [ext_resource type="AudioStream" uid="uid://gjaulv0kl1sl" path="res://assets/audio/classic-game-action-positive-1-224407 (1).mp3" id="7_25y5m"]
+[ext_resource type="Texture2D" uid="uid://2d105jnvl03p" path="res://assets/sprites/IMG_2323.PNG" id="8_324xv"]
+[ext_resource type="Texture2D" uid="uid://bljsrvhigawu3" path="res://assets/sprites/IMG_2324.PNG" id="9_gqyfk"]
+[ext_resource type="Texture2D" uid="uid://dlv5ql7hgjcxy" path="res://assets/sprites/IMG_2325.PNG" id="10_ws8j1"]
+[ext_resource type="Texture2D" uid="uid://bfd2vh30p4faq" path="res://assets/sprites/IMG_2326.PNG" id="11_y6xc8"]
+[ext_resource type="Texture2D" uid="uid://kuyvxej4n7ky" path="res://assets/sprites/IMG_2327.PNG" id="12_olblg"]
+[ext_resource type="Texture2D" uid="uid://clrvj775frl8j" path="res://assets/sprites/IMG_2328.PNG" id="13_3alcy"]
 
 [sub_resource type="Curve2D" id="Curve2D_r2c0o"]
 _data = {
@@ -25,6 +33,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_isxro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3a003")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_324xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gqyfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ws8j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y6xc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_olblg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3alcy")
+}],
+"loop": false,
+"name": &"disappear",
 "speed": 5.0
 }]
 
@@ -53,8 +90,10 @@ script = ExtResource("1_nxl02")
 position = Vector2(-36.999268, -9.80072)
 rotation = 2.1762776
 sprite_frames = SubResource("SpriteFrames_r2c0o")
+animation = &"disappear"
 autoplay = "default"
-frame_progress = 0.089254946
+frame = 7
+frame_progress = 1.0
 
 [node name="Letters" type="Label" parent="Path2D/PathFollow2D/AnimatedSprite2D"]
 offset_left = -186.5039
@@ -70,3 +109,5 @@ text = "INAT"
 
 [node name="SpawnSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_25y5m")
+
+[connection signal="animation_finished" from="Path2D/PathFollow2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://eon8djhhpwja"]
+
+[ext_resource type="Texture2D" uid="uid://llghpujkjefj" path="res://assets/sprites/IMG_2299.PNG" id="1_nfwh3"]
+[ext_resource type="Texture2D" uid="uid://cue4ow0pwe7qv" path="res://assets/sprites/IMG_2300.PNG" id="2_icpvq"]
+[ext_resource type="Texture2D" uid="uid://bfs0oejeik203" path="res://assets/sprites/IMG_2301.PNG" id="3_wt8m4"]
+[ext_resource type="Texture2D" uid="uid://b6yganar4h4lw" path="res://assets/sprites/IMG_2302.PNG" id="4_l1i3p"]
+[ext_resource type="Texture2D" uid="uid://cph7il5ge3xsv" path="res://assets/sprites/IMG_2303.PNG" id="5_gh27k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7tnc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nfwh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_icpvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wt8m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l1i3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gh27k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PowerupSnow" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h7tnc")
+autoplay = "default"
+frame_progress = 0.23686025

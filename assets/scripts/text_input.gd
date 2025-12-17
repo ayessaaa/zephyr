@@ -12,6 +12,7 @@ extends Node2D
 @onready var score_animation: AnimationPlayer = get_parent().get_node("Camera2D/Score/ScoreAnimation")
 @onready var bg_music: AudioStreamPlayer2D = $"../../BgMusic"
 @onready var explosion_sound: AudioStreamPlayer2D = $ExplosionSound
+@onready var airplanes_node = get_parent().get_node("Camera2D/Airplanes")
 
 var score = 0
 
@@ -64,10 +65,17 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		else:
 			print("not found")
 			
-	if new_text.to_lower().find(Global.powerup_letters.to_lower()):
-		print("POWERUP")
+	if new_text.to_lower().find(Global.powerup_letters.to_lower()) and is_real_word(new_text, Global.powerup_letters):
+		
+		camera.trigger_shake("yellow_bg")
+		line_edit.text = ""
+		#airplane_sprite.play("disappear")
+		airplanes_node.get_child(0).get_node("Path2D/PathFollow2D/AnimatedSprite2D").play("disappear")
+		airplanes_node.get_child(0).get_node("Path2D/PathFollow2D/AnimatedSprite2D/Letters").visible = false
+		Global.powerup = true
+		
 		return
-			
+		
 	animation_player.play("incorrect")
 	camera.trigger_shake("red_bg")
 	line_edit.text = ""
