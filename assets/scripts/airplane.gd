@@ -31,6 +31,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if sprite_float:
 		animated_sprite_2d.position.y += 2
 

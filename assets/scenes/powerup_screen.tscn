@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds1kp1hayys43"]
+[gd_scene load_steps=14 format=3 uid="uid://ds1kp1hayys43"]
 
 [ext_resource type="Texture2D" uid="uid://mde244uw1kbp" path="res://assets/sprites/Frame 58.png" id="1_0wtyd"]
 [ext_resource type="Script" uid="uid://bkk1ouhcs403s" path="res://assets/scripts/powerup_screen.gd" id="1_jjo25"]
 [ext_resource type="AudioStream" uid="uid://mma5s1s6d1y7" path="res://assets/audio/iced-magic-6-378606 (1).mp3" id="3_3rmp6"]
 [ext_resource type="Texture2D" uid="uid://x6w14w8wmmtl" path="res://assets/sprites/Subtract.png" id="4_h16qx"]
 [ext_resource type="Texture2D" uid="uid://vg5np0p8k4hg" path="res://assets/sprites/Subtract1.png" id="4_qo1qx"]
-[ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="6_qo1qx"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="7_0e7kf"]
 
 [sub_resource type="Animation" id="Animation_3rmp6"]
@@ -355,10 +354,6 @@ scale = Vector2(0.69546247, 0.71273285)
 sprite_frames = SubResource("SpriteFrames_0e7kf")
 autoplay = "default"
 frame_progress = 0.4464395
-
-[node name="PowerupMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_qo1qx")
-bus = &"BgMusic"
 
 [node name="Title" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)

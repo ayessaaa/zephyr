@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=20 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://djxarqc2kffhx" path="res://assets/scenes/cloud_3.tscn" id="9_eblat"]
 [ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="13_7i2xy"]
 [ext_resource type="AudioStream" uid="uid://b3buy6hk2u1un" path="res://assets/audio/meow1.mp3" id="13_r6dgb"]
+[ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="15_7swdg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y61u2"]
 radius = 26.019224
@@ -271,6 +272,10 @@ stream = ExtResource("13_7i2xy")
 autoplay = true
 bus = &"BgMusic"
 parameters/looping = true
+
+[node name="PowerupMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_7swdg")
+bus = &"BgMusic"
 
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]

@@ -80,4 +80,5 @@ var powerup_type = ""
 var freeze_timer = 0.0
 
 var game_running = true
+var pause = false
 #var bg_main_music_playing = true

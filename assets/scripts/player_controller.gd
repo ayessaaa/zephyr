@@ -15,7 +15,7 @@ var last_y = 0
 
 
 func _physics_process(delta: float) -> void:
-	if !Global.game_running:
+	if !Global.game_running or Global.pause:
 		return
 	if Global.menu_hide:
 		hide_animation.play("hide")

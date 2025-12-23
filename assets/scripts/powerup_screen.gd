@@ -1,5 +1,5 @@
 extends Node2D
-@onready var powerup_music: AudioStreamPlayer2D = $PowerupMusic
+@onready var powerup_music: AudioStreamPlayer2D = $"../../../PowerupMusic"
 @onready var bg_music: AudioStreamPlayer2D = $"../../../BgMusic"
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

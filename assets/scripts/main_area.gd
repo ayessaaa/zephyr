@@ -31,6 +31,8 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var settings: Node2D = $Player/Camera2D/Settings
 @onready var freeze_color_rect: ColorRect = $Player/Camera2D/FreezeColorRect
 @onready var powerup_screen: Node2D = $Player/Camera2D/PowerupScreen
+@onready var pause_screen_animation: AnimationPlayer = $Player/Camera2D/PauseScreen/AnimationPlayer
+@onready var pause_screen: Node2D = $Player/Camera2D/PauseScreen
 
 const AIRPLANE = preload("uid://cwcn3ybunn6nu")
 @onready var airplanes: Node2D = $Player/Camera2D/Airplanes
@@ -48,7 +50,7 @@ var powerup_timer = 0.0
 
 func _ready():
 	#load_word_list("res://words.txt")
-	#bg_music.play()
+	bg_music.play()
 	
 	#sound_button()
 	var custom_cursor_texture = preload("uid://cj2fdlneamenu")
@@ -60,6 +62,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pause_screen.visible = Global.pause
 	menu_buttons.visible = Global.menu
 	rocket_green.visible = Global.menu
 	rocket_red.visible = Global.menu
@@ -73,7 +76,7 @@ func _process(delta: float) -> void:
 	
 	#freeze_color_rect.visible = !Global.menu
 	
-	if !Global.game_running:
+	if !Global.game_running or Global.pause:
 		return
 	
 	
@@ -109,6 +112,10 @@ func _process(delta: float) -> void:
 	
 	timer += delta
 	probability_timer += delta*0.25
+	
+	if Input.is_action_just_pressed("esc"):
+		Global.pause = true
+		pause_screen_animation.play("in")
 	
 	var rocket_timer = 4 if Global.powerup_type == "freeze" else 8
 	

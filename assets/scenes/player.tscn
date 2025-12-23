@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=69 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b45ma70rpfndx" path="res://assets/scenes/settings.tscn" id="4_gmant"]
 [ext_resource type="Texture2D" uid="uid://byi6ihdwhq0l5" path="res://assets/sprites/IMG_2241.PNG" id="5_c6vv5"]
 [ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="5_o5c66"]
+[ext_resource type="PackedScene" uid="uid://chjrqfrig7q8g" path="res://assets/scenes/pause_screen.tscn" id="5_uqo28"]
 [ext_resource type="PackedScene" uid="uid://iydwpujjwdhq" path="res://assets/scenes/areas/text_input.tscn" id="6_0gfpk"]
 [ext_resource type="Texture2D" uid="uid://cdhwrodsxpxkt" path="res://assets/sprites/IMG_2242.PNG" id="6_nh07x"]
 [ext_resource type="Texture2D" uid="uid://dt6jflxnbgmcc" path="res://assets/sprites/logo.png" id="7_00pic"]
@@ -962,6 +963,9 @@ libraries = {
 }
 
 [node name="Settings" parent="Camera2D" instance=ExtResource("4_gmant")]
+
+[node name="PauseScreen" parent="Camera2D" instance=ExtResource("5_uqo28")]
+position = Vector2(-556, -285)
 
 [node name="PowerupScreen" parent="Camera2D" instance=ExtResource("13_omckb")]
 position = Vector2(-767, -221)
