@@ -46,6 +46,7 @@ var tutorial = false
 var rocket_list = []
 var score = 0
 var rocket_speed = 50.0
+var player_speed = 20.0
 var floating = true
 
 var tutorial_number = 1
@@ -75,6 +76,8 @@ var music_volume = 0
 
 var powerup_letters = ""
 var powerup = false
+var powerup_type = ""
+var freeze_timer = 0.0
 
 var game_running = true
 #var bg_main_music_playing = true

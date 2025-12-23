@@ -4,6 +4,8 @@ extends Node2D
 @onready var SFX = AudioServer.get_bus_index("SFX")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("Menu/MenuBg/AnimationPlayer")
+@onready var sfx: HSlider = $SFX
+@onready var music: HSlider = $Music
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +13,8 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(BG_MUSIC, Global.music_volume)
 	await get_tree().create_timer(2.0).timeout 
 	animation_player.play("fade_in")
+	sfx.value = Global.sfx_volume
+	music.value = Global.music_volume
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

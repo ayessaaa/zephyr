@@ -110,6 +110,8 @@ func _process(delta: float) -> void:
 	timer += delta
 	probability_timer += delta*0.25
 	
+	var rocket_timer = 4 if Global.powerup_type == "freeze" else 8
+	
 	if timer >= 4:
 		timer = 0
 		var random_position = randi_range(0, len(rocket_position_x) - 1)

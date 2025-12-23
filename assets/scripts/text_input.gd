@@ -68,7 +68,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		else:
 			print("not found")
 			
-	if new_text.to_lower().find(Global.powerup_letters.to_lower()) and is_real_word(new_text, Global.powerup_letters):
+	if new_text.to_lower().find(Global.powerup_letters.to_lower()) and is_real_word(new_text, Global.powerup_letters) and airplanes_node.get_child_count() > 0:
 		
 		camera.trigger_shake("dark_bg")
 		line_edit.text = ""
@@ -77,6 +77,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		airplanes_node.get_child(0).get_node("Path2D/PathFollow2D/AnimatedSprite2D/Letters").visible = false
 		Global.powerup = true
 		airplanes_node.get_child(0).get_node("CollectSound").play()
+		Global.powerup_letters = ""
 		return
 		
 	animation_player.play("incorrect")

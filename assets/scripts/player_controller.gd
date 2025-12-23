@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var bg_music: AudioStreamPlayer2D = $BgMusic
 @onready var hide_animation: AnimationPlayer = $Camera2D/Menu/HideAnimation
 
-const SPEED = 20.0
+#const SPEED = 20.0
 const JUMP_VELOCITY = -400.0
 
 var last_y = 0
@@ -64,15 +64,15 @@ func _physics_process(delta: float) -> void:
 			else:
 				sprite_2d.play("default")
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * Global.player_speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, Global.player_speed)
 	else:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * Global.player_speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, Global.player_speed)
 		
 		if Input.is_action_just_pressed("ui_left"):
 			animation_player.stop()

@@ -40,6 +40,8 @@ func _on_play_button_pressed() -> void:
 		select_music.play()
 		tutorial_animation.play("fade_in")
 		Global.tutorial = true
+		await get_tree().create_timer(1.0).timeout
+		Global.menu = false
 	else:
 		animation_player.queue("transition_screen")
 		select_music.play()

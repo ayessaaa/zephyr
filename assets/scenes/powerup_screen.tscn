@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ds1kp1hayys43"]
+[gd_scene load_steps=15 format=3 uid="uid://ds1kp1hayys43"]
 
 [ext_resource type="Texture2D" uid="uid://mde244uw1kbp" path="res://assets/sprites/Frame 58.png" id="1_0wtyd"]
 [ext_resource type="Script" uid="uid://bkk1ouhcs403s" path="res://assets/scripts/powerup_screen.gd" id="1_jjo25"]
@@ -6,6 +6,106 @@
 [ext_resource type="Texture2D" uid="uid://x6w14w8wmmtl" path="res://assets/sprites/Subtract.png" id="4_h16qx"]
 [ext_resource type="Texture2D" uid="uid://vg5np0p8k4hg" path="res://assets/sprites/Subtract1.png" id="4_qo1qx"]
 [ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="6_qo1qx"]
+[ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="7_0e7kf"]
+
+[sub_resource type="Animation" id="Animation_3rmp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1186.0001, -60.999992)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(303, 516)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DarkBg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IceSound:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ProgressBar:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(753.5, 224.5)]
+}
 
 [sub_resource type="Animation" id="Animation_qd4k2"]
 resource_name = "in"
@@ -70,20 +170,44 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ProgressBar:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.64, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.64, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="Animation" id="Animation_3rmp6"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_0e7kf"]
+resource_name = "out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TopRight:position")
+tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1186.0001, -60.999992)]
+"values": [Vector2(753.5, 224.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -92,52 +216,65 @@ tracks/1/path = NodePath("BottomLeft:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(303, 516)]
+"values": [Vector2(415.00012, 426.00003), Vector2(415.00012, 426.00003), Vector2(306.00006, 488)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("DarkBg:modulate")
+tracks/2/path = NodePath("TopRight:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(1110.9999, 18), Vector2(1110.9999, 18), Vector2(1244, -76.99999)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/path = NodePath("ProgressBar:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("IceSound:playing")
+tracks/4/path = NodePath("Title:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h16qx"]
 _data = {
 &"RESET": SubResource("Animation_3rmp6"),
-&"in": SubResource("Animation_qd4k2")
+&"in": SubResource("Animation_qd4k2"),
+&"out": SubResource("Animation_0e7kf")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0e7kf"]
@@ -153,6 +290,15 @@ animations = [{
 "name": &"default",
 "speed": 3.0
 }]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvv63"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kxsx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="PowerupScreen" type="Node2D"]
 z_index = 5
@@ -213,5 +359,28 @@ frame_progress = 0.4464395
 [node name="PowerupMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_qo1qx")
 bus = &"BgMusic"
+
+[node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 723.0
+offset_top = 23.0
+offset_right = 915.0
+offset_bottom = 72.0
+scale = Vector2(0.36841166, 0.36841166)
+theme_override_colors/font_color = Color(0.27450982, 0.29411766, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("7_0e7kf")
+theme_override_font_sizes/font_size = 50
+text = "FREEZE"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 555.0
+offset_top = 47.0
+offset_right = 973.0
+offset_bottom = 55.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_cvv63")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3kxsx")
+value = 100.0
+show_percentage = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
