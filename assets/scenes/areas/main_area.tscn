@@ -57,12 +57,13 @@ gravity_scale = -3.495
 script = ExtResource("4_u3uip")
 
 [node name="WhiteBg" type="Sprite2D" parent="Balloon"]
+z_index = 1
 position = Vector2(590, 208)
 scale = Vector2(0.12787092, 0.13255514)
 texture = ExtResource("2_utkpm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Balloon"]
-z_index = 1
+z_index = 2
 position = Vector2(590, 208)
 scale = Vector2(0.13255513, 0.13255514)
 texture = ExtResource("3_6d4cm")
@@ -96,6 +97,7 @@ stream = ExtResource("6_7i2xy")
 bus = &"SFX"
 
 [node name="Rope2" type="RigidBody2D" parent="."]
+z_index = 1
 position = Vector2(-5, 25)
 gravity_scale = -1.0
 
@@ -122,6 +124,7 @@ node_b = NodePath("../../Balloon")
 softness = 1.99
 
 [node name="Rope3" type="RigidBody2D" parent="."]
+z_index = 1
 position = Vector2(-5, 45)
 gravity_scale = -1.0
 
@@ -148,6 +151,7 @@ node_b = NodePath("../../Rope2")
 softness = 1.99
 
 [node name="Rope4" type="RigidBody2D" parent="."]
+z_index = 1
 position = Vector2(-5, 65)
 gravity_scale = -1.0
 
@@ -174,6 +178,7 @@ node_b = NodePath("../../Rope3")
 softness = 1.99
 
 [node name="Rope5" type="RigidBody2D" parent="."]
+z_index = 1
 position = Vector2(-5, 85)
 gravity_scale = -1.0
 

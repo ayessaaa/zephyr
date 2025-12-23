@@ -31,6 +31,8 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	if !Global.game_running:
+		return
 	if Global.gameover:
 		queue_free()
 	if show_score:

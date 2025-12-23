@@ -29,6 +29,8 @@ const ROCKET_GREEN = preload("res://assets/scenes/areas/rocket_green.tscn")
 @onready var menu_bg_animation: AnimationPlayer = $Player/Camera2D/Menu/MenuBg/AnimationPlayer
 @onready var gameover: Node2D = $Player/Camera2D/Gameover
 @onready var settings: Node2D = $Player/Camera2D/Settings
+@onready var freeze_color_rect: ColorRect = $Player/Camera2D/FreezeColorRect
+@onready var powerup_screen: Node2D = $Player/Camera2D/PowerupScreen
 
 const AIRPLANE = preload("uid://cwcn3ybunn6nu")
 @onready var airplanes: Node2D = $Player/Camera2D/Airplanes
@@ -66,7 +68,13 @@ func _process(delta: float) -> void:
 	subtitle.visible = Global.menu
 	gameover.visible = Global.gameover
 	settings.visible = Global.settings
+	powerup_screen.visible = Global.powerup
+	#bg_music.playing = Global.bg_main_music_playing
 	
+	#freeze_color_rect.visible = !Global.menu
+	
+	if !Global.game_running:
+		return
 	
 	
 	if Global.restart:

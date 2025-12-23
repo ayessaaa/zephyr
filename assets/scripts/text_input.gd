@@ -23,10 +23,13 @@ var score = 0
 	#label.text = new_text
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
+	if !Global.game_running:
+		return
 	if Global.gameover:
 		return
 	#label.text = new_text
 	for rocket in Global.rocket_list:
+		
 		#if rocket.is_free():
 			#
 		if not new_text.to_lower().find(rocket.pattern.to_lower()) != -1:
@@ -67,13 +70,13 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			
 	if new_text.to_lower().find(Global.powerup_letters.to_lower()) and is_real_word(new_text, Global.powerup_letters):
 		
-		camera.trigger_shake("yellow_bg")
+		camera.trigger_shake("dark_bg")
 		line_edit.text = ""
 		#airplane_sprite.play("disappear")
 		airplanes_node.get_child(0).get_node("Path2D/PathFollow2D/AnimatedSprite2D").play("disappear")
 		airplanes_node.get_child(0).get_node("Path2D/PathFollow2D/AnimatedSprite2D/Letters").visible = false
 		Global.powerup = true
-		
+		airplanes_node.get_child(0).get_node("CollectSound").play()
 		return
 		
 	animation_player.play("incorrect")

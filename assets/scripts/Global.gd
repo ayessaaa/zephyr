@@ -75,3 +75,6 @@ var music_volume = 0
 
 var powerup_letters = ""
 var powerup = false
+
+var game_running = true
+#var bg_main_music_playing = true

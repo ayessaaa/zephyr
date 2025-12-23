@@ -1,0 +1,217 @@
+[gd_scene load_steps=11 format=3 uid="uid://ds1kp1hayys43"]
+
+[ext_resource type="Texture2D" uid="uid://mde244uw1kbp" path="res://assets/sprites/Frame 58.png" id="1_0wtyd"]
+[ext_resource type="Script" uid="uid://bkk1ouhcs403s" path="res://assets/scripts/powerup_screen.gd" id="1_jjo25"]
+[ext_resource type="AudioStream" uid="uid://mma5s1s6d1y7" path="res://assets/audio/iced-magic-6-378606 (1).mp3" id="3_3rmp6"]
+[ext_resource type="Texture2D" uid="uid://x6w14w8wmmtl" path="res://assets/sprites/Subtract.png" id="4_h16qx"]
+[ext_resource type="Texture2D" uid="uid://vg5np0p8k4hg" path="res://assets/sprites/Subtract1.png" id="4_qo1qx"]
+[ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="6_qo1qx"]
+
+[sub_resource type="Animation" id="Animation_qd4k2"]
+resource_name = "in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopRight:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6999999, 1.6999999, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1186.0001, -60.999992), Vector2(1107.9999, 22), Vector2(1110.9999, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomLeft:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6999999, 1.6999999, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(303, 516), Vector2(418.0001, 422.00003), Vector2(415.00012, 426.00003)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DarkBg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 2.6333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IceSound:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5333333, 1.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_3rmp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1186.0001, -60.999992)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(303, 516)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DarkBg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IceSound:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h16qx"]
+_data = {
+&"RESET": SubResource("Animation_3rmp6"),
+&"in": SubResource("Animation_qd4k2")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e7kf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qo1qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h16qx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="PowerupScreen" type="Node2D"]
+z_index = 5
+script = ExtResource("1_jjo25")
+
+[node name="TopRight" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(1186.0001, -60.999992)
+rotation = 0.14175609
+scale = Vector2(0.31911123, 0.31911123)
+texture = ExtResource("1_0wtyd")
+
+[node name="BottomLeft" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(303, 516)
+rotation = 0.14175609
+scale = Vector2(0.31911123, 0.31911123)
+texture = ExtResource("1_0wtyd")
+flip_h = true
+flip_v = true
+
+[node name="WhiteBg" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+offset_left = 138.0
+offset_top = -158.0
+offset_right = 1333.0
+offset_bottom = 476.0
+
+[node name="DarkBg" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+offset_left = 69.0
+offset_top = -79.0
+offset_right = 1264.0
+offset_bottom = 555.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h16qx")
+}
+
+[node name="IceSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3rmp6")
+volume_db = -1.0
+bus = &"SFX"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(753.5, 224.5)
+scale = Vector2(0.69546247, 0.71273285)
+sprite_frames = SubResource("SpriteFrames_0e7kf")
+autoplay = "default"
+frame_progress = 0.4464395
+
+[node name="PowerupMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qo1qx")
+bus = &"BgMusic"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

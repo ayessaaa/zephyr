@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mma5s1s6d1y7"
+path="res://.godot/imported/iced-magic-6-378606 (1).mp3-19169f379bbb34aaf9d53f19c7fdc1af.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/iced-magic-6-378606 (1).mp3"
+dest_files=["res://.godot/imported/iced-magic-6-378606 (1).mp3-19169f379bbb34aaf9d53f19c7fdc1af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
