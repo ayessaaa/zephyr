@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgtijnky3h5ho"]
+[gd_scene load_steps=17 format=3 uid="uid://dgtijnky3h5ho"]
 
 [ext_resource type="Script" uid="uid://im3pqah35s0s" path="res://assets/scripts/rocket_red.gd" id="1_4jufp"]
 [ext_resource type="Texture2D" uid="uid://c8m8ct5gqpkww" path="res://assets/sprites/IMG_2228.PNG" id="2_bicmf"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://d2vm1xds80ojh" path="res://assets/sprites/IMG_2235.PNG" id="8_w20ik"]
 [ext_resource type="Texture2D" uid="uid://b3wmd3clef6j8" path="res://assets/sprites/IMG_2236.PNG" id="9_m6ijb"]
 [ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="10_xrf2s"]
+[ext_resource type="Texture2D" uid="uid://bi5ja73wmi8wg" path="res://assets/sprites/IMG_2355.PNG" id="11_jygwb"]
 [ext_resource type="AudioStream" uid="uid://ctg80vo0n3uvu" path="res://assets/audio/firewood-burning-sound-179862.mp3" id="12_alt2i"]
+[ext_resource type="Texture2D" uid="uid://ckfowxfp6n2nj" path="res://assets/sprites/IMG_2356.PNG" id="12_e5yjn"]
 [ext_resource type="AudioStream" uid="uid://cc2sf2d65g32d" path="res://assets/audio/explosion-9-340460.mp3" id="13_yf5k1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ka46r"]
@@ -52,6 +54,17 @@ animations = [{
 "loop": false,
 "name": &"explode",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_jygwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e5yjn")
+}],
+"loop": true,
+"name": &"freeze",
+"speed": 5.0
 }]
 
 [node name="RocketRed" type="Area2D"]
@@ -64,6 +77,7 @@ script = ExtResource("1_4jufp")
 z_index = 1
 scale = Vector2(0.886008, 0.886008)
 sprite_frames = SubResource("SpriteFrames_ka46r")
+animation = &"freeze"
 autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

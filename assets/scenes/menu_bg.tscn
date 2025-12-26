@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tmlcdud6k2cr"]
+[gd_scene load_steps=15 format=3 uid="uid://tmlcdud6k2cr"]
 
 [ext_resource type="Script" uid="uid://beh7h47vgh6hc" path="res://assets/sprites/menu_bg.gd" id="1_d8xo4"]
 [ext_resource type="Texture2D" uid="uid://s5tvi0kpditd" path="res://assets/sprites/Frame 14.png" id="2_47r05"]
@@ -334,6 +334,58 @@ tracks/3/keys = {
 "values": [Vector2(1400.0001, 648), Vector2(1400.0001, 863.2798)]
 }
 
+[sub_resource type="Animation" id="Animation_tgy02"]
+resource_name = "transition_screen_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parallax2D/Top1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400, -461.99994), Vector2(1400, 1139.1313)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parallax2D2/Top2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1392, -786.99994), Vector2(1392, 814.1314)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parallax2D2/Bottom2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1412.0332, 903.2799)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parallax2D/Bottom1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1412.0333, 823.2798)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_76354"]
 _data = {
 &"RESET": SubResource("Animation_03y8d"),
@@ -343,7 +395,8 @@ _data = {
 &"outside_screen": SubResource("Animation_e8okb"),
 &"transition": SubResource("Animation_62hxs"),
 &"transition_out": SubResource("Animation_76354"),
-&"transition_screen": SubResource("Animation_d8xo4")
+&"transition_screen": SubResource("Animation_d8xo4"),
+&"transition_screen_2": SubResource("Animation_tgy02")
 }
 
 [node name="MenuBg" type="Node2D"]

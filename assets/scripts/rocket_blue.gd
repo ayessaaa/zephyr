@@ -50,6 +50,11 @@ func _process(delta: float) -> void:
 	
 	var direction = balloon.global_position - global_position
 	rotation = direction.angle() + PI
+	
+	if Global.powerup_type == "freeze":
+		sprite_2d.play("freeze")
+	else:
+		sprite_2d.play("default")
 
 
 func _on_sprite_2d_animation_finished() -> void:

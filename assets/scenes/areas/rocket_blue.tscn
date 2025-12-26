@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sygm6x2k7e7m"]
+[gd_scene load_steps=17 format=3 uid="uid://sygm6x2k7e7m"]
 
 [ext_resource type="Script" uid="uid://dbwwjrvs60j2s" path="res://assets/scripts/rocket_blue.gd" id="1_rjx5b"]
 [ext_resource type="Texture2D" uid="uid://bq1oa8wnhtdjt" path="res://assets/sprites/IMG_2229.PNG" id="2_wvmm3"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://d2vm1xds80ojh" path="res://assets/sprites/IMG_2235.PNG" id="8_12v2l"]
 [ext_resource type="Texture2D" uid="uid://b3wmd3clef6j8" path="res://assets/sprites/IMG_2236.PNG" id="9_077xa"]
 [ext_resource type="Texture2D" uid="uid://rwt4p2fx4ngj" path="res://assets/sprites/IMG_2237.PNG" id="10_p0lgi"]
+[ext_resource type="Texture2D" uid="uid://3525yd4isqx3" path="res://assets/sprites/IMG_2357.PNG" id="11_dtllp"]
+[ext_resource type="Texture2D" uid="uid://dqhxrtxqopk7d" path="res://assets/sprites/IMG_2358.PNG" id="12_t0ip7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dx7jq"]
 animations = [{
@@ -52,6 +54,17 @@ animations = [{
 "loop": false,
 "name": &"explode",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dtllp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t0ip7")
+}],
+"loop": true,
+"name": &"freeze",
+"speed": 5.0
 }]
 
 [node name="RocketBlue" type="Area2D"]
@@ -64,10 +77,8 @@ script = ExtResource("1_rjx5b")
 z_index = 1
 scale = Vector2(0.886, 0.886)
 sprite_frames = SubResource("SpriteFrames_dx7jq")
-animation = &"explode"
+animation = &"freeze"
 autoplay = "default"
-frame = 6
-frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(25.748154, 8.582726)

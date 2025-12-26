@@ -23,10 +23,10 @@ func _on_balloon_area_area_entered(area: Area2D) -> void:
 		Global.rocket_list.erase(area)
 		area.get_node("Sprite2D").play("explode")
 		
-		rope_2.queue_free()
-		rope_3.queue_free()
-		rope_4.queue_free()
-		rope_5.queue_free()
+		#rope_2.queue_free()
+		#rope_3.queue_free()
+		#rope_4.queue_free()
+		#rope_5.queue_free()
 		
 		Global.floating = false
 		Global.score_fadeout = true

@@ -76,7 +76,12 @@ func _process(delta: float) -> void:
 	
 	#freeze_color_rect.visible = !Global.menu
 	
-	if !Global.game_running or Global.pause:
+	if !Global.game_running:
+		return
+		
+	if Global.pause:
+		if Input.is_action_just_pressed("esc"):
+			pause_screen_animation.play("out")
 		return
 	
 	
