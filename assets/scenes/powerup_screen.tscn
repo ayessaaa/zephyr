@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ds1kp1hayys43"]
+[gd_scene load_steps=15 format=3 uid="uid://ds1kp1hayys43"]
 
 [ext_resource type="Texture2D" uid="uid://mde244uw1kbp" path="res://assets/sprites/Frame 58.png" id="1_0wtyd"]
 [ext_resource type="Script" uid="uid://bkk1ouhcs403s" path="res://assets/scripts/powerup_screen.gd" id="1_jjo25"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://x6w14w8wmmtl" path="res://assets/sprites/Subtract.png" id="4_h16qx"]
 [ext_resource type="Texture2D" uid="uid://vg5np0p8k4hg" path="res://assets/sprites/Subtract1.png" id="4_qo1qx"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="7_0e7kf"]
+[ext_resource type="Texture2D" uid="uid://docdow3n0hi4d" path="res://assets/sprites/Frame 66.png" id="7_cvv63"]
 
 [sub_resource type="Animation" id="Animation_3rmp6"]
 length = 0.001
@@ -105,6 +106,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(753.5, 224.5)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("FreezeTimerBg:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(757, -77)]
+}
 
 [sub_resource type="Animation" id="Animation_qd4k2"]
 resource_name = "in"
@@ -193,6 +206,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("FreezeTimerBg:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.18, 2.35, 2.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(757, -77), Vector2(757.00006, 67), Vector2(757.00006, 65)]
+}
 
 [sub_resource type="Animation" id="Animation_0e7kf"]
 resource_name = "out"
@@ -239,7 +264,7 @@ tracks/3/path = NodePath("ProgressBar:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25),
+"times": PackedFloat32Array(0.01666671, 0.2666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -268,6 +293,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FreezeTimerBg:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 0.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(757.00006, 61), Vector2(757.00006, -28)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h16qx"]
 _data = {
@@ -290,10 +327,15 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvv63"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgovb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kxsx"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.3019608, 0.7019608, 0.77254903, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -356,6 +398,7 @@ autoplay = "default"
 frame_progress = 0.4464395
 
 [node name="Title" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 723.0
 offset_top = 23.0
@@ -367,13 +410,18 @@ theme_override_fonts/font = ExtResource("7_0e7kf")
 theme_override_font_sizes/font_size = 50
 text = "FREEZE"
 
+[node name="FreezeTimerBg" type="Sprite2D" parent="."]
+position = Vector2(757, -77)
+scale = Vector2(0.42929927, 0.42929927)
+texture = ExtResource("7_cvv63")
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 555.0
-offset_top = 47.0
-offset_right = 973.0
-offset_bottom = 55.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_cvv63")
+offset_left = 546.0
+offset_top = 31.0
+offset_right = 944.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_cgovb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3kxsx")
 value = 100.0
 show_percentage = false

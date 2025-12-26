@@ -1,20 +1,71 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=26 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
-[ext_resource type="Texture2D" uid="uid://03h3a0dd2eev" path="res://assets/sprites/IMG_2189.PNG" id="2_utkpm"]
 [ext_resource type="PackedScene" uid="uid://dvaotgkjbc0pm" path="res://assets/scenes/player.tscn" id="2_x40lm"]
-[ext_resource type="Texture2D" uid="uid://5sf0rb158ygs" path="res://assets/sprites/IMG_2193.PNG" id="3_6d4cm"]
 [ext_resource type="Texture2D" uid="uid://co610mowxe521" path="res://assets/sprites/IMG_2197.PNG" id="3_y61u2"]
 [ext_resource type="Texture2D" uid="uid://dpnte6mqwblw0" path="res://assets/sprites/IMG_2196.PNG" id="4_8hxss"]
+[ext_resource type="Texture2D" uid="uid://bb2erdtapeeac" path="res://assets/sprites/IMG_2382.PNG" id="4_euksj"]
 [ext_resource type="Script" uid="uid://dh4lj7ygmt5si" path="res://assets/scripts/balloon.gd" id="4_u3uip"]
+[ext_resource type="Texture2D" uid="uid://dhb0cck5kfb1a" path="res://assets/sprites/IMG_2380.PNG" id="5_mt1ir"]
 [ext_resource type="AudioStream" uid="uid://bd22kmq8vq1ht" path="res://assets/audio/balloon-burst-383750.mp3" id="6_7i2xy"]
+[ext_resource type="Texture2D" uid="uid://cbc7yf3uc7xxk" path="res://assets/sprites/IMG_2381.PNG" id="6_1404o"]
 [ext_resource type="PackedScene" uid="uid://byurh1y0yj7o3" path="res://assets/scenes/cloud_1.tscn" id="7_8hxss"]
+[ext_resource type="Texture2D" uid="uid://bc1wnsncfrsfp" path="res://assets/sprites/IMG_2377.PNG" id="7_qhged"]
+[ext_resource type="Texture2D" uid="uid://2af4ca5gvi2x" path="res://assets/sprites/IMG_2378.PNG" id="8_g0b8i"]
 [ext_resource type="PackedScene" uid="uid://dxw88obwdo4vq" path="res://assets/scenes/cloud_2.tscn" id="8_x0hsm"]
 [ext_resource type="PackedScene" uid="uid://djxarqc2kffhx" path="res://assets/scenes/cloud_3.tscn" id="9_eblat"]
+[ext_resource type="Texture2D" uid="uid://ce8u30htrvi8k" path="res://assets/sprites/IMG_2379.PNG" id="9_qfk6f"]
 [ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="13_7i2xy"]
 [ext_resource type="AudioStream" uid="uid://b3buy6hk2u1un" path="res://assets/audio/meow1.mp3" id="13_r6dgb"]
 [ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="15_7swdg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5ag8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_euksj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mt1ir")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgwcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1404o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qhged")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g0b8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qfk6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mt1ir")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y61u2"]
 radius = 26.019224
@@ -57,17 +108,19 @@ mass = 0.132
 gravity_scale = -3.495
 script = ExtResource("4_u3uip")
 
-[node name="WhiteBg" type="Sprite2D" parent="Balloon"]
+[node name="WhiteBg" type="AnimatedSprite2D" parent="Balloon"]
 z_index = 1
-position = Vector2(590, 208)
-scale = Vector2(0.12787092, 0.13255514)
-texture = ExtResource("2_utkpm")
+position = Vector2(590.22906, 205)
+scale = Vector2(0.13060212, 0.13255514)
+sprite_frames = SubResource("SpriteFrames_o5ag8")
+autoplay = "default"
 
-[node name="Sprite2D" type="Sprite2D" parent="Balloon"]
+[node name="BalloonSprite2D" type="AnimatedSprite2D" parent="Balloon"]
 z_index = 2
-position = Vector2(590, 208)
+position = Vector2(590.00006, 205.00002)
 scale = Vector2(0.13255513, 0.13255514)
-texture = ExtResource("3_6d4cm")
+sprite_frames = SubResource("SpriteFrames_bgwcf")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balloon"]
 position = Vector2(590, 203)

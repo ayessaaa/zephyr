@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
-[ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="2_8sknh"]
-[ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="3_0gfpk"]
 [ext_resource type="PackedScene" uid="uid://tmlcdud6k2cr" path="res://assets/scenes/menu_bg.tscn" id="3_60g6h"]
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="3_c6vv5"]
 [ext_resource type="PackedScene" uid="uid://x0y3qhsb0bum" path="res://assets/scenes/menu_buttons.tscn" id="3_hrrj1"]
@@ -41,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://cttp8ixcxq31h" path="res://assets/sprites/IMG_2368.PNG" id="36_ike5y"]
 [ext_resource type="Texture2D" uid="uid://csi7i8xx1sh5n" path="res://assets/sprites/IMG_2371.PNG" id="37_p0j5o"]
 [ext_resource type="Texture2D" uid="uid://6yhufnd2p40b" path="res://assets/sprites/IMG_2372.PNG" id="38_ingmm"]
+[ext_resource type="Texture2D" uid="uid://ci4vgyqen6o6b" path="res://assets/sprites/IMG_2373.PNG" id="39_jd8hh"]
+[ext_resource type="Texture2D" uid="uid://cwkq7j2buqygl" path="res://assets/sprites/IMG_2374.PNG" id="40_yitjv"]
 [ext_resource type="Texture2D" uid="uid://bfaqu6cntkr8y" path="res://assets/sprites/IMG_2365.PNG" id="41_w5a74"]
 [ext_resource type="Texture2D" uid="uid://bd5qmnqpweodi" path="res://assets/sprites/IMG_2366.PNG" id="42_mpwc7"]
 
@@ -963,10 +963,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8sknh")
+"texture": ExtResource("39_jd8hh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_0gfpk")
+"texture": ExtResource("40_yitjv")
 }],
 "loop": true,
 "name": &"default",
@@ -1121,6 +1121,7 @@ texture_hover = ExtResource("17_gmant")
 script = ExtResource("19_gmant")
 
 [node name="Score" type="Area2D" parent="Camera2D"]
+z_index = 6
 script = ExtResource("16_0e2pd")
 
 [node name="ScoreSprite" type="Sprite2D" parent="Camera2D/Score"]
@@ -1172,7 +1173,7 @@ scale = Vector2(0.10440334, 0.104403354)
 sprite_frames = SubResource("SpriteFrames_8sknh")
 animation = &"freeze"
 autoplay = "default"
-frame_progress = 0.48730102
+frame_progress = 0.15835711
 
 [node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
 z_index = 4
@@ -1180,8 +1181,8 @@ z_as_relative = false
 position = Vector2(1.5258789e-05, 0)
 scale = Vector2(0.9961368, 0.99613655)
 sprite_frames = SubResource("SpriteFrames_tc801")
-animation = &"freeze"
 autoplay = "default"
+frame_progress = 0.45785546
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 75)

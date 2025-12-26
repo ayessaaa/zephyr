@@ -3,7 +3,7 @@ extends Node2D
 var english_words := {}
 
 @onready var bg_music: AudioStreamPlayer2D = $BgMusic
-@onready var score: Area2D = $Score
+#@onready var score: Area2D = $Score
 @onready var menu_buttons: Node2D = $Player/Camera2D/Menu/MenuButtons
 @onready var play_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/PlayButton
 @onready var style_button: TextureButton = $Player/Camera2D/Menu/MenuButtons/StyleButton
@@ -12,6 +12,7 @@ var english_words := {}
 @onready var text_input_animation: AnimationPlayer = $Player/TextInput/AnimationPlayer
 @onready var text_input: Node2D = $Player/TextInput
 @onready var line_edit: LineEdit = $Player/TextInput/LineEdit
+@onready var score: Area2D = $Player/Camera2D/Score
 
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
 const ROCKET_BLUE = preload("res://assets/scenes/areas/rocket_blue.tscn")
@@ -98,7 +99,7 @@ func _process(delta: float) -> void:
 	if !Global.playing:
 		return
 		
-	#score.visible = !Global.menu and !Global.tutorial
+	score.visible = !Global.menu and !Global.tutorial
 	line_edit.visible = Global.line_edit_visible 
 	play_button.disabled = !(Global.menu or Global.tutorial)
 	style_button.disabled = !(Global.menu or Global.tutorial)
