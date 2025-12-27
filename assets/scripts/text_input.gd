@@ -14,6 +14,8 @@ extends Node2D
 @onready var explosion_sound: AudioStreamPlayer2D = $ExplosionSound
 @onready var airplanes_node = get_parent().get_node("Camera2D/Airplanes")
 
+var multiplier = 1
+
 var score = 0
 
 #func _ready() -> void:
@@ -45,12 +47,15 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 			rocket.show_score = true
 			correct_sound.play()
 			
+			if Global.powerup_type == "double":
+				multiplier = 2
+			
 			if rocket.color == "red":
-				score = len(new_text)*27
+				score = len(new_text)*27*multiplier
 			elif rocket.color == "green":
-				score = len(new_text)*48
+				score = len(new_text)*48*multiplier
 			else:
-				score = len(new_text)*69
+				score = len(new_text)*69*multiplier
 				
 			rocket.score = score
 			Global.score += score

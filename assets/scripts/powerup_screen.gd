@@ -67,7 +67,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		bg_music.stop()
 		powerup_music.play()
 		Global.game_running = true
-		Global.double_timer = 20.0
+		Global.double_timer = 10.0
 	elif anim_name == "out":
 		bg_music.play()
 		powerup_music.stop()

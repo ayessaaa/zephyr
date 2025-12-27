@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 		return
 	if Global.powerup:
 		return
+	if Global.gameover:
+		return
 	progress_ratio += delta * speed
 	if progress_ratio == 1.0:
 		queue_free()
