@@ -19,6 +19,10 @@ var sprite_float = false
 	"augh", 
 ]
 
+var powerups = ["freeze", "double"]
+@export var powerup_type = ""
+var type = ""
+
 var letter_sequence = ""
 @onready var letters: Label = $Path2D/PathFollow2D/AnimatedSprite2D/Letters
 
@@ -28,6 +32,8 @@ func _ready() -> void:
 	var random_x = randi_range(0, len(letter_sequences)-1)
 	letter_sequence = letter_sequences[random_x]
 	letters.text = letter_sequence.to_upper()
+	type = powerups[randi_range(0, len(powerups)-1)]
+	print(type)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,13 +44,18 @@ func _process(delta: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "disappear":
-		#queue_free()
-		animated_sprite_2d.play("snow")
-		animation_player.play("disappear")
+		Global.powerup_type = type
 		sprite_float = true
 		Global.game_running = false
-		powerup_screen_animation.play("in")
-		
+		if Global.powerup_type == "freeze":
+			#queue_free()
+			animated_sprite_2d.play("snow")
+			animation_player.play("disappear")
+			powerup_screen_animation.play("freeze_in")
+		elif Global.powerup_type == "double":
+			animated_sprite_2d.play("snow")
+			animation_player.play("disappear")
+			powerup_screen_animation.play("double_in")
 
 #
 #func _on_animated_sprite_2d_animation_changed() -> void:

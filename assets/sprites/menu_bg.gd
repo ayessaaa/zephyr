@@ -34,8 +34,16 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.rocket_list = []
 		Global.score = 0
 		Global.rocket_speed = 50.0
+		#Global.playing = false
 		#menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
+	if anim_name == "transition_screen_2":
+		Global.gameover = false
+		Global.restart = true
+		Global.floating = true
+		Global.playing = false
+		Global.rocket_list = []
+		Global.score = 0
 	if anim_name == "transition" and Global.settings:
 		Global.menu = false
 	#if anim_name == "transition_screen" and Global.menu

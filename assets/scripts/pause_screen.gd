@@ -26,7 +26,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_menu_button_pressed() -> void:
 	bg_animation.play("transition_screen_2")
-	bg_animation.queue("inside_screen")
+	#bg_animation.queue("inside_screen")
 	#Global.pause = false
 	#bg_animation.queue("inside_screen")
 	Global.gameover = false

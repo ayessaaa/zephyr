@@ -152,9 +152,9 @@ func _process(delta: float) -> void:
 		
 	powerup_timer += delta
 	
-	if powerup_timer > 5:
+	if powerup_timer > 5 and airplanes.get_child_count() == 0 and !Global.powerup:
 		var random_x = randi_range(0, 10)
-		powerup_timer = -1000
+		powerup_timer = 0
 		if random_x > 0 and Global.powerup_letters == "":
 			spawn_airplane()
 			print("airplane")

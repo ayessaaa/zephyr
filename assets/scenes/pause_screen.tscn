@@ -319,6 +319,7 @@ _data = {
 }
 
 [node name="PauseScreen" type="Node2D"]
+z_index = 7
 script = ExtResource("1_wxheu")
 
 [node name="DarkBg" type="ColorRect" parent="."]
