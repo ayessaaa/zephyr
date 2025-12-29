@@ -66,7 +66,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pause_screen.visible = Global.pause
-	menu_buttons.visible = Global.menu
+	menu_buttons.visible = Global.menu and !Global.hide_buttons
 	rocket_green.visible = Global.menu
 	rocket_red.visible = Global.menu
 	rocket_blue.visible = Global.menu

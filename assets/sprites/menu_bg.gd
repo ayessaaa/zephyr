@@ -46,6 +46,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.score = 0
 	if anim_name == "transition" and Global.settings:
 		Global.menu = false
+	if anim_name == "transition" and Global.style:
+		Global.hide_buttons = true
 	#if anim_name == "transition_screen" and Global.menu
 		
 	
