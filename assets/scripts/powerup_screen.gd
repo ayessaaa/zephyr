@@ -46,9 +46,23 @@ func _process(delta: float) -> void:
 		
 		if Global.game_running:
 			Global.double_timer -= delta
-			progress_bar.value = Global.double_timer / 20 * 100
+			progress_bar.value = Global.double_timer / 15 * 100
 			
 			if Global.double_timer <= 0:
+				animation_player.play("out")
+				
+	elif Global.powerup_type == "shield":
+		top_right.play("shield")
+		bottom_left.play("shield")
+		sprite_2d.play("shield")
+		timer_bg.play("shield")
+		progress_animation_player.play("shield")
+		
+		if Global.game_running:
+			Global.shield_timer -= delta
+			progress_bar.value = Global.shield_timer / 100 * 100
+			
+			if Global.shield_timer <= 0:
 				animation_player.play("out")
 
 
@@ -67,14 +81,24 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		bg_music.stop()
 		powerup_music.play()
 		Global.game_running = true
-		Global.double_timer = 10.0
+		Global.double_timer = 15.0
+	elif anim_name == "shield_in":
+		bg_music.stop()
+		powerup_music.play()
+		Global.game_running = true
+		Global.shield_timer = 100.0
+		cat_sprite_2d.play("shield")
+		cat_white_bg.play("shield")
 	elif anim_name == "out":
+		if Global.powerup_type == "freeze":
+			Global.rocket_speed *= 2
+			Global.player_speed *= 2
 		bg_music.play()
 		powerup_music.stop()
 		Global.powerup = false
 		Global.powerup_type = ""
-		Global.rocket_speed *= 2
-		Global.player_speed *= 2
+		
 		cat_sprite_2d.play("default")
 		cat_white_bg.play("default")
+		
 	##Global.bg_main_music_playing = false

@@ -79,6 +79,7 @@ var powerup = false
 var powerup_type = ""
 var freeze_timer = 0.0
 var double_timer = 0.0
+var shield_timer = 0.0
 
 var game_running = true
 var pause = false

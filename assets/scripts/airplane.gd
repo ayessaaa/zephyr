@@ -19,7 +19,7 @@ var sprite_float = false
 	"augh", 
 ]
 
-var powerups = [ "double"]
+var powerups = [ "shield"]
 @export var powerup_type = ""
 var type = ""
 
@@ -53,9 +53,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			animation_player.play("disappear")
 			powerup_screen_animation.play("freeze_in")
 		elif Global.powerup_type == "double":
-			animated_sprite_2d.play("snow")
+			animated_sprite_2d.play("double")
 			animation_player.play("disappear")
 			powerup_screen_animation.play("double_in")
+		elif Global.powerup_type == "shield":
+			animated_sprite_2d.play("shield")
+			animation_player.play("disappear")
+			powerup_screen_animation.play("shield_in")
 
 #
 #func _on_animated_sprite_2d_animation_changed() -> void:

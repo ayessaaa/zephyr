@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cwcn3ybunn6nu"]
+[gd_scene load_steps=33 format=3 uid="uid://cwcn3ybunn6nu"]
 
 [ext_resource type="Script" uid="uid://dyho1nt1wdk0j" path="res://assets/scripts/airplane.gd" id="1_8ih4i"]
 [ext_resource type="Texture2D" uid="uid://dkoqytocb5mur" path="res://assets/sprites/IMG_2289.PNG" id="1_876u6"]
@@ -16,11 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://kuyvxej4n7ky" path="res://assets/sprites/IMG_2327.PNG" id="12_olblg"]
 [ext_resource type="Texture2D" uid="uid://clrvj775frl8j" path="res://assets/sprites/IMG_2328.PNG" id="13_3alcy"]
 [ext_resource type="Texture2D" uid="uid://llghpujkjefj" path="res://assets/sprites/IMG_2299.PNG" id="14_olblg"]
+[ext_resource type="Texture2D" uid="uid://bp3bmnm53mg3d" path="res://assets/sprites/IMG_2386.PNG" id="14_qqxye"]
 [ext_resource type="Texture2D" uid="uid://cue4ow0pwe7qv" path="res://assets/sprites/IMG_2300.PNG" id="15_3alcy"]
+[ext_resource type="Texture2D" uid="uid://c7dw0ohd8nvl7" path="res://assets/sprites/IMG_2387.PNG" id="15_fvtf8"]
+[ext_resource type="Texture2D" uid="uid://byj2kr6xxfd7h" path="res://assets/sprites/IMG_2388.PNG" id="16_2ahsa"]
 [ext_resource type="AudioStream" uid="uid://scgsmflky3ag" path="res://assets/audio/classic-game-action-positive-30-224562.mp3" id="16_3a003"]
 [ext_resource type="Texture2D" uid="uid://bfs0oejeik203" path="res://assets/sprites/IMG_2301.PNG" id="16_bc4l0"]
+[ext_resource type="Texture2D" uid="uid://b5vgj2f852s4e" path="res://assets/sprites/IMG_2389.PNG" id="17_t1y71"]
 [ext_resource type="Texture2D" uid="uid://b6yganar4h4lw" path="res://assets/sprites/IMG_2302.PNG" id="17_xdn84"]
 [ext_resource type="Texture2D" uid="uid://cph7il5ge3xsv" path="res://assets/sprites/IMG_2303.PNG" id="18_867qk"]
+[ext_resource type="Texture2D" uid="uid://bvyabltsnbjdf" path="res://assets/sprites/IMG_2390.PNG" id="18_r1pcd"]
+[ext_resource type="Texture2D" uid="uid://bsier0nx1i2eq" path="res://assets/sprites/IMG_2391.PNG" id="19_5hc6b"]
 
 [sub_resource type="Curve2D" id="Curve2D_r2c0o"]
 _data = {
@@ -70,6 +76,34 @@ animations = [{
 "name": &"disappear",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"double",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qqxye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fvtf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2ahsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t1y71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_r1pcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5hc6b")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("14_olblg")
@@ -90,6 +124,33 @@ animations = [{
 "name": &"snow",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_3alcy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_olblg"]
 resource_name = "disappear"
@@ -117,33 +178,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.28, 1.28), Vector2(1.25, 1.25)]
-}
-
-[sub_resource type="Animation" id="Animation_3alcy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bc4l0"]
@@ -178,10 +212,9 @@ z_index = 6
 position = Vector2(-36.999268, -9.80072)
 rotation = 2.1762776
 sprite_frames = SubResource("SpriteFrames_r2c0o")
-animation = &"snow"
+animation = &"shield"
 autoplay = "default"
-frame = 4
-frame_progress = 1.0
+frame_progress = 0.32118222
 
 [node name="Letters" type="Label" parent="Path2D/PathFollow2D/AnimatedSprite2D"]
 offset_left = -186.5039

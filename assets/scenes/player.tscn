@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=83 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
@@ -40,9 +40,13 @@
 [ext_resource type="Texture2D" uid="uid://csi7i8xx1sh5n" path="res://assets/sprites/IMG_2371.PNG" id="37_p0j5o"]
 [ext_resource type="Texture2D" uid="uid://6yhufnd2p40b" path="res://assets/sprites/IMG_2372.PNG" id="38_ingmm"]
 [ext_resource type="Texture2D" uid="uid://ci4vgyqen6o6b" path="res://assets/sprites/IMG_2373.PNG" id="39_jd8hh"]
+[ext_resource type="Texture2D" uid="uid://b3f0wa86onro0" path="res://assets/sprites/IMG_2399.PNG" id="39_p0j5o"]
+[ext_resource type="Texture2D" uid="uid://djoib5fh8fgpm" path="res://assets/sprites/IMG_2403.PNG" id="40_ingmm"]
 [ext_resource type="Texture2D" uid="uid://cwkq7j2buqygl" path="res://assets/sprites/IMG_2374.PNG" id="40_yitjv"]
 [ext_resource type="Texture2D" uid="uid://bfaqu6cntkr8y" path="res://assets/sprites/IMG_2365.PNG" id="41_w5a74"]
 [ext_resource type="Texture2D" uid="uid://bd5qmnqpweodi" path="res://assets/sprites/IMG_2366.PNG" id="42_mpwc7"]
+[ext_resource type="Texture2D" uid="uid://daems26xjl4mx" path="res://assets/sprites/IMG_2401.PNG" id="45_w5a74"]
+[ext_resource type="Texture2D" uid="uid://kcnlmaie818n" path="res://assets/sprites/IMG_2402.PNG" id="46_mpwc7"]
 
 [sub_resource type="Animation" id="Animation_tc801"]
 length = 0.001
@@ -957,6 +961,17 @@ animations = [{
 "loop": true,
 "name": &"scared",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_p0j5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ingmm")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc801"]
@@ -981,6 +996,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"freeze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_w5a74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_mpwc7")
+}],
+"loop": true,
+"name": &"shield",
 "speed": 5.0
 }]
 
@@ -1171,9 +1197,8 @@ position = Vector2(3.9999986, 1)
 rotation = 0.2617994
 scale = Vector2(0.10440334, 0.104403354)
 sprite_frames = SubResource("SpriteFrames_8sknh")
-animation = &"freeze"
+animation = &"shield"
 autoplay = "default"
-frame_progress = 0.15835711
 
 [node name="WhiteBg" type="AnimatedSprite2D" parent="CatAnimation/Sprite2D"]
 z_index = 4
@@ -1181,8 +1206,8 @@ z_as_relative = false
 position = Vector2(1.5258789e-05, 0)
 scale = Vector2(0.9961368, 0.99613655)
 sprite_frames = SubResource("SpriteFrames_tc801")
+animation = &"shield"
 autoplay = "default"
-frame_progress = 0.45785546
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 75)
