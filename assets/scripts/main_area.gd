@@ -48,6 +48,8 @@ var probability_timer = 0
 
 var powerup_timer = 0.0
 
+@onready var style_screen: Node2D = $Player/Camera2D/StyleScreen
+
 
 func _ready():
 	#load_word_list("res://words.txt")
@@ -74,6 +76,8 @@ func _process(delta: float) -> void:
 	settings.visible = Global.settings
 	powerup_screen.visible = Global.powerup
 	#bg_music.playing = Global.bg_main_music_playing
+	
+	style_screen.visible = Global.style
 	
 	#freeze_color_rect.visible = !Global.menu
 	
@@ -150,14 +154,15 @@ func _process(delta: float) -> void:
 		Global.score_fadein = false
 		print("run")
 		
-	powerup_timer += delta
 	
-	if powerup_timer > 5 and airplanes.get_child_count() == 0 and !Global.powerup:
-		var random_x = randi_range(0, 10)
-		powerup_timer = 0
-		if random_x > 0 and Global.powerup_letters == "":
-			spawn_airplane()
-			print("airplane")
+	if airplanes.get_child_count() == 0 and !Global.powerup:
+		powerup_timer += delta
+		if powerup_timer > 5:
+			var random_x = randi_range(0, 10)
+			powerup_timer = 0
+			if random_x > 0 and Global.powerup_letters == "":
+				spawn_airplane()
+				print("airplane")
 	
 	
 		

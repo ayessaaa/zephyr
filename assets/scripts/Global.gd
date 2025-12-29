@@ -69,6 +69,7 @@ var best_score = 0
 var restart = false
 var playing = false
 var settings = false
+var style = false
 
 var sfx_volume = 0
 var music_volume = 0

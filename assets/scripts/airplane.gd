@@ -19,7 +19,7 @@ var sprite_float = false
 	"augh", 
 ]
 
-var powerups = [ "shield"]
+var powerups = ["freeze",]
 @export var powerup_type = ""
 var type = ""
 

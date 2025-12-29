@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.menu and !Global.tutorial:
+	if Global.menu and !Global.tutorial and !Global.style:
 		if play_button.is_hovered() and hovering != "play":
 			hover_music.play()
 			hovering = "play"
@@ -51,9 +51,10 @@ func _on_play_button_pressed() -> void:
 			
 
 
-#func _on_style_button_pressed() -> void:
-	#if Global.menu:
-		#animation_player.play("transition_out")
+func _on_style_button_pressed() -> void:
+	animation_player.queue("transition")
+	select_music.play()
+	Global.style = true
 
 
 func _on_settings_button_pressed() -> void:

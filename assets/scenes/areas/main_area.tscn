@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bbug54s1qisjb"]
+[gd_scene load_steps=37 format=3 uid="uid://bbug54s1qisjb"]
 
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="1_8hxss"]
 [ext_resource type="Script" uid="uid://dw2hxpi4qfgdx" path="res://assets/scripts/main_area.gd" id="1_s6uqe"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b6iwgs43ikgmj" path="res://assets/sprites/IMG_2413.PNG" id="14_h638p"]
 [ext_resource type="Texture2D" uid="uid://dfbkugit64ipk" path="res://assets/sprites/IMG_2416.PNG" id="15_1ooie"]
 [ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="15_7swdg"]
+[ext_resource type="AudioStream" uid="uid://cc2sf2d65g32d" path="res://assets/audio/explosion-9-340460.mp3" id="25_o5ag8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o5ag8"]
 animations = [{
@@ -104,6 +105,33 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Animation" id="Animation_o5ag8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.020172214, 0.020172214)]
+}
+
 [sub_resource type="Animation" id="Animation_qfk6f"]
 resource_name = "fade_in"
 length = 0.6
@@ -130,33 +158,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.020172214, 0.020172214), Vector2(0.116974115, 0.116974115), Vector2(0.11234428, 0.11234428)]
-}
-
-[sub_resource type="Animation" id="Animation_o5ag8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.020172214, 0.020172214)]
 }
 
 [sub_resource type="Animation" id="Animation_bgwcf"]
@@ -462,6 +463,12 @@ parameters/looping = true
 stream = ExtResource("15_7swdg")
 bus = &"BgMusic"
 
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_o5ag8")
+volume_db = 5.0
+bus = &"SFX"
+
 [connection signal="area_entered" from="Balloon/BalloonArea" to="Balloon" method="_on_balloon_area_area_entered"]
 [connection signal="area_entered" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_entered"]
 [connection signal="area_exited" from="Balloon/BalloonExternalArea" to="Balloon" method="_on_balloon_external_area_area_exited"]
+[connection signal="animation_finished" from="Balloon/Shield/AnimationPlayer" to="Balloon" method="_on_animation_player_animation_finished"]

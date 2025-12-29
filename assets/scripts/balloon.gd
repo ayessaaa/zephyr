@@ -13,6 +13,7 @@ extends RigidBody2D
 @onready var powerup_animation: AnimationPlayer = $"../Player/Camera2D/PowerupScreen/AnimationPlayer"
 @onready var shield: AnimatedSprite2D = $Shield
 @onready var shield_animation_player: AnimationPlayer = $Shield/AnimationPlayer
+@onready var explosion_sound: AudioStreamPlayer2D = $"../ExplosionSound"
 
 var shield_fade_in = false
 
@@ -52,13 +53,20 @@ func _on_balloon_external_area_area_entered(area: Area2D) -> void:
 	if Global.powerup_type != "shield":
 		player_animation.play("scared")
 	elif Global.powerup_type == "shield":
-			area.get_node("Sprite2D").play("explode")
-			Global.powerup_type = ""
-			unshield_sound.play()
-			powerup_animation.play("out")
-			shield_animation_player.play("fade_out")
-			return
+		Global.rocket_list.erase(area)
+		area.get_node("Sprite2D").play("explode")
+		Global.powerup_type = ""
+		unshield_sound.play()
+		powerup_animation.play("out")
+		shield_animation_player.play("fade_out")
+		explosion_sound.play()
+		return
 
 
 func _on_balloon_external_area_area_exited(area: Area2D) -> void:
 	player_animation.play("default")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "fade_out":
+		shield_fade_in = false

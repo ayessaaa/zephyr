@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=84 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3ocowwon4e8c" path="res://assets/sprites/bg.png" id="3_c6vv5"]
 [ext_resource type="PackedScene" uid="uid://x0y3qhsb0bum" path="res://assets/scenes/menu_buttons.tscn" id="3_hrrj1"]
 [ext_resource type="PackedScene" uid="uid://b45ma70rpfndx" path="res://assets/scenes/settings.tscn" id="4_gmant"]
+[ext_resource type="PackedScene" uid="uid://3g2jsfhnumlr" path="res://assets/scenes/style_screen.tscn" id="4_ingmm"]
 [ext_resource type="PackedScene" uid="uid://chjrqfrig7q8g" path="res://assets/scenes/pause_screen.tscn" id="5_uqo28"]
 [ext_resource type="PackedScene" uid="uid://iydwpujjwdhq" path="res://assets/scenes/areas/text_input.tscn" id="6_0gfpk"]
 [ext_resource type="Texture2D" uid="uid://dt6jflxnbgmcc" path="res://assets/sprites/logo.png" id="7_00pic"]
@@ -1052,6 +1053,8 @@ texture = ExtResource("3_c6vv5")
 libraries = {
 &"": SubResource("AnimationLibrary_60g6h")
 }
+
+[node name="StyleScreen" parent="Camera2D" instance=ExtResource("4_ingmm")]
 
 [node name="Settings" parent="Camera2D" instance=ExtResource("4_gmant")]
 

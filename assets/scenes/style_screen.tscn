@@ -1,0 +1,355 @@
+[gd_scene load_steps=31 format=3 uid="uid://3g2jsfhnumlr"]
+
+[ext_resource type="Script" uid="uid://cyrsj4penhrwq" path="res://assets/scripts/style_screen.gd" id="1_hawr3"]
+[ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="1_wecqa"]
+[ext_resource type="Texture2D" uid="uid://5sf0rb158ygs" path="res://assets/sprites/IMG_2193.PNG" id="2_dump4"]
+[ext_resource type="Texture2D" uid="uid://03h3a0dd2eev" path="res://assets/sprites/IMG_2189.PNG" id="3_th2bi"]
+[ext_resource type="Texture2D" uid="uid://co610mowxe521" path="res://assets/sprites/IMG_2197.PNG" id="4_2xy14"]
+[ext_resource type="Texture2D" uid="uid://dpnte6mqwblw0" path="res://assets/sprites/IMG_2196.PNG" id="5_hawr3"]
+[ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="6_s5rnq"]
+[ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="7_2xugu"]
+[ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="8_kriny"]
+[ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="9_hmgeb"]
+[ext_resource type="Texture2D" uid="uid://bbso776kj2t2o" path="res://assets/sprites/fi_254434.png" id="11_s5rnq"]
+[ext_resource type="Texture2D" uid="uid://b0upij6aex65y" path="res://assets/sprites/fi_254434b.png" id="12_kriny"]
+[ext_resource type="Texture2D" uid="uid://cogeesjypo3g2" path="res://assets/sprites/fi_254434a.png" id="13_hmgeb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hawr3"]
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5rnq"]
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xugu"]
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5jrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dump4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8x6cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_th2bi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_2xugu"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalloonSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(0.96, 0.96)]
+}
+
+[sub_resource type="Animation" id="Animation_kriny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalloonSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_hawr3"]
+resource_name = "unhover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalloonSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.96, 0.96), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_fap8r"]
+resource_name = "pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalloonSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.96, 0.96), Vector2(1.15, 1.15), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmgeb"]
+_data = {
+&"RESET": SubResource("Animation_kriny"),
+&"hover": SubResource("Animation_2xugu"),
+&"pressed": SubResource("Animation_fap8r"),
+&"unhover": SubResource("Animation_hawr3")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fap8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2xy14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vs2qo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hawr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0of8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s5rnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2xugu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ewxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_kriny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hmgeb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_s5rnq"]
+resource_name = "balloon_selected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat/CatSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("String/StringSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_hmgeb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat/CatSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("String/StringSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fap8r"]
+_data = {
+&"RESET": SubResource("Animation_hmgeb"),
+&"balloon_selected": SubResource("Animation_s5rnq")
+}
+
+[node name="StyleScreen" type="Node2D"]
+z_index = 40
+script = ExtResource("1_hawr3")
+
+[node name="StyleLabel" type="Label" parent="."]
+z_index = 40
+offset_left = -70.0
+offset_top = -152.0
+offset_right = 285.0
+offset_bottom = -79.0
+scale = Vector2(0.3921008, 0.3921008)
+theme_override_fonts/font = ExtResource("1_wecqa")
+theme_override_font_sizes/font_size = 75
+text = "STYLE"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Subtitle" type="Label" parent="."]
+z_index = 40
+offset_left = -111.99999
+offset_top = -110.99999
+offset_right = 463.0
+offset_bottom = -37.999992
+scale = Vector2(0.3921008, 0.3921008)
+theme_override_fonts/font = ExtResource("1_wecqa")
+theme_override_font_sizes/font_size = 40
+text = "select your own balloon / cat"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Balloon" type="Node2D" parent="."]
+position = Vector2(-0.68749917, -22.956982)
+scale = Vector2(0.13351788, 0.13351789)
+
+[node name="BalloonButton" type="Button" parent="Balloon"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -339.3733
+offset_top = -359.82446
+offset_right = 319.71448
+offset_bottom = 276.79437
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hawr3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s5rnq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xugu")
+
+[node name="BalloonSprite" type="AnimatedSprite2D" parent="Balloon"]
+z_index = 41
+position = Vector2(-3.9375114, -2.419876)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_d5jrb")
+
+[node name="BalloonWhite" type="AnimatedSprite2D" parent="Balloon/BalloonSprite"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_8x6cw")
+
+[node name="BalloonAnimationPlayer" type="AnimationPlayer" parent="Balloon"]
+libraries = {
+&"": SubResource("AnimationLibrary_hmgeb")
+}
+
+[node name="String" type="Node2D" parent="."]
+
+[node name="StringSprite" type="AnimatedSprite2D" parent="String"]
+z_index = 40
+position = Vector2(0, 40.624977)
+scale = Vector2(0.125, 0.032348264)
+sprite_frames = SubResource("SpriteFrames_fap8r")
+
+[node name="StringWhite" type="AnimatedSprite2D" parent="String/StringSprite"]
+z_index = -1
+position = Vector2(0, -266.62875)
+scale = Vector2(1, 0.79012305)
+sprite_frames = SubResource("SpriteFrames_vs2qo")
+
+[node name="Cat" type="Node2D" parent="."]
+
+[node name="CatSprite" type="AnimatedSprite2D" parent="Cat"]
+z_index = 40
+position = Vector2(9.499994, 117.42954)
+scale = Vector2(0.109357394, 0.10935737)
+sprite_frames = SubResource("SpriteFrames_0of8a")
+autoplay = "default"
+
+[node name="CatWhite" type="AnimatedSprite2D" parent="Cat/CatSprite"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_3ewxh")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fap8r")
+}
+
+[node name="LeftButton" type="TextureButton" parent="."]
+offset_left = -120.0
+offset_top = -44.0
+offset_right = -26.0
+offset_bottom = 54.0
+scale = Vector2(0.34611446, 0.34611446)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_s5rnq")
+texture_pressed = ExtResource("12_kriny")
+texture_hover = ExtResource("13_hmgeb")
+
+[node name="RightButton" type="TextureButton" parent="."]
+offset_left = 87.0
+offset_top = -44.0
+offset_right = 181.0
+offset_bottom = 54.0
+scale = Vector2(0.34611446, 0.34611446)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_s5rnq")
+texture_pressed = ExtResource("12_kriny")
+texture_hover = ExtResource("13_hmgeb")
+flip_h = true
+
+[connection signal="mouse_entered" from="Balloon/BalloonButton" to="." method="_on_balloon_button_mouse_entered"]
+[connection signal="mouse_exited" from="Balloon/BalloonButton" to="." method="_on_balloon_button_mouse_exited"]
+[connection signal="pressed" from="Balloon/BalloonButton" to="." method="_on_balloon_button_pressed"]
