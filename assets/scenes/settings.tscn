@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b45ma70rpfndx"]
+[gd_scene load_steps=31 format=3 uid="uid://b45ma70rpfndx"]
 
 [ext_resource type="Script" uid="uid://cepwjbwfdpaeh" path="res://assets/scripts/settings.gd" id="1_17tup"]
 [ext_resource type="Texture2D" uid="uid://diutjyni08j0i" path="res://assets/sprites/big_blue_strip.png" id="2_48ty2"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cktqipxapbjgj" path="res://assets/sprites/fi_1828774-1.png" id="12_45trt"]
 [ext_resource type="Texture2D" uid="uid://ceb8184idqbpc" path="res://assets/sprites/fi_1828774.png" id="13_dia3x"]
 [ext_resource type="AudioStream" uid="uid://b18ftd7o56nn7" path="res://assets/audio/new-notification-019-363747.mp3" id="14_cuai4"]
+[ext_resource type="AudioStream" uid="uid://dm2dse8ige7vl" path="res://assets/audio/ui-sound-off-270300_SlVBVQwe.mp3" id="15_45trt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp2u4"]
 bg_color = Color(1, 1, 1, 1)
@@ -121,7 +122,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_rhcal"]
@@ -323,18 +324,6 @@ tracks/14/path = NodePath("ExitSound:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath(".:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -696,18 +685,6 @@ tracks/14/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath(".:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dia3x"]
 _data = {
@@ -932,6 +909,10 @@ bus = &"SFX"
 libraries = {
 &"": SubResource("AnimationLibrary_dia3x")
 }
+
+[node name="ExitSound2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_45trt")
+volume_db = 4.039
 
 [connection signal="value_changed" from="SFX" to="." method="_on_volume_value_changed"]
 [connection signal="value_changed" from="Music" to="." method="_on_music_value_changed"]

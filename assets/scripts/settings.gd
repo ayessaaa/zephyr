@@ -6,8 +6,8 @@ extends Node2D
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("Menu/MenuBg/AnimationPlayer")
 @onready var sfx: HSlider = $SFX
 @onready var music: HSlider = $Music
-
-var fade_in = false
+@onready var exit_sound_2: AudioStreamPlayer2D = $ExitSound2
+@onready var exit_sound: AudioStreamPlayer2D = $ExitSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,11 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.settings and !fade_in:
-		fade_in = true
-		
-		print("fadein")
-
+	pass
 
 func _on_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(SFX, value)
@@ -47,12 +43,13 @@ func _on_music_value_changed(value: float) -> void:
 
 func _on_exit_button_pressed() -> void:
 	animation_player.play("fade_out")
+	exit_sound.play()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_out" and Global.settings:
 		Global.menu = true
 		Global.settings = false
-		fade_in = false
+		#exit_sound_2.play()
 		menu_transition_animation.play("transition_out")
 		menu_transition_animation.queue("inside_screen")

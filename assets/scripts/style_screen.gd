@@ -7,6 +7,7 @@ extends Node2D
 @onready var hover_music: AudioStreamPlayer2D = $HoverMusic
 @onready var select_music: AudioStreamPlayer2D = $SelectMusic
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("Menu/MenuBg/AnimationPlayer")
+@onready var exit_sound: AudioStreamPlayer2D = $ExitSound
 
 var customizing = ""
 var fade_in = false
@@ -117,6 +118,7 @@ func _on_right_button_mouse_entered() -> void:
 
 func _on_exit_button_pressed() -> void:
 	animation_player.play("fade_out")
+	exit_sound.play()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
