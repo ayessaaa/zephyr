@@ -6,6 +6,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $"../MenuBg/AnimationPlayer"
 @onready var select_music: AudioStreamPlayer2D = $SelectMusic
 @onready var tutorial_animation: AnimationPlayer = $"../Tutorial/AnimationPlayer"
+@onready var settings_animation_player: AnimationPlayer = get_parent().get_parent().get_node("Settings/AnimationPlayer")
 
 var hovering = ""
 
@@ -63,6 +64,9 @@ func _on_settings_button_pressed() -> void:
 	select_music.play()
 	#tutorial_animation.play("fade_in")
 	Global.settings = true
+	
+	await get_tree().create_timer(1.0).timeout 
+	settings_animation_player.play("fade_in")
 	#else:
 		#animation_player.queue("transition_screen")
 		#select_music.play()

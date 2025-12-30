@@ -73,7 +73,7 @@ func _process(delta: float) -> void:
 	logo.visible = Global.menu
 	subtitle.visible = Global.menu
 	gameover.visible = Global.gameover
-	settings.visible = Global.settings
+	#settings.visible = Global.settings
 	powerup_screen.visible = Global.powerup
 	#bg_music.playing = Global.bg_main_music_playing
 	
