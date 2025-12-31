@@ -1,37 +1,71 @@
-[gd_scene load_steps=69 format=3 uid="uid://3g2jsfhnumlr"]
+[gd_scene load_steps=104 format=3 uid="uid://3g2jsfhnumlr"]
 
 [ext_resource type="Script" uid="uid://cyrsj4penhrwq" path="res://assets/scripts/style_screen.gd" id="1_hawr3"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="1_wecqa"]
-[ext_resource type="Texture2D" uid="uid://5sf0rb158ygs" path="res://assets/sprites/IMG_2193.PNG" id="2_dump4"]
-[ext_resource type="Texture2D" uid="uid://03h3a0dd2eev" path="res://assets/sprites/IMG_2189.PNG" id="3_th2bi"]
+[ext_resource type="Texture2D" uid="uid://lnjes26jl23m" path="res://assets/sprites/balloons/IMG_2449.PNG" id="3_e00fi"]
 [ext_resource type="Texture2D" uid="uid://co610mowxe521" path="res://assets/sprites/IMG_2197.PNG" id="4_2xy14"]
+[ext_resource type="Texture2D" uid="uid://ccuqvqveovpa4" path="res://assets/sprites/balloons/IMG_2444.PNG" id="4_f5pgf"]
+[ext_resource type="Texture2D" uid="uid://byxuaa6at1e4" path="res://assets/sprites/balloons/IMG_2437.PNG" id="4_lnqrg"]
+[ext_resource type="Texture2D" uid="uid://b4ya162byjoiw" path="res://assets/sprites/balloons/IMG_2448.PNG" id="4_p3wka"]
+[ext_resource type="Texture2D" uid="uid://gt1olakks1k4" path="res://assets/sprites/balloons/IMG_2438.PNG" id="4_s307r"]
+[ext_resource type="Texture2D" uid="uid://xf5iphyxtxo0" path="res://assets/sprites/balloons/IMG_2431.PNG" id="5_0sjfq"]
+[ext_resource type="Texture2D" uid="uid://dujnhomrxshl" path="res://assets/sprites/balloons/IMG_2447.PNG" id="5_87q6u"]
 [ext_resource type="Texture2D" uid="uid://dpnte6mqwblw0" path="res://assets/sprites/IMG_2196.PNG" id="5_hawr3"]
+[ext_resource type="Texture2D" uid="uid://156jnag7f1ia" path="res://assets/sprites/balloons/IMG_2425.PNG" id="5_r5uyh"]
+[ext_resource type="Texture2D" uid="uid://cgi8ptls65htp" path="res://assets/sprites/balloons/IMG_2436.PNG" id="5_u1lah"]
+[ext_resource type="Texture2D" uid="uid://dt85g8m1vndf3" path="res://assets/sprites/balloons/IMG_2420.PNG" id="6_cspm7"]
+[ext_resource type="Texture2D" uid="uid://cqje2fgpdrx0d" path="res://assets/sprites/balloons/IMG_2451.PNG" id="6_j0xdc"]
+[ext_resource type="Texture2D" uid="uid://dvtspo7byaae3" path="res://assets/sprites/balloons/IMG_2435.PNG" id="6_l2oqq"]
+[ext_resource type="Texture2D" uid="uid://bxtor33kih0eb" path="res://assets/sprites/balloons/IMG_2446.PNG" id="6_rl8rf"]
 [ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="6_s5rnq"]
 [ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="7_2xugu"]
+[ext_resource type="Texture2D" uid="uid://by3jtsefqsspm" path="res://assets/sprites/balloons/IMG_2450.PNG" id="7_e00fi"]
+[ext_resource type="Texture2D" uid="uid://dr2sq3rqf3gey" path="res://assets/sprites/balloons/IMG_2439.PNG" id="7_hdrlg"]
 [ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="8_kriny"]
+[ext_resource type="Texture2D" uid="uid://c8lcu3w0vvhp7" path="res://assets/sprites/balloons/IMG_2432.PNG" id="9_e00fi"]
+[ext_resource type="Texture2D" uid="uid://x7tkknvys3tc" path="res://assets/sprites/balloons/IMG_2440.PNG" id="9_hlcdt"]
 [ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="9_hmgeb"]
+[ext_resource type="Texture2D" uid="uid://gemy0ofn85vx" path="res://assets/sprites/balloons/IMG_2434.PNG" id="10_0sjfq"]
+[ext_resource type="Texture2D" uid="uid://db8ukvdvetsmh" path="res://assets/sprites/balloons/IMG_2430.PNG" id="10_p3wka"]
+[ext_resource type="Texture2D" uid="uid://b5ctb8nwi2l6r" path="res://assets/sprites/balloons/IMG_2428.PNG" id="11_6acb1"]
+[ext_resource type="Texture2D" uid="uid://fy551n8itrog" path="res://assets/sprites/balloons/IMG_2429.PNG" id="11_87q6u"]
 [ext_resource type="Texture2D" uid="uid://bbso776kj2t2o" path="res://assets/sprites/fi_254434.png" id="11_s5rnq"]
+[ext_resource type="Texture2D" uid="uid://cnnnalyqts43g" path="res://assets/sprites/balloons/IMG_2422.PNG" id="12_i3877"]
+[ext_resource type="Texture2D" uid="uid://dvwwml6qfvhy6" path="res://assets/sprites/balloons/IMG_2433.PNG" id="12_j0xdc"]
 [ext_resource type="Texture2D" uid="uid://b0upij6aex65y" path="res://assets/sprites/fi_254434b.png" id="12_kriny"]
 [ext_resource type="Texture2D" uid="uid://cogeesjypo3g2" path="res://assets/sprites/fi_254434a.png" id="13_hmgeb"]
 [ext_resource type="Texture2D" uid="uid://b4kuf2nabeboi" path="res://assets/sprites/Frame 82.png" id="14_hmgeb"]
+[ext_resource type="Texture2D" uid="uid://cljjh3sbaynmb" path="res://assets/sprites/balloons/IMG_2426.PNG" id="14_rhvy4"]
 [ext_resource type="Texture2D" uid="uid://dg1os6t2s3k2w" path="res://assets/sprites/Frame 83.png" id="15_fap8r"]
+[ext_resource type="Texture2D" uid="uid://c03dd7oty4jkt" path="res://assets/sprites/balloons/IMG_2424.PNG" id="15_ikgs6"]
 [ext_resource type="Texture2D" uid="uid://b6pelatf641su" path="res://assets/sprites/Frame 93.png" id="16_dtuok"]
 [ext_resource type="Texture2D" uid="uid://c7jmxwbq01i01" path="res://assets/sprites/Frame 84.png" id="16_ii4ut"]
+[ext_resource type="Texture2D" uid="uid://8sdkceks2clt" path="res://assets/sprites/balloons/IMG_2423.PNG" id="16_th4bp"]
+[ext_resource type="Texture2D" uid="uid://brm5pypm6x5rl" path="res://assets/sprites/balloons/IMG_2427.PNG" id="17_1ffe8"]
 [ext_resource type="Texture2D" uid="uid://cq4q8r4le60xm" path="res://assets/sprites/Frame 85.png" id="17_48i88"]
 [ext_resource type="Texture2D" uid="uid://cqc7otocdy104" path="res://assets/sprites/Frame 88.png" id="17_aavs8"]
 [ext_resource type="Texture2D" uid="uid://dknpcuvnjdida" path="res://assets/sprites/Frame 86.png" id="18_yey4e"]
 [ext_resource type="Texture2D" uid="uid://drkefbksgsvfw" path="res://assets/sprites/Frame 94.png" id="19_7n4kr"]
+[ext_resource type="Texture2D" uid="uid://gyif57xkvefp" path="res://assets/sprites/balloons/IMG_2419.PNG" id="19_m71gx"]
 [ext_resource type="Texture2D" uid="uid://g6av83ldyw1i" path="res://assets/sprites/Frame 87.png" id="19_vakh3"]
+[ext_resource type="Texture2D" uid="uid://dsul3ob0gsisn" path="res://assets/sprites/balloons/IMG_2418.PNG" id="20_ikuuj"]
 [ext_resource type="Texture2D" uid="uid://cb0ebtvges7ht" path="res://assets/sprites/Frame 89.png" id="20_o7cbj"]
+[ext_resource type="Texture2D" uid="uid://da88bj5wtjemc" path="res://assets/sprites/balloons/IMG_2417.PNG" id="21_xubgm"]
+[ext_resource type="Texture2D" uid="uid://cmovsj2lre14m" path="res://assets/sprites/balloons/IMG_2421.PNG" id="22_tyvgs"]
 [ext_resource type="Texture2D" uid="uid://c7se57iiv2whn" path="res://assets/sprites/Frame 95.png" id="22_xhguj"]
 [ext_resource type="Texture2D" uid="uid://bs8oqnn654bes" path="res://assets/sprites/Frame 90.png" id="23_m0yix"]
+[ext_resource type="Texture2D" uid="uid://cmqkmsfeyfd5i" path="res://assets/sprites/balloons/IMG_2443.PNG" id="24_23tyq"]
+[ext_resource type="Texture2D" uid="uid://cejctm73pu8fp" path="res://assets/sprites/balloons/IMG_2442.PNG" id="25_lporx"]
 [ext_resource type="Texture2D" uid="uid://cougqtoe0yrf7" path="res://assets/sprites/Frame 96.png" id="25_vxc88"]
 [ext_resource type="Texture2D" uid="uid://dtekb1e64uh52" path="res://assets/sprites/Frame 91.png" id="26_f5pgf"]
+[ext_resource type="Texture2D" uid="uid://cmktrbs3k6b8p" path="res://assets/sprites/balloons/IMG_2441.PNG" id="26_rhc7m"]
+[ext_resource type="Texture2D" uid="uid://bm5qvs7itkicu" path="res://assets/sprites/balloons/IMG_2445.PNG" id="27_i2vjo"]
 [ext_resource type="Texture2D" uid="uid://hbjppwkihku6" path="res://assets/sprites/Frame 97.png" id="28_rl8rf"]
 [ext_resource type="Texture2D" uid="uid://8o84e8xb7cgr" path="res://assets/sprites/Frame 92.png" id="29_o8wnf"]
 [ext_resource type="AudioStream" uid="uid://bg7441fl71w3v" path="res://assets/audio/happy-pop-1-185286 (mp3cut.net).mp3" id="30_7n4kr"]
 [ext_resource type="AudioStream" uid="uid://c4ubwihadtq2t" path="res://assets/audio/select-002-337219.mp3" id="31_7n4kr"]
 [ext_resource type="Texture2D" uid="uid://bcchkkrs7ngl" path="res://assets/sprites/close.png" id="32_m0yix"]
+[ext_resource type="Texture2D" uid="uid://cr7ri7boqnopi" path="res://assets/sprites/balloons/IMG_2452.PNG" id="33_p3wka"]
 [ext_resource type="Texture2D" uid="uid://cktqipxapbjgj" path="res://assets/sprites/fi_1828774-1.png" id="33_vxc88"]
 [ext_resource type="Texture2D" uid="uid://ceb8184idqbpc" path="res://assets/sprites/fi_1828774.png" id="34_f5pgf"]
 [ext_resource type="AudioStream" uid="uid://b18ftd7o56nn7" path="res://assets/audio/new-notification-019-363747.mp3" id="35_vxc88"]
@@ -58,10 +92,242 @@ corner_radius_bottom_left = 500
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dump4")
+"texture": ExtResource("3_e00fi")
 }],
 "loop": true,
-"name": &"default",
+"name": &"default_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p3wka")
+}],
+"loop": true,
+"name": &"default_lilac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_87q6u")
+}],
+"loop": true,
+"name": &"default_purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j0xdc")
+}],
+"loop": true,
+"name": &"default_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e00fi")
+}],
+"loop": true,
+"name": &"default_yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s307r")
+}],
+"loop": true,
+"name": &"heart_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u1lah")
+}],
+"loop": true,
+"name": &"heart_lilac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_l2oqq")
+}],
+"loop": true,
+"name": &"heart_purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hdrlg")
+}],
+"loop": true,
+"name": &"heart_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lnqrg")
+}],
+"loop": true,
+"name": &"heart_yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_e00fi")
+}],
+"loop": true,
+"name": &"mickey_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_p3wka")
+}],
+"loop": true,
+"name": &"mickey_lilac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_87q6u")
+}],
+"loop": true,
+"name": &"mickey_purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_j0xdc")
+}],
+"loop": true,
+"name": &"mickey_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0sjfq")
+}],
+"loop": true,
+"name": &"mickey_yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rhvy4")
+}],
+"loop": true,
+"name": &"moon_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ikgs6")
+}],
+"loop": true,
+"name": &"moon_lilac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_th4bp")
+}],
+"loop": true,
+"name": &"moon_purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_1ffe8")
+}],
+"loop": true,
+"name": &"moon_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r5uyh")
+}],
+"loop": true,
+"name": &"moon_yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_m71gx")
+}],
+"loop": true,
+"name": &"sparkle_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ikuuj")
+}],
+"loop": true,
+"name": &"sparkle_lilac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xubgm")
+}],
+"loop": true,
+"name": &"sparkle_purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_tyvgs")
+}],
+"loop": true,
+"name": &"sparkle_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cspm7")
+}],
+"loop": true,
+"name": &"sparkle_yellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_23tyq")
+}],
+"loop": true,
+"name": &"star_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_lporx")
+}],
+"loop": true,
+"name": &"star_lilac",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_rhc7m")
+}],
+"loop": true,
+"name": &"star_purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_i2vjo")
+}],
+"loop": true,
+"name": &"star_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f5pgf")
+}],
+"loop": true,
+"name": &"star_yellow",
 "speed": 5.0
 }]
 
@@ -69,10 +335,50 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_th2bi")
+"texture": ExtResource("33_p3wka")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hlcdt")
+}],
+"loop": true,
+"name": &"heart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0sjfq")
+}],
+"loop": true,
+"name": &"mickey",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6acb1")
+}],
+"loop": true,
+"name": &"moon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_i3877")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rl8rf")
+}],
+"loop": true,
+"name": &"star",
 "speed": 5.0
 }]
 
@@ -138,11 +444,28 @@ tracks/0/keys = {
 "values": [Vector2(0.96, 0.96), Vector2(0.9, 0.9)]
 }
 
+[sub_resource type="Animation" id="Animation_0sjfq"]
+resource_name = "switch"
+length = 0.34
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalloonSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.96, 0.96), Vector2(1.0979124, 1.0979124), Vector2(1.0559797, 1.0559797)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hmgeb"]
 _data = {
 &"RESET": SubResource("Animation_kriny"),
 &"hover": SubResource("Animation_2xugu"),
 &"pressed": SubResource("Animation_fap8r"),
+&"switch": SubResource("Animation_0sjfq"),
 &"unhover": SubResource("Animation_hawr3")
 }
 
@@ -1763,14 +2086,17 @@ metadata/_edit_use_anchors_ = true
 [node name="BalloonSprite" type="AnimatedSprite2D" parent="Balloon"]
 modulate = Color(1, 1, 1, 0)
 z_index = 41
-position = Vector2(-3.9375114, -2.419876)
+position = Vector2(5.4045067, 6.922165)
 scale = Vector2(0.96, 0.96)
 sprite_frames = SubResource("SpriteFrames_d5jrb")
+animation = &"default_yellow"
+autoplay = "default_yellow"
 
 [node name="BalloonWhite" type="AnimatedSprite2D" parent="Balloon/BalloonSprite"]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_8x6cw")
+autoplay = "default"
 
 [node name="BalloonAnimationPlayer" type="AnimationPlayer" parent="Balloon"]
 libraries = {
@@ -1972,8 +2298,13 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="RightButton" to="." method="_on_right_button_mouse_entered"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
 [connection signal="mouse_entered" from="ColorBg/RedButton" to="." method="_on_red_button_mouse_entered"]
+[connection signal="pressed" from="ColorBg/RedButton" to="." method="_on_red_button_pressed"]
 [connection signal="mouse_entered" from="ColorBg/YellowButton" to="." method="_on_yellow_button_mouse_entered"]
+[connection signal="pressed" from="ColorBg/YellowButton" to="." method="_on_yellow_button_pressed"]
 [connection signal="mouse_entered" from="ColorBg/GreenButton" to="." method="_on_green_button_mouse_entered"]
+[connection signal="pressed" from="ColorBg/GreenButton" to="." method="_on_green_button_pressed"]
 [connection signal="mouse_entered" from="ColorBg/LilacButton" to="." method="_on_lilac_button_mouse_entered"]
+[connection signal="pressed" from="ColorBg/LilacButton" to="." method="_on_lilac_button_pressed"]
 [connection signal="mouse_entered" from="ColorBg/PurpleButton" to="." method="_on_purple_button_mouse_entered"]
+[connection signal="pressed" from="ColorBg/PurpleButton" to="." method="_on_purple_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

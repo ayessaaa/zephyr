@@ -2,12 +2,18 @@ extends Node2D
 @onready var balloon_animation_player: AnimationPlayer = $Balloon/BalloonAnimationPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var balloon_sprite: AnimatedSprite2D = $Balloon/BalloonSprite
+@onready var balloon_white: AnimatedSprite2D = $Balloon/BalloonSprite/BalloonWhite
 @onready var subtitle: Label = $Subtitle
 @onready var cat_animation_player: AnimationPlayer = $Cat/CatAnimationPlayer
 @onready var hover_music: AudioStreamPlayer2D = $HoverMusic
 @onready var select_music: AudioStreamPlayer2D = $SelectMusic
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("Menu/MenuBg/AnimationPlayer")
 @onready var exit_sound: AudioStreamPlayer2D = $ExitSound
+
+#var balloon_colors = ["red", "yellow", "green", "lilac", "purple"]
+var balloon_color = "yellow"
+var balloon_shapes = ["default", "star", "sparkle", "moon", "mickey", "heart"]
+var balloon_index = 0
 
 var customizing = ""
 var fade_in = false
@@ -81,11 +87,27 @@ func _on_cat_button_pressed() -> void:
 
 
 func _on_right_button_pressed() -> void:
-	pass # Replace with function body.
+	if customizing == "balloon":
+		if balloon_index == len(balloon_shapes)-1:
+			balloon_index = 0
+		else:
+			balloon_index += 1
+		balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+		balloon_white.play(balloon_shapes[balloon_index])
+		select_music.play()
+		balloon_animation_player.play("switch")
 
 
 func _on_left_button_pressed() -> void:
-	pass # Replace with function body.
+	if customizing == "balloon":
+		if balloon_index == 0:
+			balloon_index = len(balloon_shapes)-1
+		else:
+			balloon_index -= 1
+		balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+		balloon_white.play(balloon_shapes[balloon_index])
+		select_music.play()
+		balloon_animation_player.play("switch")
 
 
 func _on_red_button_mouse_entered() -> void:
@@ -130,3 +152,38 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		fade_in = false
 		menu_transition_animation.play("transition_out")
 		menu_transition_animation.queue("inside_screen")
+
+
+func _on_red_button_pressed() -> void:
+	balloon_color = "red"
+	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	select_music.play()
+	balloon_animation_player.play("switch")
+
+
+func _on_yellow_button_pressed() -> void:
+	balloon_color = "yellow"
+	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	select_music.play()
+	balloon_animation_player.play("switch")
+
+
+func _on_green_button_pressed() -> void:
+	balloon_color = "green"
+	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	select_music.play()
+	balloon_animation_player.play("switch")
+
+
+func _on_lilac_button_pressed() -> void:
+	balloon_color = "lilac"
+	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	select_music.play()
+	balloon_animation_player.play("switch")
+
+
+func _on_purple_button_pressed() -> void:
+	balloon_color = "purple"
+	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	select_music.play()
+	balloon_animation_player.play("switch")
