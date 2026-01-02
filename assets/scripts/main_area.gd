@@ -13,6 +13,7 @@ var english_words := {}
 @onready var text_input: Node2D = $Player/TextInput
 @onready var line_edit: LineEdit = $Player/TextInput/LineEdit
 @onready var score: Area2D = $Player/Camera2D/Score
+@onready var cat_sprite_2d: AnimatedSprite2D = $Player/CatAnimation/Sprite2D
 
 const ROCKET_RED = preload("res://assets/scenes/areas/rocket_red.tscn")
 const ROCKET_BLUE = preload("res://assets/scenes/areas/rocket_blue.tscn")
@@ -39,6 +40,8 @@ const AIRPLANE = preload("uid://cwcn3ybunn6nu")
 @onready var airplanes: Node2D = $Player/Camera2D/Airplanes
 
 var timer = 10
+var rocket_timer_limit_array = [4.0, 3.3, 3.5, 3.0]
+var rocket_timer_limit = 4.0
 var rocket_position_x = [-500, 500]
 
 var meow_timer = 0
@@ -60,6 +63,8 @@ func _ready():
 	var hand_cursor_texture = preload("uid://bapm1li2vjkau")
 	Input.set_custom_mouse_cursor(custom_cursor_texture, Input.CURSOR_IBEAM)
 	Input.set_custom_mouse_cursor(hand_cursor_texture, Input.CURSOR_POINTING_HAND)
+	
+	cat_sprite_2d.play(Global.cat+"_default")
 		
 
 
@@ -126,10 +131,15 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		Global.pause = true
 		pause_screen_animation.play("in")
+		
+	
+	if Global.menu or Global.settings or Global.style:
+		return
 	
 	var rocket_timer = 4 if Global.powerup_type == "freeze" else 8
 	
-	if timer >= 4:
+	if timer >= rocket_timer_limit:
+		rocket_timer_limit = rocket_timer_limit_array[randi_range(0, len(rocket_timer_limit_array)-1)]
 		timer = 0
 		var random_position = randi_range(0, len(rocket_position_x) - 1)
 		var random_probability = randi_range(0, 100)
@@ -160,7 +170,7 @@ func _process(delta: float) -> void:
 		if powerup_timer > 5:
 			var random_x = randi_range(0, 10)
 			powerup_timer = 0
-			if random_x > 0 and Global.powerup_letters == "":
+			if random_x > 8 and Global.powerup_letters == "":
 				spawn_airplane()
 				print("airplane")
 	

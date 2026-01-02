@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://dvaotgkjbc0pm"]
+[gd_scene load_steps=127 format=3 uid="uid://dvaotgkjbc0pm"]
 
 [ext_resource type="Script" uid="uid://bimnhc47suao" path="res://assets/scripts/player_controller.gd" id="1_s027a"]
 [ext_resource type="Script" uid="uid://d083l7cmtgewg" path="res://assets/scripts/camera_2d.gd" id="2_0hrit"]
@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://eaw5ajy0i0e7" path="res://assets/scripts/score_label.gd" id="19_gdn7j"]
 [ext_resource type="Script" uid="uid://csvcm3a2odxmk" path="res://assets/scripts/sound_button.gd" id="19_gmant"]
 [ext_resource type="PackedScene" uid="uid://dwpo6ca0ouk3r" path="res://assets/scenes/gameover.tscn" id="20_ay2jx"]
+[ext_resource type="Texture2D" uid="uid://graqyp2c732g" path="res://assets/sprites/Frame 103sad.png" id="34_qitea"]
 [ext_resource type="Texture2D" uid="uid://dkyovnjolskga" path="res://assets/sprites/cats/IMG_2459.png" id="34_wgcu2"]
 [ext_resource type="Texture2D" uid="uid://ca6mslujpvq5w" path="res://assets/sprites/cats/IMG_2460.png" id="35_o0l36"]
 [ext_resource type="Texture2D" uid="uid://djy1j1180sshj" path="res://assets/sprites/IMG_2363.PNG" id="35_qnek2"]
@@ -89,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://chg1yjnenyugd" path="res://assets/sprites/IMG_2369.PNG" id="74_lq2xh"]
 [ext_resource type="Texture2D" uid="uid://dle4mtwxc0wb5" path="res://assets/sprites/IMG_2370.PNG" id="75_5vgk6"]
 [ext_resource type="AudioStream" uid="uid://c06dyefkbcm53" path="res://assets/audio/game-music-loop-7-145285_5hC6pRU1.mp3" id="89_o0l36"]
+[ext_resource type="AudioStream" uid="uid://dhjrbglirojgt" path="res://assets/audio/game-music-loop-19-153393.mp3" id="90_fdhl0"]
 
 [sub_resource type="Animation" id="Animation_tc801"]
 length = 0.001
@@ -1447,6 +1449,11 @@ position = Vector2(-2, 11)
 
 [node name="Airplanes" type="Node2D" parent="Camera2D"]
 
+[node name="Home" type="Sprite2D" parent="Camera2D"]
+position = Vector2(329.37497, 168.59216)
+scale = Vector2(0.16810337, 0.16810338)
+texture = ExtResource("34_qitea")
+
 [node name="CatAnimation" type="Node2D" parent="."]
 position = Vector2(0, 64)
 
@@ -1484,6 +1491,11 @@ position = Vector2(0, 155)
 [node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("89_o0l36")
 autoplay = true
+bus = &"BgMusic"
+parameters/looping = true
+
+[node name="PowerupMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("90_fdhl0")
 bus = &"BgMusic"
 parameters/looping = true
 

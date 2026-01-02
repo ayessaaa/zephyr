@@ -59,7 +59,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 				
 			rocket.score = score
 			Global.score += score
-			Global.rocket_speed += score*0.01
+			Global.rocket_speed += score*0.005
 			score_animation.play("scored")
 			
 			Global.rocket_list.erase(rocket)

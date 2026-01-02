@@ -24,7 +24,10 @@ var fade_in = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	balloon_sprite.play(Global.balloon+"_"+Global.balloon_color)
+	balloon_white.play(Global.balloon)
+	cat_sprite.play(Global.cat)
+	cat_name.text = Global.cat
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

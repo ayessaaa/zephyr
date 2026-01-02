@@ -97,7 +97,7 @@ func _on_exit_button_pressed() -> void:
 		animation_player.play("fade_out")
 	Global.score_fadein = true
 	exit_animation_player.play("fade_out")
-	Global.tutorial_number = 10
+	Global.tutorial_number = 100
 	
 	await get_tree().create_timer(.5).timeout 
 	Global.camera_pos = true

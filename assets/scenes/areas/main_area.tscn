@@ -891,6 +891,7 @@ bus = &"BgMusic"
 parameters/looping = true
 
 [node name="PowerupMusic" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("15_7swdg")
 bus = &"BgMusic"
 
