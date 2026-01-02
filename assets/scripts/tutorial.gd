@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 		return
 	if Global.tutorial_done:
 		if Input.is_action_just_pressed("mouse_click") and Global.tutorial_number != 4:
-			if Global.tutorial_number == 8:
+			if Global.tutorial_number >= 8:
 				text_animation.play(str(Global.tutorial_number))
 				Global.tutorial_number += 1
 			else:
@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 			Global.tutorial_done = false
 		if Global.tutorial_number == 7:
 			text_animation.play("7")
+			#text_animation.queue("8")
 			Global.tutorial_number = 8
 			Global.tutorial_done = false
 			
@@ -67,11 +68,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_text_animation_animation_finished(anim_name: StringName) -> void:
 	print("done")
+	
 	Global.tutorial_done = true
 	if Global.tutorial_number == 5:
 		Global.tutorial_number = 6
 		#tutorial_done = false
-	if Global.tutorial_number == 9:
+	if Global.tutorial_number == 11:
 		menu_transition_animation.play("transition_out")
 		Global.score_fadein = true
 		Global.camera_pos = true

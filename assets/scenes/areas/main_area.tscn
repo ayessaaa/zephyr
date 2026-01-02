@@ -885,8 +885,8 @@ bus = &"SFX"
 [node name="ScoreTexts" type="Node2D" parent="."]
 
 [node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("13_7i2xy")
-autoplay = true
 bus = &"BgMusic"
 parameters/looping = true
 
