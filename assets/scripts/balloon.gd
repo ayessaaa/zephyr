@@ -16,6 +16,7 @@ extends RigidBody2D
 @onready var explosion_sound: AudioStreamPlayer2D = $"../ExplosionSound"
 
 var shield_fade_in = false
+var explode = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,7 +28,10 @@ func _process(delta: float) -> void:
 	if Global.powerup_type == "shield" and !shield_fade_in:
 		shield_animation_player.play("fade_in")
 		shield_fade_in = true
-
+		
+	if !explode:
+		balloon_sprite_2d.play(Global.balloon+"_"+Global.balloon_color)
+		white_bg.play(Global.balloon)
 
 func _on_balloon_area_area_entered(area: Area2D) -> void:
 	if area.type == "rocket":
@@ -47,6 +51,7 @@ func _on_balloon_area_area_entered(area: Area2D) -> void:
 		balloon_pop_sound.play()
 		white_bg.play("explode")
 		balloon_sprite_2d.play("explode")
+		explode = true
 
 
 func _on_balloon_external_area_area_entered(area: Area2D) -> void:

@@ -11,6 +11,10 @@ extends Node2D
 @onready var timer_bg: AnimatedSprite2D = $TimerBg
 @onready var progress_animation_player: AnimationPlayer = $ProgressBar/AnimationPlayer
 
+@onready var white_bg: AnimatedSprite2D = $"../../../Balloon/WhiteBg"
+@onready var balloon_sprite_2d: AnimatedSprite2D = $"../../../Balloon/BalloonSprite2D"
+@onready var snow_balloon: AnimatedSprite2D = $"../../../Balloon/SnowBalloon"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,12 +26,16 @@ func _process(delta: float) -> void:
 	if Global.pause:
 		return
 		
+		
 	if Global.powerup_type == "freeze":
 		top_right.play("freeze")
 		bottom_left.play("freeze")
 		sprite_2d.play("freeze")
 		timer_bg.play("freeze")
 		progress_animation_player.play("freeze")
+		white_bg.play(Global.balloon+"_freeze")
+		snow_balloon.play(Global.balloon)
+		#balloon_sprite_2d.play(Global.balloon+"_freeze")
 		
 		if Global.game_running:
 			Global.freeze_timer -= delta
@@ -35,12 +43,12 @@ func _process(delta: float) -> void:
 			
 			if Global.freeze_timer <= 0:
 				animation_player.play("out")
-				
+				snow_balloon.play("none")
 				
 	elif Global.powerup_type == "double":
 		top_right.play("double")
 		bottom_left.play("double")
-		sprite_2d.play("double")
+		sprite_2d.play(Global.cat+"_double")
 		timer_bg.play("double")
 		progress_animation_player.play("double")
 		
@@ -54,7 +62,7 @@ func _process(delta: float) -> void:
 	elif Global.powerup_type == "shield":
 		top_right.play("shield")
 		bottom_left.play("shield")
-		sprite_2d.play("shield")
+		sprite_2d.play(Global.cat+"_shield")
 		timer_bg.play("shield")
 		progress_animation_player.play("shield")
 		
@@ -75,7 +83,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.player_speed /= 2
 		#Global.powerup_type = "freeze"
 		Global.freeze_timer = 20.0
-		cat_sprite_2d.play("freeze")
+		cat_sprite_2d.play(Global.cat+"_freeze")
 		cat_white_bg.play("freeze")
 	elif anim_name == "double_in":
 		bg_music.stop()
@@ -87,7 +95,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		powerup_music.play()
 		Global.game_running = true
 		Global.shield_timer = 100.0
-		cat_sprite_2d.play("shield")
+		cat_sprite_2d.play(Global.cat+"_shield")
 		cat_white_bg.play("shield")
 	elif anim_name == "out":
 		if Global.powerup_type == "freeze":
@@ -98,7 +106,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		Global.powerup = false
 		Global.powerup_type = ""
 		
-		cat_sprite_2d.play("default")
+		cat_sprite_2d.play(Global.cat+"_default")
 		cat_white_bg.play("default")
 		
 	##Global.bg_main_music_playing = false

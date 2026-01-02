@@ -86,3 +86,9 @@ var shield_timer = 0.0
 var game_running = true
 var pause = false
 #var bg_main_music_playing = true
+
+var cat = "zephyr"
+var cat_index = 0
+var balloon = "default"
+var balloon_color = "yellow"
+var balloon_index = 0

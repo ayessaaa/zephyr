@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			#sprite_2d.play("scared")
 		#else:
 			#velocity.y = 0
-		sprite_2d.play("scared")
+		sprite_2d.play(Global.cat+"_scared")
 
 
 	# Get the input direction and handle the movement/deceleration.
@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	if Global.menu or Global.tutorial:
 		var direction = 0
 		if mouse_position.x > 635:
-			sprite_2d.play("default")
+			sprite_2d.play(Global.cat+"_default")
 			direction = 1 
 			if animation_player.current_animation != "cursor_to_right":
 				animation_player.stop()
@@ -53,16 +53,16 @@ func _physics_process(delta: float) -> void:
 				
 		elif mouse_position.x < 490:
 			direction = -1 
-			sprite_2d.play("default")
+			sprite_2d.play(Global.cat+"_default")
 			if animation_player.current_animation != "cursor_to_left":
 				animation_player.stop()
 				animation_player.queue("cursor_to_left")
 					
 		else:
 			if mouse_position.y > 25 and mouse_position.y < 200:
-				sprite_2d.play("scared")
+				sprite_2d.play(Global.cat+"_scared")
 			else:
-				sprite_2d.play("default")
+				sprite_2d.play(Global.cat+"_default")
 		if direction:
 			velocity.x = direction * Global.player_speed
 		else:

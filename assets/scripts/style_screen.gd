@@ -9,11 +9,14 @@ extends Node2D
 @onready var select_music: AudioStreamPlayer2D = $SelectMusic
 @onready var menu_transition_animation: AnimationPlayer = get_parent().get_node("Menu/MenuBg/AnimationPlayer")
 @onready var exit_sound: AudioStreamPlayer2D = $ExitSound
+@onready var cat_sprite: AnimatedSprite2D = $Cat/CatSprite
+@onready var cat_white: AnimatedSprite2D = $Cat/CatSprite/CatWhite
+@onready var cat_name: Label = $Cat/CatName
 
 #var balloon_colors = ["red", "yellow", "green", "lilac", "purple"]
-var balloon_color = "yellow"
 var balloon_shapes = ["default", "star", "sparkle", "moon", "mickey", "heart"]
-var balloon_index = 0
+
+var cats = ["zephyr", "callie", "harper", "holly", "luca", "theo"]
 
 var customizing = ""
 var fade_in = false
@@ -30,6 +33,8 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(1.0).timeout 
 		animation_player.play("fade_in")
 		fade_in = true
+		
+	cat_name.text = Global.cat
 
 
 #func _on_balloon_area_mouse_entered() -> void:
@@ -88,26 +93,51 @@ func _on_cat_button_pressed() -> void:
 
 func _on_right_button_pressed() -> void:
 	if customizing == "balloon":
-		if balloon_index == len(balloon_shapes)-1:
-			balloon_index = 0
+		if Global.balloon_index == len(balloon_shapes)-1:
+			Global.balloon_index = 0
 		else:
-			balloon_index += 1
-		balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
-		balloon_white.play(balloon_shapes[balloon_index])
+			Global.balloon_index += 1
+		balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
+		balloon_white.play(balloon_shapes[Global.balloon_index])
 		select_music.play()
 		balloon_animation_player.play("switch")
+		Global.balloon = balloon_shapes[Global.balloon_index]
+		
+		
+	elif customizing == "cat":
+		if Global.cat_index == len(cats)-1:
+			Global.cat_index = 0
+		else:
+			Global.cat_index += 1
+		cat_sprite.play(cats[Global.cat_index])
+		cat_white.play(cats[Global.cat_index])
+		select_music.play()
+		cat_animation_player.play("switch")
+		Global.cat = cats[Global.cat_index]
 
 
 func _on_left_button_pressed() -> void:
 	if customizing == "balloon":
-		if balloon_index == 0:
-			balloon_index = len(balloon_shapes)-1
+		if Global.balloon_index == 0:
+			Global.balloon_index = len(balloon_shapes)-1
 		else:
-			balloon_index -= 1
-		balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
-		balloon_white.play(balloon_shapes[balloon_index])
+			Global.balloon_index -= 1
+		balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
+		balloon_white.play(balloon_shapes[Global.balloon_index])
 		select_music.play()
 		balloon_animation_player.play("switch")
+		Global.balloon = balloon_shapes[Global.balloon_index]
+		
+	elif customizing == "cat":
+		if Global.cat_index == 0:
+			Global.cat_index = len(cats)-1
+		else:
+			Global.cat_index -= 1
+		cat_sprite.play(cats[Global.cat_index])
+		cat_white.play(cats[Global.cat_index])
+		select_music.play()
+		cat_animation_player.play("switch")
+		Global.cat = cats[Global.cat_index]
 
 
 func _on_red_button_mouse_entered() -> void:
@@ -155,35 +185,35 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_red_button_pressed() -> void:
-	balloon_color = "red"
-	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	Global.balloon_color = "red"
+	balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
 	select_music.play()
 	balloon_animation_player.play("switch")
 
 
 func _on_yellow_button_pressed() -> void:
-	balloon_color = "yellow"
-	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	Global.balloon_color = "yellow"
+	balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
 	select_music.play()
 	balloon_animation_player.play("switch")
 
 
 func _on_green_button_pressed() -> void:
-	balloon_color = "green"
-	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	Global.balloon_color = "green"
+	balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
 	select_music.play()
 	balloon_animation_player.play("switch")
 
 
 func _on_lilac_button_pressed() -> void:
-	balloon_color = "lilac"
-	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	Global.balloon_color = "lilac"
+	balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
 	select_music.play()
 	balloon_animation_player.play("switch")
 
 
 func _on_purple_button_pressed() -> void:
-	balloon_color = "purple"
-	balloon_sprite.play(balloon_shapes[balloon_index]+"_"+balloon_color)
+	Global.balloon_color = "purple"
+	balloon_sprite.play(balloon_shapes[Global.balloon_index]+"_"+Global.balloon_color)
 	select_music.play()
 	balloon_animation_player.play("switch")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://3g2jsfhnumlr"]
+[gd_scene load_steps=115 format=3 uid="uid://3g2jsfhnumlr"]
 
 [ext_resource type="Script" uid="uid://cyrsj4penhrwq" path="res://assets/scripts/style_screen.gd" id="1_hawr3"]
 [ext_resource type="FontFile" uid="uid://dncv652mci8bv" path="res://assets/fonts/Poppin-Regular.otf" id="1_wecqa"]
@@ -17,14 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://cqje2fgpdrx0d" path="res://assets/sprites/balloons/IMG_2451.PNG" id="6_j0xdc"]
 [ext_resource type="Texture2D" uid="uid://dvtspo7byaae3" path="res://assets/sprites/balloons/IMG_2435.PNG" id="6_l2oqq"]
 [ext_resource type="Texture2D" uid="uid://bxtor33kih0eb" path="res://assets/sprites/balloons/IMG_2446.PNG" id="6_rl8rf"]
-[ext_resource type="Texture2D" uid="uid://brmgje4mw57gb" path="res://assets/sprites/IMG_2198.PNG" id="6_s5rnq"]
-[ext_resource type="Texture2D" uid="uid://bnjt01ehauwt0" path="res://assets/sprites/IMG_2199.PNG" id="7_2xugu"]
 [ext_resource type="Texture2D" uid="uid://by3jtsefqsspm" path="res://assets/sprites/balloons/IMG_2450.PNG" id="7_e00fi"]
 [ext_resource type="Texture2D" uid="uid://dr2sq3rqf3gey" path="res://assets/sprites/balloons/IMG_2439.PNG" id="7_hdrlg"]
-[ext_resource type="Texture2D" uid="uid://bkfsafp4xob57" path="res://assets/sprites/IMG_2200.PNG" id="8_kriny"]
 [ext_resource type="Texture2D" uid="uid://c8lcu3w0vvhp7" path="res://assets/sprites/balloons/IMG_2432.PNG" id="9_e00fi"]
 [ext_resource type="Texture2D" uid="uid://x7tkknvys3tc" path="res://assets/sprites/balloons/IMG_2440.PNG" id="9_hlcdt"]
-[ext_resource type="Texture2D" uid="uid://dggbrcr2so53q" path="res://assets/sprites/IMG_2201.PNG" id="9_hmgeb"]
 [ext_resource type="Texture2D" uid="uid://gemy0ofn85vx" path="res://assets/sprites/balloons/IMG_2434.PNG" id="10_0sjfq"]
 [ext_resource type="Texture2D" uid="uid://db8ukvdvetsmh" path="res://assets/sprites/balloons/IMG_2430.PNG" id="10_p3wka"]
 [ext_resource type="Texture2D" uid="uid://b5ctb8nwi2l6r" path="res://assets/sprites/balloons/IMG_2428.PNG" id="11_6acb1"]
@@ -69,6 +65,20 @@
 [ext_resource type="Texture2D" uid="uid://cktqipxapbjgj" path="res://assets/sprites/fi_1828774-1.png" id="33_vxc88"]
 [ext_resource type="Texture2D" uid="uid://ceb8184idqbpc" path="res://assets/sprites/fi_1828774.png" id="34_f5pgf"]
 [ext_resource type="AudioStream" uid="uid://b18ftd7o56nn7" path="res://assets/audio/new-notification-019-363747.mp3" id="35_vxc88"]
+[ext_resource type="Texture2D" uid="uid://dkyovnjolskga" path="res://assets/sprites/cats/IMG_2459.png" id="45_qwp48"]
+[ext_resource type="Texture2D" uid="uid://ca6mslujpvq5w" path="res://assets/sprites/cats/IMG_2460.png" id="46_p8yq7"]
+[ext_resource type="Texture2D" uid="uid://dcx1a518cw15p" path="res://assets/sprites/cats/IMG_2458.png" id="48_xubgm"]
+[ext_resource type="Texture2D" uid="uid://d4dpe31xdr720" path="res://assets/sprites/cats/IMG_2464.png" id="53_fhlmo"]
+[ext_resource type="Texture2D" uid="uid://bu1xkejdeyq8t" path="res://assets/sprites/cats/IMG_2465.png" id="54_xhsoj"]
+[ext_resource type="Texture2D" uid="uid://bqi6kwrxyk6ud" path="res://assets/sprites/cats/IMG_2462.png" id="61_ssa5v"]
+[ext_resource type="Texture2D" uid="uid://djlnggdw53m1u" path="res://assets/sprites/cats/IMG_2463.png" id="62_6j7ro"]
+[ext_resource type="Texture2D" uid="uid://c4f5n2nxcl36d" path="res://assets/sprites/cats/IMG_2457.png" id="70_egrsa"]
+[ext_resource type="Texture2D" uid="uid://etg1fbglp1hv" path="res://assets/sprites/cats/IMG_2466.png" id="77_gp6yx"]
+[ext_resource type="Texture2D" uid="uid://c4re37f55pi1c" path="res://assets/sprites/cats/IMG_2467.png" id="78_7nylp"]
+[ext_resource type="Texture2D" uid="uid://chg1yjnenyugd" path="res://assets/sprites/IMG_2369.PNG" id="85_d63b6"]
+[ext_resource type="Texture2D" uid="uid://dle4mtwxc0wb5" path="res://assets/sprites/IMG_2370.PNG" id="86_qv0gc"]
+[ext_resource type="Texture2D" uid="uid://ci4vgyqen6o6b" path="res://assets/sprites/IMG_2373.PNG" id="93_2uw82"]
+[ext_resource type="Texture2D" uid="uid://cwkq7j2buqygl" path="res://assets/sprites/IMG_2374.PNG" id="94_bevak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hawr3"]
 corner_radius_top_left = 500
@@ -428,22 +438,6 @@ tracks/0/keys = {
 "values": [Vector2(0.96, 0.96), Vector2(1.15, 1.15), Vector2(1.1, 1.1)]
 }
 
-[sub_resource type="Animation" id="Animation_hawr3"]
-resource_name = "unhover"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BalloonSprite:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.19999999),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.96, 0.96), Vector2(0.9, 0.9)]
-}
-
 [sub_resource type="Animation" id="Animation_0sjfq"]
 resource_name = "switch"
 length = 0.34
@@ -458,6 +452,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.96, 0.96), Vector2(1.0979124, 1.0979124), Vector2(1.0559797, 1.0559797)]
+}
+
+[sub_resource type="Animation" id="Animation_hawr3"]
+resource_name = "unhover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BalloonSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.96, 0.96), Vector2(0.9, 0.9)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hmgeb"]
@@ -495,13 +505,68 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_s5rnq")
+"texture": ExtResource("45_qwp48")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_2xugu")
+"texture": ExtResource("46_p8yq7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"callie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_fhlmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_xhsoj")
+}],
+"loop": true,
+"name": &"harper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_ssa5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_6j7ro")
+}],
+"loop": true,
+"name": &"holly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_egrsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_xubgm")
+}],
+"loop": true,
+"name": &"luca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_gp6yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_7nylp")
+}],
+"loop": true,
+"name": &"theo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_d63b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_qv0gc")
+}],
+"loop": true,
+"name": &"zephyr",
 "speed": 5.0
 }]
 
@@ -509,13 +574,68 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_kriny")
+"texture": ExtResource("93_2uw82")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_hmgeb")
+"texture": ExtResource("94_bevak")
 }],
 "loop": true,
-"name": &"default",
+"name": &"callie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_2uw82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_bevak")
+}],
+"loop": true,
+"name": &"harper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_2uw82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_bevak")
+}],
+"loop": true,
+"name": &"holly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_2uw82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_bevak")
+}],
+"loop": true,
+"name": &"luca",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_2uw82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_bevak")
+}],
+"loop": true,
+"name": &"theo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_2uw82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_bevak")
+}],
+"loop": true,
+"name": &"zephyr",
 "speed": 5.0
 }]
 
@@ -600,11 +720,28 @@ tracks/0/keys = {
 "values": [Vector2(0.115, 0.115), Vector2(0.109357394, 0.10935737)]
 }
 
+[sub_resource type="Animation" id="Animation_xubgm"]
+resource_name = "switch"
+length = 0.34
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109357394, 0.10935737), Vector2(0.11463871, 0.114638686), Vector2(0.11276779, 0.11276776)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3ewxh"]
 _data = {
 &"RESET": SubResource("Animation_0of8a"),
 &"hover": SubResource("Animation_vs2qo"),
 &"pressed": SubResource("Animation_edhdi"),
+&"switch": SubResource("Animation_xubgm"),
 &"unhover": SubResource("Animation_3ewxh")
 }
 
@@ -970,6 +1107,18 @@ tracks/29/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Cat/CatName:modulate")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_s5rnq"]
 resource_name = "balloon_selected"
@@ -1216,6 +1365,18 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(0, 330), Vector2(0, 248), Vector2(0, 260)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Cat/CatName:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_48i88"]
 resource_name = "cat_animation"
@@ -1314,6 +1475,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(37, 77.34349)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Cat/CatName:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_yey4e"]
@@ -1449,6 +1622,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 260), Vector2(0, 412)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Cat/CatName:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ii4ut"]
@@ -2126,23 +2311,27 @@ position = Vector2(0, -8)
 
 [node name="CatSprite" type="AnimatedSprite2D" parent="Cat"]
 z_index = 40
-position = Vector2(-0.5000076, 110.429535)
+position = Vector2(-0.37517738, 108.73219)
 rotation = 0.2617994
 scale = Vector2(0.109357394, 0.10935737)
 sprite_frames = SubResource("SpriteFrames_0of8a")
-autoplay = "default"
+animation = &"zephyr"
+autoplay = "zephyr"
 
 [node name="CatWhite" type="AnimatedSprite2D" parent="Cat/CatSprite"]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
+position = Vector2(1.1366701, -2.428694)
+scale = Vector2(1.0097884, 1.0097884)
 sprite_frames = SubResource("SpriteFrames_3ewxh")
-autoplay = "default"
+animation = &"zephyr"
+autoplay = "zephyr"
 
 [node name="CatButton" type="Button" parent="Cat"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -54.0
+offset_left = -57.0
 offset_top = 56.0
-offset_right = 45.0
+offset_right = 42.0
 offset_bottom = 176.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_kriny")
@@ -2154,6 +2343,18 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_3ewxh")
 }
+
+[node name="CatName" type="Label" parent="Cat"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -56.000004
+offset_top = 196.00002
+offset_right = 360.67218
+offset_bottom = 254.00002
+scale = Vector2(0.25814378, 0.25814378)
+theme_override_fonts/font = ExtResource("1_wecqa")
+theme_override_font_sizes/font_size = 60
+text = "zephyr"
+horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
