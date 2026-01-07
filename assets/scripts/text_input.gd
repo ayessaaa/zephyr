@@ -32,8 +32,9 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	#label.text = new_text
 	for rocket in Global.rocket_list:
 		
-		#if rocket.is_free():
-			#
+		if new_text.to_lower() == rocket.pattern.to_lower():
+			print("same sequence")
+			continue
 		if not new_text.to_lower().find(rocket.pattern.to_lower()) != -1:
 			print("no sequence")
 			continue
@@ -73,8 +74,9 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		else:
 			print("not found")
 			
-	if new_text.to_lower().find(Global.powerup_letters.to_lower()) and is_real_word(new_text, Global.powerup_letters) and airplanes_node.get_child_count() > 0:
-		
+	if new_text.to_lower().find(Global.powerup_letters.to_lower()) != -1 and is_real_word(new_text, Global.powerup_letters) and airplanes_node.get_child_count() > 0:
+		print(new_text.to_lower().find(Global.powerup_letters.to_lower()))
+		print(new_text.to_lower())
 		camera.trigger_shake("dark_bg")
 		line_edit.text = ""
 		#airplane_sprite.play("disappear")

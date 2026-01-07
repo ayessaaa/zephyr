@@ -26,6 +26,7 @@ Global="*res://assets/scripts/Global.gd"
 [display]
 
 window/size/resizable=false
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://b2ogah1oftlxq"
 
 [editor_plugins]

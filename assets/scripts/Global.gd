@@ -12,7 +12,7 @@ func _ready():
 	load_word_list()
 
 func load_word_list():
-	var path := "res://assets/words.txt"
+	var path := "res://assets/words_alpha.txt"
 	var file := FileAccess.open(path, FileAccess.READ)
 
 	if file == null:

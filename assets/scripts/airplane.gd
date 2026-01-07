@@ -31,9 +31,9 @@ func _ready() -> void:
 	spawn_sound.play()
 	var random_x = randi_range(0, len(letter_sequences)-1)
 	letter_sequence = letter_sequences[random_x]
+	Global.powerup_letters = letter_sequence
 	letters.text = letter_sequence.to_upper()
 	type = powerups[randi_range(0, len(powerups)-1)]
-	print(type)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

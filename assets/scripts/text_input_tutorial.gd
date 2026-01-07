@@ -24,8 +24,13 @@ var score = 0
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	#label.text = new_text
-		
-	if not new_text.to_lower().find("so") != -1:
+	if new_text.to_lower() == "so":
+		animation_player.play("incorrect")
+		camera.trigger_shake("red_bg")
+		line_edit.text = ""
+		incorrect_sound.play()
+		return
+	elif not new_text.to_lower().find("so") != -1:
 		animation_player.play("incorrect")
 		camera.trigger_shake("red_bg")
 		line_edit.text = ""
